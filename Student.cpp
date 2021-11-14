@@ -1,0 +1,20 @@
+/*
+
+Ima sledeca polja 
+ime 
+prezime
+indeks
+email 
+smer
+espb
+lista svih ispita koje slusa
+lista polozenih ispita
+
+
+ovde da budu informacije za raspored o ispitma koje treba staviti u kalendar
+
+
+
+
+
+*/
