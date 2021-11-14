@@ -1,0 +1,61 @@
+{
+    "subjects":[
+    { "_name":"Relacione baze podataka",
+      "_espb": 6,
+      "difficulty": null,
+      "url" : null
+    },
+    {
+      "_name":"Prevodjenje programskih jezika",
+      "_espb": 6,
+      "difficulty": null,
+      "url" : null
+    },
+    {
+        "_name":"Racunarska grafika",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Verovatnoca",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Uvod u numeicku matematiku",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Vestacka inteligencija",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Istrazivanje podataka",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Programske paradigme",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    },
+    {
+        "_name":"Statistika",
+        "_espb": 6,
+        "difficulty": null,
+        "url" : null
+    }
+
+  ]
+
+}
+
+

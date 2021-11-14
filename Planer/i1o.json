@@ -1,0 +1,52 @@
+
+ [   { "_name":"Programiranje 1",
+      "_espb": "8",
+      "difficulty": "0",
+      "url" : "unknown"
+    },
+    {
+      "_name":"Uvod u organizaciju i arhitekturu racunara",
+      "_espb": "6",
+      "difficulty": "0",
+      "url" : "unknown"
+    },
+    {
+        "_name":"Diskretne strukture 1",
+        "_espb": "6",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Linearna algebra i analiticka geometrija",
+        "_espb": "7",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Programiranje 2",
+        "_espb": "8",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Uvod u organizaciju i arhitekturu racunara",
+        "_espb": "6",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Diskretne strukture 2",
+        "_espb": "6",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Analiza 1",
+        "_espb": "7",
+        "difficulty": "0",
+        "url" : "unknown"
+    }
+
+  ]
+
+
