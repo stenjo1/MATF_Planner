@@ -41,8 +41,8 @@ void Student::jsonToSubjectList(QJsonArray arr){
    auto begin =  arr.begin();
    auto end = arr.end();
    while(begin != end){
-       Subject sub = Subject((*begin).toObject());
-       _allSubjects.push_back(&sub);
+       Subject *sub =new Subject((*begin).toObject());
+       _allSubjects.push_back(sub);
        begin++;
    }
 }

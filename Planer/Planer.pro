@@ -10,19 +10,25 @@ CONFIG += c++11
 
 SOURCES += \
     Exam.cpp \
+    FirstYearI.cpp \
+    FirstYearM.cpp \
+    LoginPage.cpp \
     Student.cpp \
     Subject.cpp \
-    main.cpp \
-    widget.cpp
+    main.cpp
 
 HEADERS += \
     Exam.hpp \
+    FirstYearI.h \
+    FirstYearM.h \
+    LoginPage.h \
     Student.hpp \
-    Subject.hpp \
-    widget.h
+    Subject.hpp
 
 FORMS += \
-    widget.ui
+    FirstYearI.ui \
+    FirstYearM.ui \
+    LoginPage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

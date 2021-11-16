@@ -11,7 +11,7 @@ public:
     void setPassed(); // postavlja true ako student polozi ispit
     bool checkIfDatePassed(QDate date); //proverava da li je ispit pre datuma proslednjenog kao argument
     bool checkIfDatePassed(); //proverava da li je datum prosao od trenutnog vremena
-    void writeToFileInJson(QString pathname);
+    void writeToFile(QString pathname); // pise sebe u json fajl koji je zadat kao argument
 
 private:
     QDate _date;
@@ -20,5 +20,6 @@ private:
     bool _passed;
     unsigned _numbersOfTry; //broj izlazaka na ovaj ispit
 };
+
 
 #endif // EXAM_HPP

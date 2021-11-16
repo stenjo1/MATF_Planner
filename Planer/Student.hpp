@@ -7,6 +7,7 @@
 #include<QJsonArray>
 #include<QFile>
 #include<QJsonDocument>
+#include<QVector>
 
 class Student
 {
@@ -23,6 +24,8 @@ public:
 private:
     QString _name;
     QString _surrname;
+    QString _yearOfStudy;
+    QString _email;
     std::vector<Subject*> _allSubjects;
     std::vector<Exam*> _exams;
 
