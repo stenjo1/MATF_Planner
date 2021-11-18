@@ -12,6 +12,7 @@ SOURCES += \
     Exam.cpp \
     FirstYearI.cpp \
     FirstYearM.cpp \
+    FourthYearI.cpp \
     FourthYearMR.cpp \
     LoginPage.cpp \
     ModulM.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
     SecondYearMR.cpp \
     Student.cpp \
     Subject.cpp \
+    ThirdYearI.cpp \
     ThirdYearMR.cpp \
     main.cpp
 
@@ -26,6 +28,7 @@ HEADERS += \
     Exam.hpp \
     FirstYearI.h \
     FirstYearM.h \
+    FourthYearI.h \
     FourthYearMR.h \
     LoginPage.h \
     ModulM.h \
@@ -33,16 +36,19 @@ HEADERS += \
     SecondYearMR.h \
     Student.hpp \
     Subject.hpp \
+    ThirdYearI.h \
     ThirdYearMR.h
 
 FORMS += \
     FirstYearI.ui \
     FirstYearM.ui \
+    FourthYearI.ui \
     FourthYearMR.ui \
     LoginPage.ui \
     ModulM.ui \
     SecondYearI.ui \
     SecondYearMR.ui \
+    ThirdYearI.ui \
     ThirdYearMR.ui
 
 # Default rules for deployment.

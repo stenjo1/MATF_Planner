@@ -25,7 +25,7 @@ void FirstYearI::on_back_button_clicked()
 
 
 
-void FirstYearI::on_forward_button_clicked()
+void FirstYearI::forward_button_clicked()
 {
     SecondYearI *w = new SecondYearI;
     w->show();

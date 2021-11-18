@@ -137,5 +137,25 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>forward_button</sender>
+   <signal>clicked()</signal>
+   <receiver>FirstYearI</receiver>
+   <slot>on_forward_button_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>624</x>
+     <y>388</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>581</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_forward_button_clicked()</slot>
+ </slots>
 </ui>

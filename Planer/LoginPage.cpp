@@ -14,7 +14,7 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
-void LoginPage::on_nextButton_clicked()
+void LoginPage::nextButton_clicked()
 {
    if(ui->info_department->isChecked()){
 

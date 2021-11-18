@@ -17,7 +17,7 @@ public:
 
 private slots:
     void on_back_button_clicked();
-    void on_forward_button_clicked();
+    void forward_button_clicked();
 
 private:
     Ui::FirstYearI *ui;
