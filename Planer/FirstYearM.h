@@ -15,6 +15,11 @@ public:
     explicit FirstYearM(QWidget *parent = nullptr);
     ~FirstYearM();
 
+private slots:
+    void on_pbNext_clicked();
+
+    void on_pbBack_clicked();
+
 private:
     Ui::FirstYearM *ui;
 };

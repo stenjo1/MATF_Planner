@@ -12,26 +12,38 @@ SOURCES += \
     Exam.cpp \
     FirstYearI.cpp \
     FirstYearM.cpp \
+    FourthYearMR.cpp \
     LoginPage.cpp \
+    ModulM.cpp \
     SecondYearI.cpp \
+    SecondYearMR.cpp \
     Student.cpp \
     Subject.cpp \
+    ThirdYearMR.cpp \
     main.cpp
 
 HEADERS += \
     Exam.hpp \
     FirstYearI.h \
     FirstYearM.h \
+    FourthYearMR.h \
     LoginPage.h \
+    ModulM.h \
     SecondYearI.h \
+    SecondYearMR.h \
     Student.hpp \
-    Subject.hpp
+    Subject.hpp \
+    ThirdYearMR.h
 
 FORMS += \
     FirstYearI.ui \
     FirstYearM.ui \
+    FourthYearMR.ui \
     LoginPage.ui \
-    SecondYearI.ui
+    ModulM.ui \
+    SecondYearI.ui \
+    SecondYearMR.ui \
+    ThirdYearMR.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

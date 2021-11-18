@@ -4,7 +4,7 @@
 #include<QFile>
 #include<QJsonDocument>
 #include <QJsonArray>
-#include "Loginpage.h"
+#include "LoginPage.h"
 
 
 int main(int argc, char *argv[])
