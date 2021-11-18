@@ -10,19 +10,46 @@ CONFIG += c++11
 
 SOURCES += \
     Exam.cpp \
+    FirstYearI.cpp \
+    FirstYearM.cpp \
+    FourthYearI.cpp \
+    FourthYearMR.cpp \
+    LoginPage.cpp \
+    ModulM.cpp \
+    SecondYearI.cpp \
+    SecondYearMR.cpp \
     Student.cpp \
     Subject.cpp \
-    main.cpp \
-    widget.cpp
+    ThirdYearI.cpp \
+    ThirdYearMR.cpp \
+    main.cpp
 
 HEADERS += \
     Exam.hpp \
+    FirstYearI.h \
+    FirstYearM.h \
+    FourthYearI.h \
+    FourthYearMR.h \
+    LoginPage.h \
+    ModulM.h \
+    SecondYearI.h \
+    SecondYearMR.h \
     Student.hpp \
     Subject.hpp \
-    widget.h
+    ThirdYearI.h \
+    ThirdYearMR.h
 
 FORMS += \
-    widget.ui
+    FirstYearI.ui \
+    FirstYearM.ui \
+    FourthYearI.ui \
+    FourthYearMR.ui \
+    LoginPage.ui \
+    ModulM.ui \
+    SecondYearI.ui \
+    SecondYearMR.ui \
+    ThirdYearI.ui \
+    ThirdYearMR.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
