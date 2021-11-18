@@ -12,8 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -24,8 +28,7 @@ class Ui_FirstYearI
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_6;
+    QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_2;
     QCheckBox *checkBox_6;
     QCheckBox *checkBox_7;
@@ -36,25 +39,23 @@ public:
     QCheckBox *checkBox_5;
     QCheckBox *checkBox_4;
     QCheckBox *checkBox_3;
+    QLabel *label_6;
+    QHBoxLayout *horizontalLayout;
+    QFrame *frame;
+    QFrame *frame_2;
+    QPushButton *back_button;
+    QPushButton *forward_button;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *FirstYearI)
     {
         if (FirstYearI->objectName().isEmpty())
             FirstYearI->setObjectName(QString::fromUtf8("FirstYearI"));
-        FirstYearI->resize(788, 468);
+        FirstYearI->resize(739, 480);
         centralwidget = new QWidget(FirstYearI);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        verticalLayout_3 = new QVBoxLayout(centralwidget);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_6 = new QLabel(centralwidget);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        QFont font;
-        font.setPointSize(22);
-        label_6->setFont(font);
-
-        verticalLayout_3->addWidget(label_6);
-
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         checkBox_6 = new QCheckBox(centralwidget);
@@ -78,7 +79,7 @@ public:
         verticalLayout_2->addWidget(checkBox_9);
 
 
-        verticalLayout_3->addLayout(verticalLayout_2);
+        gridLayout->addLayout(verticalLayout_2, 4, 0, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -104,7 +105,44 @@ public:
         verticalLayout->addWidget(checkBox_3);
 
 
-        verticalLayout_3->addLayout(verticalLayout);
+        gridLayout->addLayout(verticalLayout, 5, 0, 1, 1);
+
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        QFont font;
+        font.setPointSize(22);
+        label_6->setFont(font);
+
+        gridLayout->addWidget(label_6, 0, 0, 1, 1);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        frame = new QFrame(centralwidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+
+        horizontalLayout->addWidget(frame);
+
+        frame_2 = new QFrame(centralwidget);
+        frame_2->setObjectName(QString::fromUtf8("frame_2"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+
+        horizontalLayout->addWidget(frame_2);
+
+        back_button = new QPushButton(centralwidget);
+        back_button->setObjectName(QString::fromUtf8("back_button"));
+
+        horizontalLayout->addWidget(back_button);
+
+        forward_button = new QPushButton(centralwidget);
+        forward_button->setObjectName(QString::fromUtf8("forward_button"));
+
+        horizontalLayout->addWidget(forward_button);
+
+
+        gridLayout->addLayout(horizontalLayout, 6, 0, 1, 1);
 
         FirstYearI->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(FirstYearI);
@@ -119,7 +157,6 @@ public:
     void retranslateUi(QMainWindow *FirstYearI)
     {
         FirstYearI->setWindowTitle(QCoreApplication::translate("FirstYearI", "MainWindow", nullptr));
-        label_6->setText(QCoreApplication::translate("FirstYearI", "Prva godina - informatika", nullptr));
         checkBox_6->setText(QCoreApplication::translate("FirstYearI", "Programiranje 2", nullptr));
         checkBox_7->setText(QCoreApplication::translate("FirstYearI", "Uvod u organizaciju i arhitekturu racunara 2", nullptr));
         checkBox_8->setText(QCoreApplication::translate("FirstYearI", "Diskretne strukture 2", nullptr));
@@ -128,6 +165,9 @@ public:
         checkBox_5->setText(QCoreApplication::translate("FirstYearI", "Uvod u organizaciju i arhitekturu racunara 1", nullptr));
         checkBox_4->setText(QCoreApplication::translate("FirstYearI", "Diskretne strukture 1", nullptr));
         checkBox_3->setText(QCoreApplication::translate("FirstYearI", "Linearna algebra i analiticka geometrija", nullptr));
+        label_6->setText(QCoreApplication::translate("FirstYearI", "Prva godina - informatika", nullptr));
+        back_button->setText(QCoreApplication::translate("FirstYearI", "nazad", nullptr));
+        forward_button->setText(QCoreApplication::translate("FirstYearI", "dalje", nullptr));
     } // retranslateUi
 
 };

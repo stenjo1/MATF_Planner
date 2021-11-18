@@ -2,9 +2,11 @@ release/Exam.o
 release/FirstYearI.o
 release/FirstYearM.o
 release/LoginPage.o
+release/SecondYearI.o
 release/Student.o
 release/Subject.o
 release/main.o
 release/moc_FirstYearI.o
 release/moc_FirstYearM.o
 release/moc_LoginPage.o
+release/moc_SecondYearI.o

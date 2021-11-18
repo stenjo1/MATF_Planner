@@ -13,6 +13,7 @@ SOURCES += \
     FirstYearI.cpp \
     FirstYearM.cpp \
     LoginPage.cpp \
+    SecondYearI.cpp \
     Student.cpp \
     Subject.cpp \
     main.cpp
@@ -22,13 +23,15 @@ HEADERS += \
     FirstYearI.h \
     FirstYearM.h \
     LoginPage.h \
+    SecondYearI.h \
     Student.hpp \
     Subject.hpp
 
 FORMS += \
     FirstYearI.ui \
     FirstYearM.ui \
-    LoginPage.ui
+    LoginPage.ui \
+    SecondYearI.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

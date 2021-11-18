@@ -21,7 +21,7 @@ void LoginPage::on_nextButton_clicked()
         FirstYearI *w = new FirstYearI;
         w->show();
         hide();
-
+        //nzm dal ode curi memorija
     }else if (ui->math_department->isChecked()){
        FirstYearM *w = new FirstYearM;
        w->show();
