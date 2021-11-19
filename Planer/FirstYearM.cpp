@@ -1,7 +1,7 @@
 #include "FirstYearM.h"
 #include "ui_FirstYearM.h"
-#include "ModulM.h"
 #include "LoginPage.h"
+#include "SecondYearMR.h"
 
 FirstYearM::FirstYearM(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +17,7 @@ FirstYearM::~FirstYearM()
 
 void FirstYearM::on_pbNext_clicked()
 {
-    ModulM *w = new ModulM;
+    SecondYearMR *w = new SecondYearMR;
     w->show();
     hide();
 

@@ -23,7 +23,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Prva godina - matematika</string>
+       <string>Prva godina </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -110,6 +110,13 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbEnd">
+      <property name="text">
+       <string>Kraj</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

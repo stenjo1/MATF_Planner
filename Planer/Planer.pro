@@ -15,7 +15,6 @@ SOURCES += \
     FourthYearI.cpp \
     FourthYearMR.cpp \
     LoginPage.cpp \
-    ModulM.cpp \
     SecondYearI.cpp \
     SecondYearMR.cpp \
     Student.cpp \
@@ -31,7 +30,6 @@ HEADERS += \
     FourthYearI.h \
     FourthYearMR.h \
     LoginPage.h \
-    ModulM.h \
     SecondYearI.h \
     SecondYearMR.h \
     Student.hpp \
@@ -45,7 +43,6 @@ FORMS += \
     FourthYearI.ui \
     FourthYearMR.ui \
     LoginPage.ui \
-    ModulM.ui \
     SecondYearI.ui \
     SecondYearMR.ui \
     ThirdYearI.ui \

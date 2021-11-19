@@ -1,6 +1,7 @@
 #include "SecondYearMR.h"
 #include "ui_SecondYearMR.h"
 #include "ThirdYearMR.h"
+#include "FirstYearM.h"
 
 SecondYearMR::SecondYearMR(QWidget *parent) :
     QWidget(parent),
@@ -19,5 +20,19 @@ void SecondYearMR::on_pbNext_clicked()
     ThirdYearMR *w = new ThirdYearMR;
     w->show();
     close();
+}
+
+
+void SecondYearMR::on_pbBack_clicked()
+{
+    FirstYearM *w = new FirstYearM;
+    w->show();
+    close();
+}
+
+
+void SecondYearMR::on_pbEnd_clicked()
+{
+
 }
 
