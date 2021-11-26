@@ -1,4 +1,4 @@
-#include "Exam.hpp"
+#include "headers/Exam.hpp"
 
 Exam::Exam(QDate date,QString url,Subject subject, bool passed=false, unsigned numbersOfTry=0)
 {

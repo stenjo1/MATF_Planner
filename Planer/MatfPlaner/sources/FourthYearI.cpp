@@ -1,6 +1,6 @@
-#include "FourthYearI.h"
+#include "headers/FourthYearI.h"
 #include "ui_FourthYearI.h"
-#include "ThirdYearI.h"
+#include "headers/ThirdYearI.h"
 FourthYearI::FourthYearI(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FourthYearI)

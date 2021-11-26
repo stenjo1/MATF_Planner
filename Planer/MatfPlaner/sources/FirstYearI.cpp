@@ -1,7 +1,7 @@
-#include "FirstYearI.h"
+#include "headers/FirstYearI.h"
 #include "ui_FirstYearI.h"
-#include "LoginPage.h"
-#include "SecondYearI.h"
+#include "headers/LoginPage.h"
+#include "headers/SecondYearI.h"
 FirstYearI::FirstYearI(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FirstYearI)

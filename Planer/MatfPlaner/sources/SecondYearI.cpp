@@ -1,7 +1,7 @@
-#include "SecondYearI.h"
+#include "headers/SecondYearI.h"
 #include "ui_SecondYearI.h"
-#include "FirstYearI.h"
-#include "ThirdYearI.h"
+#include "headers/FirstYearI.h"
+#include "headers/ThirdYearI.h"
 SecondYearI::SecondYearI(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SecondYearI)

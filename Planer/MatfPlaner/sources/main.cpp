@@ -1,10 +1,10 @@
-#include "Subject.hpp"
+#include "headers/Subject.hpp"
 #include <QApplication>
 #include<QList>
 #include<QFile>
 #include<QJsonDocument>
 #include <QJsonArray>
-#include "LoginPage.h"
+#include "headers/LoginPage.h"
 
 
 int main(int argc, char *argv[])

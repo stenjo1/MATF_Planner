@@ -1,7 +1,7 @@
-#include "ThirdYearMR.h"
+#include "headers/ThirdYearMR.h"
 #include "ui_ThirdYearMR.h"
-#include "FourthYearMR.h"
-#include "SecondYearMR.h"
+#include "headers/FourthYearMR.h"
+#include "headers/SecondYearMR.h"
 
 ThirdYearMR::ThirdYearMR(QWidget *parent) :
     QWidget(parent),

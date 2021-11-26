@@ -1,7 +1,7 @@
-#include "LoginPage.h"
+#include "headers/LoginPage.h"
 #include "ui_LoginPage.h"
-#include "FirstYearI.h"
-#include "FirstYearM.h"
+#include "headers/FirstYearI.h"
+#include "headers/FirstYearM.h"
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage)

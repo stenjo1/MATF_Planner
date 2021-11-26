@@ -1,6 +1,6 @@
-#include "FourthYearMR.h"
+#include "headers/FourthYearMR.h"
 #include "ui_FourthYearMR.h"
-#include "ThirdYearMR.h"
+#include "headers/ThirdYearMR.h"
 
 FourthYearMR::FourthYearMR(QWidget *parent) :
     QWidget(parent),
