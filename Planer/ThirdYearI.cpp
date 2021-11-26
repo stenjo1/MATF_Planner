@@ -22,10 +22,11 @@ void ThirdYearI::next_button_clicked(){
     //nzm dal ovde curi memorija
 }
 
-void ThirdYearI::on_backButtonClicked()
+void ThirdYearI::on_back_pushButton_clicked()
 {
     SecondYearI *w = new SecondYearI;
     w->show();
     hide();
 //    //nzm dal ovde curi memorija
 }
+

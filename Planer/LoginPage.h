@@ -16,7 +16,7 @@ public:
     ~LoginPage();
 
 private slots:
-    void nextButton_clicked();
+    void on_nextButton_clicked();
 
 private:
     Ui::LoginPage *ui;

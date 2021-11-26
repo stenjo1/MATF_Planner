@@ -202,24 +202,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>nextButton</sender>
-   <signal>clicked()</signal>
-   <receiver>LoginPage</receiver>
-   <slot>on_nextButton_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>521</x>
-     <y>406</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>520</x>
-     <y>354</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>on_nextButton_clicked()</slot>
  </slots>

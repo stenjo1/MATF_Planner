@@ -14,18 +14,19 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
-void LoginPage::nextButton_clicked()
-{
-   if(ui->info_department->isChecked()){
 
-        FirstYearI *w = new FirstYearI;
+void LoginPage::on_nextButton_clicked()
+{
+    if(ui->info_department->isChecked()){
+
+         FirstYearI *w = new FirstYearI;
+         w->show();
+         hide();
+         //nzm dal ode curi memorija
+     }else if (ui->math_department->isChecked()){
+        FirstYearM *w = new FirstYearM;
         w->show();
         hide();
-        //nzm dal ode curi memorija
-    }else if (ui->math_department->isChecked()){
-       FirstYearM *w = new FirstYearM;
-       w->show();
-       hide();
-   }
+    }
 }
 
