@@ -5,14 +5,16 @@ Student::Student()
 
 }
 
-Student::Student(QString name,QString surrname){
-    _name = name;
-    _surrname = surrname;
+Student::Student(QString name,QString surname, QString email)
+    : _name(name), _surname(surname), _email(email)
+{
+
 }
 
-Student::Student(QString name,QString surrname,std::vector<Subject*> allSubjects,std::vector<Exam*> exams){
+
+Student::Student(QString name,QString surname,std::vector<Subject*> allSubjects,std::vector<Exam*> exams){
     _name = name;
-    _surrname = surrname;
+    _surname = surname;
     _allSubjects = allSubjects;
     _exams = exams;
 }
