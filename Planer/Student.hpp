@@ -12,8 +12,8 @@
 class Student
 {
 public:
-    Student(QString name,QString surrname);
-    Student(QString name,QString surrname,std::vector<Subject*> allSubjects,std::vector<Exam*> exams);
+    Student(QString name,QString surname, QString email);
+    Student(QString name,QString surname,std::vector<Subject*> allSubjects,std::vector<Exam*> exams);
     Student();
     ~Student();
     void addExam(Exam *exam); //dodaje ispit na studenta
@@ -23,7 +23,7 @@ public:
 
 private:
     QString _name;
-    QString _surrname;
+    QString _surname;
     QString _yearOfStudy;
     QString _email;
     std::vector<Subject*> _allSubjects;

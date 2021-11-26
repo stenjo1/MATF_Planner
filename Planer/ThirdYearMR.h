@@ -18,6 +18,10 @@ public:
 private slots:
     void on_pbNext_clicked();
 
+    void on_pbBack_clicked();
+
+    void on_pbEnd_clicked();
+
 private:
     Ui::ThirdYearMR *ui;
 };
