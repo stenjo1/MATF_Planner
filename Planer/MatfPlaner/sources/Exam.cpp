@@ -1,6 +1,6 @@
 #include "headers/Exam.hpp"
 
-Exam::Exam(QDate date,QString url,Subject subject, bool passed=false, unsigned numbersOfTry=0)
+Exam::Exam(QDate date,QString url,Subject subject, bool passed, unsigned numbersOfTry)
 {
     _date = date;
     _url = url;
@@ -21,4 +21,10 @@ bool Exam::checkIfDatePassed(QDate date){
         return true;
 
     return false;
+}
+
+
+bool Exam::seeChangesInUrl(){
+//vraca true ako je fajl promenjen
+    return true;
 }

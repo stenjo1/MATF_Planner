@@ -1,0 +1,43 @@
+{
+    "subjects": [
+    {
+        "_name":"Engleski jezik 1",
+        "_espb": "3",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Tehnicko i naucno pisanje",
+        "_espb": "3",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Engleski jezik 2",
+        "_espb": "3",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Zetetika-kriticno rasudjivanje",
+        "_espb": "3",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Osnovi astronomije",
+        "_espb": "6",
+        "difficulty": "0",
+        "url" : "unknown"
+    },
+    {
+        "_name":"Osnovi mehanike",
+        "_espb": "6",
+        "difficulty": "0",
+        "url" : "unknown"
+    }
+
+
+
+]
+}

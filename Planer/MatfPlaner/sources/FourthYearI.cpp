@@ -1,6 +1,7 @@
 #include "headers/FourthYearI.h"
 #include "ui_FourthYearI.h"
 #include "headers/ThirdYearI.h"
+#include"headers/InsertExams.h"
 FourthYearI::FourthYearI(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FourthYearI)
@@ -26,3 +27,12 @@ void FourthYearI::on_backButtonClicked()
     hide();
 //    //nzm dal ovde curi memorija
 }
+
+void FourthYearI::on_nextPushButton_clicked()
+{
+    InsertExams *w = new InsertExams;
+    w->show();
+    hide();
+    //nzm dal ovde curi memorija
+}
+
