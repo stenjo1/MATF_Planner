@@ -15,6 +15,11 @@ public:
     explicit Calendar(QWidget *parent = nullptr);
     ~Calendar();
 
+private slots:
+    void on_pbNewExam_clicked();
+
+    void on_pbProfile_clicked();
+
 private:
     Ui::Calendar *ui;
 };

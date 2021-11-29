@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>330</width>
-    <height>268</height>
+    <width>542</width>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,12 +27,22 @@
    <item>
     <widget class="QLabel" name="dateLabel">
      <property name="text">
-      <string>datum:</string>
+      <string>Ispit u prvom roku:</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="dateLineEdit"/>
+    <widget class="QLineEdit" name="dateLineEdit1"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Ispit u drugom roku:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="dateLineEdit2"/>
    </item>
    <item>
     <widget class="QLabel" name="urlLabel">

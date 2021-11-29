@@ -21,6 +21,8 @@ private slots:
 
     void on_clearWidgetButton_clicked();
 
+    void on_endInputExamButton_clicked();
+
 private:
     Ui::InsertExams *ui;
     QList<Exam*> exams;
