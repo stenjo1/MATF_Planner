@@ -45,7 +45,7 @@ public:
     {
         if (FourthYearMR->objectName().isEmpty())
             FourthYearMR->setObjectName(QString::fromUtf8("FourthYearMR"));
-        FourthYearMR->resize(607, 561);
+        FourthYearMR->resize(600, 600);
         verticalLayout = new QVBoxLayout(FourthYearMR);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         label = new QLabel(FourthYearMR);

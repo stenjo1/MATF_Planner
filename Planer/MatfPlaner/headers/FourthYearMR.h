@@ -11,6 +11,9 @@ class FourthYearMR : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void backSignal();
+
 public:
     explicit FourthYearMR(QWidget *parent = nullptr);
     ~FourthYearMR();

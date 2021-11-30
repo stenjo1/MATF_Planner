@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
@@ -26,25 +27,26 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout_2;
     QLabel *label;
-    QVBoxLayout *verticalLayout;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_5;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_2;
-    QVBoxLayout *verticalLayout_3;
-    QCheckBox *checkBox_8;
-    QCheckBox *checkBox_9;
-    QCheckBox *checkBox_10;
-    QCheckBox *checkBox_7;
-    QPushButton *next_pushButton;
-    QPushButton *back_pushButton;
+    QCheckBox *cbRBP;
+    QCheckBox *cbPPJ;
+    QCheckBox *cbRG;
+    QCheckBox *cbVrv;
+    QCheckBox *cbUNM;
+    QCheckBox *cbVI;
+    QCheckBox *cbIP1;
+    QCheckBox *cbPP;
+    QCheckBox *cbIzborniR1;
+    QCheckBox *cbStat;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pbBack;
+    QPushButton *pbNext;
+    QPushButton *pbEnd;
 
     void setupUi(QMainWindow *ThirdYearI)
     {
         if (ThirdYearI->objectName().isEmpty())
             ThirdYearI->setObjectName(QString::fromUtf8("ThirdYearI"));
-        ThirdYearI->resize(984, 441);
+        ThirdYearI->resize(600, 600);
         centralwidget = new QWidget(ThirdYearI);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout_2 = new QVBoxLayout(centralwidget);
@@ -58,75 +60,79 @@ public:
 
         verticalLayout_2->addWidget(label);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        checkBox = new QCheckBox(centralwidget);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        cbRBP = new QCheckBox(centralwidget);
+        cbRBP->setObjectName(QString::fromUtf8("cbRBP"));
 
-        verticalLayout->addWidget(checkBox);
+        verticalLayout_2->addWidget(cbRBP);
 
-        checkBox_4 = new QCheckBox(centralwidget);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
+        cbPPJ = new QCheckBox(centralwidget);
+        cbPPJ->setObjectName(QString::fromUtf8("cbPPJ"));
 
-        verticalLayout->addWidget(checkBox_4);
+        verticalLayout_2->addWidget(cbPPJ);
 
-        checkBox_5 = new QCheckBox(centralwidget);
-        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
+        cbRG = new QCheckBox(centralwidget);
+        cbRG->setObjectName(QString::fromUtf8("cbRG"));
 
-        verticalLayout->addWidget(checkBox_5);
+        verticalLayout_2->addWidget(cbRG);
 
-        checkBox_3 = new QCheckBox(centralwidget);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
+        cbVrv = new QCheckBox(centralwidget);
+        cbVrv->setObjectName(QString::fromUtf8("cbVrv"));
 
-        verticalLayout->addWidget(checkBox_3);
+        verticalLayout_2->addWidget(cbVrv);
 
-        checkBox_2 = new QCheckBox(centralwidget);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        cbUNM = new QCheckBox(centralwidget);
+        cbUNM->setObjectName(QString::fromUtf8("cbUNM"));
 
-        verticalLayout->addWidget(checkBox_2);
+        verticalLayout_2->addWidget(cbUNM);
+
+        cbVI = new QCheckBox(centralwidget);
+        cbVI->setObjectName(QString::fromUtf8("cbVI"));
+
+        verticalLayout_2->addWidget(cbVI);
+
+        cbIP1 = new QCheckBox(centralwidget);
+        cbIP1->setObjectName(QString::fromUtf8("cbIP1"));
+
+        verticalLayout_2->addWidget(cbIP1);
+
+        cbPP = new QCheckBox(centralwidget);
+        cbPP->setObjectName(QString::fromUtf8("cbPP"));
+
+        verticalLayout_2->addWidget(cbPP);
+
+        cbIzborniR1 = new QCheckBox(centralwidget);
+        cbIzborniR1->setObjectName(QString::fromUtf8("cbIzborniR1"));
+
+        verticalLayout_2->addWidget(cbIzborniR1);
+
+        cbStat = new QCheckBox(centralwidget);
+        cbStat->setObjectName(QString::fromUtf8("cbStat"));
+
+        verticalLayout_2->addWidget(cbStat);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        pbBack = new QPushButton(centralwidget);
+        pbBack->setObjectName(QString::fromUtf8("pbBack"));
+
+        horizontalLayout->addWidget(pbBack);
+
+        pbNext = new QPushButton(centralwidget);
+        pbNext->setObjectName(QString::fromUtf8("pbNext"));
+
+        horizontalLayout->addWidget(pbNext);
 
 
-        verticalLayout_2->addLayout(verticalLayout);
+        verticalLayout_2->addLayout(horizontalLayout);
 
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        checkBox_8 = new QCheckBox(centralwidget);
-        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
+        pbEnd = new QPushButton(centralwidget);
+        pbEnd->setObjectName(QString::fromUtf8("pbEnd"));
 
-        verticalLayout_3->addWidget(checkBox_8);
-
-        checkBox_9 = new QCheckBox(centralwidget);
-        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
-
-        verticalLayout_3->addWidget(checkBox_9);
-
-        checkBox_10 = new QCheckBox(centralwidget);
-        checkBox_10->setObjectName(QString::fromUtf8("checkBox_10"));
-
-        verticalLayout_3->addWidget(checkBox_10);
-
-        checkBox_7 = new QCheckBox(centralwidget);
-        checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
-
-        verticalLayout_3->addWidget(checkBox_7);
-
-
-        verticalLayout_2->addLayout(verticalLayout_3);
-
-        next_pushButton = new QPushButton(centralwidget);
-        next_pushButton->setObjectName(QString::fromUtf8("next_pushButton"));
-
-        verticalLayout_2->addWidget(next_pushButton);
-
-        back_pushButton = new QPushButton(centralwidget);
-        back_pushButton->setObjectName(QString::fromUtf8("back_pushButton"));
-
-        verticalLayout_2->addWidget(back_pushButton);
+        verticalLayout_2->addWidget(pbEnd);
 
         ThirdYearI->setCentralWidget(centralwidget);
 
         retranslateUi(ThirdYearI);
-        QObject::connect(next_pushButton, SIGNAL(clicked()), ThirdYearI, SLOT(next_button_clicked()));
 
         QMetaObject::connectSlotsByName(ThirdYearI);
     } // setupUi
@@ -135,17 +141,19 @@ public:
     {
         ThirdYearI->setWindowTitle(QCoreApplication::translate("ThirdYearI", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("ThirdYearI", "Treca godina - informatika", nullptr));
-        checkBox->setText(QCoreApplication::translate("ThirdYearI", "Relacione baze podataka", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("ThirdYearI", "Prevodjenje programskih jezika", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("ThirdYearI", "Racunarska grafika", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("ThirdYearI", "Verovatnoca", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("ThirdYearI", "Uvoid u numericku matematiku", nullptr));
-        checkBox_8->setText(QCoreApplication::translate("ThirdYearI", "Vestacka inteligencija", nullptr));
-        checkBox_9->setText(QCoreApplication::translate("ThirdYearI", "Istrazivanje podataka 1", nullptr));
-        checkBox_10->setText(QCoreApplication::translate("ThirdYearI", "Programske paradigme", nullptr));
-        checkBox_7->setText(QCoreApplication::translate("ThirdYearI", "Statistika", nullptr));
-        next_pushButton->setText(QCoreApplication::translate("ThirdYearI", "napred", nullptr));
-        back_pushButton->setText(QCoreApplication::translate("ThirdYearI", "nazad", nullptr));
+        cbRBP->setText(QCoreApplication::translate("ThirdYearI", "Relacione baze podataka", nullptr));
+        cbPPJ->setText(QCoreApplication::translate("ThirdYearI", "Prevo\304\221enje programskih jezika", nullptr));
+        cbRG->setText(QCoreApplication::translate("ThirdYearI", "Ra\304\215unarska grafika", nullptr));
+        cbVrv->setText(QCoreApplication::translate("ThirdYearI", "Verovatno\304\207a", nullptr));
+        cbUNM->setText(QCoreApplication::translate("ThirdYearI", "Uvod u numeri\304\215ku matematiku", nullptr));
+        cbVI->setText(QCoreApplication::translate("ThirdYearI", "Ve\305\241ta\304\215ka inteligencija", nullptr));
+        cbIP1->setText(QCoreApplication::translate("ThirdYearI", "Istra\305\276ivanje podataka 1", nullptr));
+        cbPP->setText(QCoreApplication::translate("ThirdYearI", "Programske paradigme", nullptr));
+        cbIzborniR1->setText(QCoreApplication::translate("ThirdYearI", "Izborni predmet R1", nullptr));
+        cbStat->setText(QCoreApplication::translate("ThirdYearI", "Statistika", nullptr));
+        pbBack->setText(QCoreApplication::translate("ThirdYearI", "Nazad", nullptr));
+        pbNext->setText(QCoreApplication::translate("ThirdYearI", "Dalje", nullptr));
+        pbEnd->setText(QCoreApplication::translate("ThirdYearI", "Kraj", nullptr));
     } // retranslateUi
 
 };

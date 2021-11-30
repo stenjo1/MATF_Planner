@@ -1,12 +1,13 @@
 #include "headers/FirstYearI.h"
 #include "ui_FirstYearI.h"
-#include "headers/LoginPage.h"
-#include "headers/SecondYearI.h"
+
 FirstYearI::FirstYearI(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::FirstYearI)
+    ui(new Ui::FirstYearI),
+    secondWindow(new SecondYearI)
 {
     ui->setupUi(this);
+    connect(secondWindow, &SecondYearI::backSignal, this, &QWidget::show);
 }
 
 FirstYearI::~FirstYearI()
@@ -14,21 +15,24 @@ FirstYearI::~FirstYearI()
     delete ui;
 }
 
-void FirstYearI::on_back_button_clicked()
+
+
+void FirstYearI::on_pbBack_clicked()
 {
-    LoginPage *w = new LoginPage;
-    w->show();
+    emit backSignal();
     hide();
-    //nzm dal ovde curi memorija
 }
 
 
-
-void FirstYearI::on_forward_button_clicked()
+void FirstYearI::on_pbNext_clicked()
 {
-    SecondYearI *w = new SecondYearI;
-    w->show();
+    secondWindow->show();
     hide();
-    //nzm dal ovde curi memorija
+}
+
+
+void FirstYearI::on_pbEnd_clicked()
+{
+    hide();
 }
 

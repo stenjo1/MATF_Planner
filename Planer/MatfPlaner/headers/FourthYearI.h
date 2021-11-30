@@ -11,15 +11,17 @@ class FourthYearI : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void backSignal();
 public:
     explicit FourthYearI(QWidget *parent = nullptr);
     ~FourthYearI();
 
 private slots:
-    void next_button_clicked();
-    void on_backButtonClicked();
 
-    void on_nextPushButton_clicked();
+    void on_pbEnd_clicked();
+
+    void on_pbBack_clicked();
 
 private:
     Ui::FourthYearI *ui;

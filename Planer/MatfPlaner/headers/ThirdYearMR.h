@@ -2,6 +2,7 @@
 #define THIRDYEARMR_H
 
 #include <QWidget>
+#include "headers/FourthYearMR.h"
 
 namespace Ui {
 class ThirdYearMR;
@@ -11,6 +12,8 @@ class ThirdYearMR : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void backSignal();
 public:
     explicit ThirdYearMR(QWidget *parent = nullptr);
     ~ThirdYearMR();
@@ -24,6 +27,7 @@ private slots:
 
 private:
     Ui::ThirdYearMR *ui;
+    FourthYearMR *fourthWindow;
 };
 
 #endif // THIRDYEARMR_H

@@ -1,13 +1,13 @@
 #include "headers/ThirdYearMR.h"
 #include "ui_ThirdYearMR.h"
-#include "headers/FourthYearMR.h"
-#include "headers/SecondYearMR.h"
 
 ThirdYearMR::ThirdYearMR(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::ThirdYearMR)
+    ui(new Ui::ThirdYearMR),
+    fourthWindow(new FourthYearMR)
 {
     ui->setupUi(this);
+    connect(fourthWindow, &FourthYearMR::backSignal, this, &QWidget::show);
 }
 
 ThirdYearMR::~ThirdYearMR()
@@ -17,22 +17,20 @@ ThirdYearMR::~ThirdYearMR()
 
 void ThirdYearMR::on_pbNext_clicked()
 {
-    FourthYearMR *w = new FourthYearMR;
-    w->show();
-    close();
+    fourthWindow->show();
+    hide();
 }
 
 
 void ThirdYearMR::on_pbBack_clicked()
 {
-    SecondYearMR *w = new SecondYearMR;
-    w->show();
-    close();
+    emit backSignal();
+    hide();
 }
 
 
 void ThirdYearMR::on_pbEnd_clicked()
 {
-
+    hide();
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>441</height>
+    <width>600</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,87 +31,97 @@
      </widget>
     </item>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QCheckBox" name="checkBox">
-        <property name="text">
-         <string>Relacione baze podataka</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_4">
-        <property name="text">
-         <string>Prevodjenje programskih jezika</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_5">
-        <property name="text">
-         <string>Racunarska grafika</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_3">
-        <property name="text">
-         <string>Verovatnoca</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="text">
-         <string>Uvoid u numericku matematiku</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QCheckBox" name="checkBox_8">
-        <property name="text">
-         <string>Vestacka inteligencija</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_9">
-        <property name="text">
-         <string>Istrazivanje podataka 1</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_10">
-        <property name="text">
-         <string>Programske paradigme</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_7">
-        <property name="text">
-         <string>Statistika</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="next_pushButton">
+     <widget class="QCheckBox" name="cbRBP">
       <property name="text">
-       <string>napred</string>
+       <string>Relacione baze podataka</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="back_pushButton">
+     <widget class="QCheckBox" name="cbPPJ">
       <property name="text">
-       <string>nazad</string>
+       <string>Prevođenje programskih jezika</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbRG">
+      <property name="text">
+       <string>Računarska grafika</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbVrv">
+      <property name="text">
+       <string>Verovatnoća</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbUNM">
+      <property name="text">
+       <string>Uvod u numeričku matematiku</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbVI">
+      <property name="text">
+       <string>Veštačka inteligencija</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbIP1">
+      <property name="text">
+       <string>Istraživanje podataka 1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbPP">
+      <property name="text">
+       <string>Programske paradigme</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbIzborniR1">
+      <property name="text">
+       <string>Izborni predmet R1</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cbStat">
+      <property name="text">
+       <string>Statistika</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="pbBack">
+        <property name="text">
+         <string>Nazad</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pbNext">
+        <property name="text">
+         <string>Dalje</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pbEnd">
+      <property name="text">
+       <string>Kraj</string>
       </property>
      </widget>
     </item>
@@ -119,24 +129,7 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>next_pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ThirdYearI</receiver>
-   <slot>next_button_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>68</x>
-     <y>382</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>518</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>next_button_clicked()</slot>
   <slot>on_back_button_clicked()</slot>

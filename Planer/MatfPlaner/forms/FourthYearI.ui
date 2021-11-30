@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>765</width>
-    <height>538</height>
+    <width>600</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,54 +30,88 @@
     </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="text">
-        <string>Racunarske mreze</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox">
-       <property name="text">
-        <string>Razvoj softvera</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QCheckBox" name="cbRM">
+     <property name="text">
+      <string>Računarske mreže</string>
+     </property>
+    </widget>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QCheckBox" name="checkBox_4">
-       <property name="text">
-        <string>Projektovanje baza podataka</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="text">
-        <string>Specijalni kurs</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QCheckBox" name="cbRS">
+     <property name="text">
+      <string>Razvoj softvera</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniR2">
+     <property name="text">
+      <string>Izborni predmet R2</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniR3">
+     <property name="text">
+      <string>Izborni predmet R3</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniM1">
+     <property name="text">
+      <string>Izborni predmet M1</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbPBP">
+     <property name="text">
+      <string>Projektovanje baza podataka</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbSK">
+     <property name="text">
+      <string>Specijalni kurs</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniK">
+     <property name="text">
+      <string>Izborni predmet K</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniV1">
+     <property name="text">
+      <string>Izborni predmet V1</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbIzborniM2">
+     <property name="text">
+      <string>Izborni predmet M2</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="backPushButton">
+      <widget class="QPushButton" name="pbBack">
        <property name="text">
-        <string>nazad</string>
+        <string>Nazad</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="nextPushButton">
+      <widget class="QPushButton" name="pbEnd">
        <property name="text">
-        <string>napred</string>
+        <string>Kraj</string>
        </property>
       </widget>
      </item>
@@ -86,40 +120,7 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>backPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>FourthYearI</receiver>
-   <slot>on_backButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>449</x>
-     <y>613</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>100</x>
-     <y>6</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>nextPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>FourthYearI</receiver>
-   <slot>next_button_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>661</x>
-     <y>606</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>559</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>on_backButtonClicked()</slot>
   <slot>next_button_clicked()</slot>

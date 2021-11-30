@@ -39,7 +39,7 @@ public:
     {
         if (InsertExams->objectName().isEmpty())
             InsertExams->setObjectName(QString::fromUtf8("InsertExams"));
-        InsertExams->resize(542, 547);
+        InsertExams->resize(600, 600);
         verticalLayout = new QVBoxLayout(InsertExams);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         examLabel = new QLabel(InsertExams);

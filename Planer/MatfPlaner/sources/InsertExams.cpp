@@ -8,6 +8,7 @@ InsertExams::InsertExams(QWidget *parent) :
     ui(new Ui::InsertExams)
 {
     ui->setupUi(this);
+    QList<Exam*> *exams = new QList<Exam*>; //feels weird
 }
 
 void InsertExams::addExam(){
@@ -20,14 +21,14 @@ void InsertExams::addExam(){
     QString url = ui->urlLineEdit->text();
     Exam *exam1 =new Exam(date1,url,dummy,false,0);// NEMOJ DA ZOVES KONSTRUKTOR KAO U JAVI SARO
     Exam *exam2 =new Exam(date2,url,dummy,false,0);
-    exams.push_back(exam1);
-    exams.push_back(exam2);//lista dinamicki alociranih ispita
+    exams->push_back(exam1);
+    exams->push_back(exam2);//lista dinamicki alociranih ispita
 }
 
 InsertExams::~InsertExams()
 {
     delete ui;
-    for (auto el: exams)
+    for (auto el: *exams)
         delete el;
 }
 

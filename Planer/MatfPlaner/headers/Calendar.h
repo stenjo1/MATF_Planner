@@ -2,6 +2,7 @@
 #define CALENDAR_H
 
 #include <QWidget>
+#include "headers/LoginPage.h"
 
 namespace Ui {
 class Calendar;
@@ -22,6 +23,7 @@ private slots:
 
 private:
     Ui::Calendar *ui;
+    LoginPage *loginWindow;
 };
 
 #endif // CALENDAR_H

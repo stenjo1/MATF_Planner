@@ -1,12 +1,13 @@
 #include "headers/ThirdYearI.h"
 #include "ui_ThirdYearI.h"
-#include "headers/SecondYearI.h"
-#include "headers/FourthYearI.h"
+
 ThirdYearI::ThirdYearI(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::ThirdYearI)
+    ui(new Ui::ThirdYearI),
+    fourthWindow(new FourthYearI)
 {
     ui->setupUi(this);
+    connect(fourthWindow, &FourthYearI::backSignal, this, &QWidget::show);
 }
 
 ThirdYearI::~ThirdYearI()
@@ -15,18 +16,23 @@ ThirdYearI::~ThirdYearI()
 }
 
 
-void ThirdYearI::next_button_clicked(){
-    FourthYearI *w = new FourthYearI;
-    w->show();
+void ThirdYearI::on_pbBack_clicked()
+{
+    emit backSignal();
+    hide();
+}
+
+
+void ThirdYearI::on_pbNext_clicked()
+{
+    fourthWindow->show();
     hide();
     //nzm dal ovde curi memorija
 }
 
-void ThirdYearI::on_back_pushButton_clicked()
+
+void ThirdYearI::on_pbEnd_clicked()
 {
-    SecondYearI *w = new SecondYearI;
-    w->show();
     hide();
-//    //nzm dal ovde curi memorija
 }
 

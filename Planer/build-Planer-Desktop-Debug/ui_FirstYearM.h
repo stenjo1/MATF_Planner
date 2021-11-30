@@ -15,9 +15,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -30,26 +28,23 @@ public:
     QVBoxLayout *verticalLayout_3;
     QLabel *label_6;
     QVBoxLayout *verticalLayout;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox_5;
-    QCheckBox *checkBox_9;
-    QCheckBox *checkBox_6;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_10;
-    QCheckBox *checkBox_8;
-    QCheckBox *checkBox_3;
+    QCheckBox *cbAnaliza1;
+    QCheckBox *cbLinearna;
+    QCheckBox *cbP2;
+    QCheckBox *cbLogika;
+    QCheckBox *cbJezik;
+    QCheckBox *cbG1;
+    QCheckBox *cbP1;
     QHBoxLayout *horizontalLayout;
     QPushButton *pbBack;
     QPushButton *pbNext;
     QPushButton *pbEnd;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *FirstYearM)
     {
         if (FirstYearM->objectName().isEmpty())
             FirstYearM->setObjectName(QString::fromUtf8("FirstYearM"));
-        FirstYearM->resize(814, 624);
+        FirstYearM->resize(600, 600);
         centralwidget = new QWidget(FirstYearM);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         verticalLayout_3 = new QVBoxLayout(centralwidget);
@@ -65,46 +60,41 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        checkBox_2 = new QCheckBox(centralwidget);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        checkBox_2->setChecked(false);
+        cbAnaliza1 = new QCheckBox(centralwidget);
+        cbAnaliza1->setObjectName(QString::fromUtf8("cbAnaliza1"));
+        cbAnaliza1->setChecked(false);
 
-        verticalLayout->addWidget(checkBox_2);
+        verticalLayout->addWidget(cbAnaliza1);
 
-        checkBox_5 = new QCheckBox(centralwidget);
-        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
+        cbLinearna = new QCheckBox(centralwidget);
+        cbLinearna->setObjectName(QString::fromUtf8("cbLinearna"));
 
-        verticalLayout->addWidget(checkBox_5);
+        verticalLayout->addWidget(cbLinearna);
 
-        checkBox_9 = new QCheckBox(centralwidget);
-        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
+        cbP2 = new QCheckBox(centralwidget);
+        cbP2->setObjectName(QString::fromUtf8("cbP2"));
 
-        verticalLayout->addWidget(checkBox_9);
+        verticalLayout->addWidget(cbP2);
 
-        checkBox_6 = new QCheckBox(centralwidget);
-        checkBox_6->setObjectName(QString::fromUtf8("checkBox_6"));
+        cbLogika = new QCheckBox(centralwidget);
+        cbLogika->setObjectName(QString::fromUtf8("cbLogika"));
 
-        verticalLayout->addWidget(checkBox_6);
+        verticalLayout->addWidget(cbLogika);
 
-        checkBox_4 = new QCheckBox(centralwidget);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
+        cbJezik = new QCheckBox(centralwidget);
+        cbJezik->setObjectName(QString::fromUtf8("cbJezik"));
 
-        verticalLayout->addWidget(checkBox_4);
+        verticalLayout->addWidget(cbJezik);
 
-        checkBox_10 = new QCheckBox(centralwidget);
-        checkBox_10->setObjectName(QString::fromUtf8("checkBox_10"));
+        cbG1 = new QCheckBox(centralwidget);
+        cbG1->setObjectName(QString::fromUtf8("cbG1"));
 
-        verticalLayout->addWidget(checkBox_10);
+        verticalLayout->addWidget(cbG1);
 
-        checkBox_8 = new QCheckBox(centralwidget);
-        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
+        cbP1 = new QCheckBox(centralwidget);
+        cbP1->setObjectName(QString::fromUtf8("cbP1"));
 
-        verticalLayout->addWidget(checkBox_8);
-
-        checkBox_3 = new QCheckBox(centralwidget);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-
-        verticalLayout->addWidget(checkBox_3);
+        verticalLayout->addWidget(cbP1);
 
 
         verticalLayout_3->addLayout(verticalLayout);
@@ -130,13 +120,6 @@ public:
         verticalLayout_3->addWidget(pbEnd);
 
         FirstYearM->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(FirstYearM);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 814, 22));
-        FirstYearM->setMenuBar(menubar);
-        statusbar = new QStatusBar(FirstYearM);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        FirstYearM->setStatusBar(statusbar);
 
         retranslateUi(FirstYearM);
 
@@ -147,14 +130,13 @@ public:
     {
         FirstYearM->setWindowTitle(QCoreApplication::translate("FirstYearM", "MainWindow", nullptr));
         label_6->setText(QCoreApplication::translate("FirstYearM", "Prva godina ", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("FirstYearM", "Analiza 1", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("FirstYearM", "Linearna algebra", nullptr));
-        checkBox_9->setText(QCoreApplication::translate("FirstYearM", "Analiza 1", nullptr));
-        checkBox_6->setText(QCoreApplication::translate("FirstYearM", "Programiranje 2", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("FirstYearM", "Uvod u matematicku logiku", nullptr));
-        checkBox_10->setText(QCoreApplication::translate("FirstYearM", "Strani jezik", nullptr));
-        checkBox_8->setText(QCoreApplication::translate("FirstYearM", "Geometrija 1", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("FirstYearM", "Programiranje 1", nullptr));
+        cbAnaliza1->setText(QCoreApplication::translate("FirstYearM", "Analiza 1", nullptr));
+        cbLinearna->setText(QCoreApplication::translate("FirstYearM", "Linearna algebra", nullptr));
+        cbP2->setText(QCoreApplication::translate("FirstYearM", "Programiranje 2", nullptr));
+        cbLogika->setText(QCoreApplication::translate("FirstYearM", "Uvod u matematicku logiku", nullptr));
+        cbJezik->setText(QCoreApplication::translate("FirstYearM", "Strani jezik", nullptr));
+        cbG1->setText(QCoreApplication::translate("FirstYearM", "Geometrija 1", nullptr));
+        cbP1->setText(QCoreApplication::translate("FirstYearM", "Programiranje 1", nullptr));
         pbBack->setText(QCoreApplication::translate("FirstYearM", "Nazad", nullptr));
         pbNext->setText(QCoreApplication::translate("FirstYearM", "Dalje", nullptr));
         pbEnd->setText(QCoreApplication::translate("FirstYearM", "Kraj", nullptr));

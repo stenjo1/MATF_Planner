@@ -2,6 +2,8 @@
 #define LOGINPAGE_H
 
 #include <QMainWindow>
+#include "headers/FirstYearI.h"
+#include "headers/FirstYearM.h"
 
 namespace Ui {
 class LoginPage;
@@ -20,6 +22,8 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
+    FirstYearM* _mWindow;
+    FirstYearI* _iWindow;
 };
 
 #endif // LOGINPAGE_H

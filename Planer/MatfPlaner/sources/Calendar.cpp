@@ -1,11 +1,11 @@
 #include "headers/Calendar.h"
 #include "ui_Calendar.h"
-#include "headers/InsertExams.h"
-#include "headers/LoginPage.h"
+
 
 Calendar::Calendar(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Calendar)
+    ui(new Ui::Calendar),
+    loginWindow(new LoginPage)
 {
     ui->setupUi(this);
 }
@@ -17,15 +17,14 @@ Calendar::~Calendar()
 
 void Calendar::on_pbNewExam_clicked()
 {
-    InsertExams* w = new InsertExams;
-    w->show();
+    //examWindow->show();
 
 }
 
 
 void Calendar::on_pbProfile_clicked()
 {
-    LoginPage *w = new LoginPage;
-    w->show();
+    loginWindow->show();
 }
+
 

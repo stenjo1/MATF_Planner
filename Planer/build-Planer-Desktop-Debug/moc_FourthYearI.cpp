@@ -23,21 +23,21 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FourthYearI_t {
     const uint offsetsAndSize[10];
-    char stringdata0[80];
+    char stringdata0[59];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_FourthYearI_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_FourthYearI_t qt_meta_stringdata_FourthYearI = {
     {
 QT_MOC_LITERAL(0, 11), // "FourthYearI"
-QT_MOC_LITERAL(12, 19), // "next_button_clicked"
-QT_MOC_LITERAL(32, 0), // ""
-QT_MOC_LITERAL(33, 20), // "on_backButtonClicked"
-QT_MOC_LITERAL(54, 25) // "on_nextPushButton_clicked"
+QT_MOC_LITERAL(12, 10), // "backSignal"
+QT_MOC_LITERAL(23, 0), // ""
+QT_MOC_LITERAL(24, 16), // "on_pbEnd_clicked"
+QT_MOC_LITERAL(41, 17) // "on_pbBack_clicked"
 
     },
-    "FourthYearI\0next_button_clicked\0\0"
-    "on_backButtonClicked\0on_nextPushButton_clicked"
+    "FourthYearI\0backSignal\0\0on_pbEnd_clicked\0"
+    "on_pbBack_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,15 +52,19 @@ static const uint qt_meta_data_FourthYearI[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    0,   32,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   32,    2, 0x08,    1 /* Private */,
        3,    0,   33,    2, 0x08,    2 /* Private */,
        4,    0,   34,    2, 0x08,    3 /* Private */,
 
- // slots: parameters
+ // signals: parameters
     QMetaType::Void,
+
+ // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
 
@@ -73,10 +77,19 @@ void FourthYearI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<FourthYearI *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->next_button_clicked(); break;
-        case 1: _t->on_backButtonClicked(); break;
-        case 2: _t->on_nextPushButton_clicked(); break;
+        case 0: _t->backSignal(); break;
+        case 1: _t->on_pbEnd_clicked(); break;
+        case 2: _t->on_pbBack_clicked(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (FourthYearI::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FourthYearI::backSignal)) {
+                *result = 0;
+                return;
+            }
         }
     }
     (void)_a;
@@ -89,8 +102,8 @@ const QMetaObject FourthYearI::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_FourthYearI_t
-, QtPrivate::TypeAndForceComplete<FourthYearI, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<FourthYearI, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -126,6 +139,12 @@ int FourthYearI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 3;
     }
     return _id;
+}
+
+// SIGNAL 0
+void FourthYearI::backSignal()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -46,7 +46,7 @@ public:
     {
         if (ThirdYearMR->objectName().isEmpty())
             ThirdYearMR->setObjectName(QString::fromUtf8("ThirdYearMR"));
-        ThirdYearMR->resize(915, 663);
+        ThirdYearMR->resize(600, 600);
         verticalLayout_2 = new QVBoxLayout(ThirdYearMR);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label = new QLabel(ThirdYearMR);
