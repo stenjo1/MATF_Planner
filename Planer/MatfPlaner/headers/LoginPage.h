@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "headers/FirstYearI.h"
 #include "headers/FirstYearM.h"
+#include <QRegularExpression>
 
 namespace Ui {
 class LoginPage;
