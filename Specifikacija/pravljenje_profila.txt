@@ -1,0 +1,108 @@
+Slučaj upotrebe "Podešavanje korisničkog profila"
+
+Kratak opis: Student iz glavnog prozora aplikacije klikom na dugme otvara formular u koji unosi osnovne podatke o sebi i zatim daljim prolaskom kroz prozore obeležava svoje položene predmete.
+
+Akteri: Student - unosi podatke o sebi
+
+Preduslovi: Aplikacija je pokrenuta i prikazuje glavni prozor
+
+Postuslovi: Uneti podaci o studentu su trajno sačuvani
+
+
+Osnovni tok:
+
+1. Student bira dugme "Profil" iz glavnog prozora.
+
+2. Aplikacija prikazuje dijalog za unosenje ličnih podataka.
+	2.1 Student unosi svoje ime.
+	2.2 Student unosi svoju email adresu.
+	2.3 Student unosi svoju godinu studija.
+	2.4 Student bira checkbox svog smera (Matematika ili Informatika).
+	2.5 Aplikacija prosleđuje informacije o studentu i dodaje sve predmete sa odabranog smera iz godina koje su manje od unesene godine studija u listu položenih predmeta Studenta, a sve ostale predmete u listu nepoloženih predmeta.
+	2.6 Ako Student odabere dugme "Kraj":
+		2.6.1 Prelazi se na korak 7
+	2.7 Ako Student odabere dugme "Dalje":
+		2.7.1 Prelazi se na korak 3.
+		
+3. Aplikacija prikazuje prozor sa predmetima u prvoj godini studija 
+	3.1 Ako Student odabere neki checkbox: 
+		3.1.1. Aplikacija dodaje taj predmet u listu položenih predmeta Studenta i uklanja ga iz liste nepoloženih predmeta
+	3.2 Ako Student skloni odabir nekog checbox-a koji je bio odabran:
+		3.2.1 Aplikacija uklanja taj predmet iz liste položenih predmeta i dodaje ga u listu nepoloženih predmeta
+	3.3 Ako Student odabere dugme "Kraj":
+		3.3.1 Prelazi se na korak 7 
+	3.4 Ako Student odabere dugme "Nazad":
+		3.4.1 Prelazi se na korak 2
+	3.5 Ako Student odabere dugme "Dalje":
+		3.5.1 Prelazi se na korak 4
+		
+4. Aplikacija prikazuje prozor sa predmetima u drugoj godini studija 
+	4.1 Ako Student odabere neki checkbox: 
+		4.1.1. Aplikacija dodaje taj predmet u listu položenih predmeta Studenta i uklanja ga iz liste nepoloženih predmeta
+	4.2 Ako Student skloni odabir nekog checbox-a koji je bio odabran:
+		4.2.1 Aplikacija uklanja taj predmet iz liste položenih predmeta i dodaje ga u listu nepoloženih predmeta
+	4.3 Ako Student odabere dugme "Kraj":
+		4.3.1 Prelazi se na korak 7
+	4.4 Ako Student odabere dugme "Nazad":
+		4.4.1 Prelazi se na korak 3
+	4.5 Ako Student odabere dugme "Dalje":
+		4.5.1 Prelazi se na korak 5
+		
+5. Aplikacija prikazuje prozor sa predmetima u trećoj godini studija 
+	5.1 Ako Student odabere neki checkbox: 
+		5.1.1. Aplikacija dodaje taj predmet u listu položenih predmeta Studenta i uklanja ga iz liste nepoloženih predmeta
+	5.2 Ako Student skloni odabir nekog checbox-a koji je bio odabran:
+		5.2.1 Aplikacija uklanja taj predmet iz liste položenih predmeta i dodaje ga u listu nepoloženih predmeta
+	5.3 Ako Student odabere dugme "Kraj":
+		5.3.1 Prelazi se na korak 7 
+	5.4 Ako Student odabere dugme "Nazad":
+		5.4.1 Prelazi se na korak 4
+	5.5 Ako Student odabere dugme "Dalje":
+		5.5.1 Prelazi se na korak 6
+		
+6. Aplikacija prikazuje prozor sa predmetima u četvrtoj godini studija 
+	6.1 Ako Student odabere neki checkbox: 
+		6.1.1. Aplikacija dodaje taj predmet u listu položenih predmeta Studenta i uklanja ga iz liste nepoloženih predmeta
+	6.2 Ako Student skloni odabir nekog checbox-a koji je bio odabran:
+		6.2.1 Aplikacija uklanja taj predmet iz liste položenih predmeta i dodaje ga u listu nepoloženih predmeta
+	6.3 Ako Student odabere dugme "Kraj":
+		6.3.1 Prelazi se na korak 7
+	6.4 Ako Student odabere dugme "Nazad":
+		6.4.1 Prelazi se na korak 5
+	6.5 Ako Student odabere dugme "Dalje":
+		6.5.1 Prelazi se na korak 7
+
+7. Zatvara se poslednji prikazani prozor
+	
+
+
+Alternativni tokovi:
+
+-A1 - Neočekivani izlaz iz aplikacije: Ukoliko u bilo kom koraku korisnik isključi aplikaciju, svi podaci koji su do tad zapamćeni ostaju sačuvani i aplikacija završava rad. Slučaj upotrebe se završava.
+
+
+Podtokovi: /
+
+Specijalni zahtevi: /
+
+Dodatne informacije: /
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+
