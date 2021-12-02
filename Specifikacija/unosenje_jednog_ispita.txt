@@ -1,0 +1,45 @@
+Slučaj upotrebe "Unošenje jednog ispita"
+
+   	 
+Naziv: "Unošenje jednog ispita"
+
+Kratak opis: Student bira željeni predmet iz padajuće liste nepoloženih predmeta i u odgovarajuća polja unosi informacije ispitima iz tog predmeta, kao i URL adresu stranice sa rezultatima. Aplikacija skladišti informacije i unosi predmet u listu ispita.
+
+Akteri: Student - bira predmet i unosi informacije o ispitima iz tog predmeta
+
+Preduslovi: Student je kreirao profil i aplikacija je formirala liste položenih i nepoloženih predmeta. Aplikacija prikazuje padajuću listu i polja za unošenje.
+
+Postuslovi: Informacije o ispitima iz odgovarajućih predmeta su sačuvane.
+
+Osnovni tok:
+1. Student bira dugme "Dodaj ispit" iz glavnog prozora.
+2. Aplikacija prikazuje dijalog za biranje predmeta i unošenje podataka o ispitima.
+	2.1 Student klikom na polje "Izaberi predmet" otvara padajući meni i bira željeni predmet.
+	2.2 Student unosi datum održavanja ispita u prvom roku.
+2.3 Student unosi vreme održavanja ispita u prvom roku.
+	2.4 Student unosi datum održavanja ispita u drugom roku.
+	2.5 Student unosi vreme održavanja ispita u drugom roku.
+	2.6 Student unosi URL adresu do stranice sa rezultatima.
+	2.7 Ako student odabere dugme "Dalje":
+		2.7.1 Aplikacija pamti unos i prelazi se na korak 2.
+	2.8 Ako student odabere dugme "Kraj":
+		2.8.1 Aplikacija pamti unos i prelazi se na korak 3.
+3. Aplikacija zatvara dijalog.
+ 
+
+Alternativni tok:
+-A1: Neočekivani izlaz iz aplikacije. Ukoliko u bilo kojem koraku korisnik isključi aplikaciju, sve eventualno zapamćene informacije o ispitima iz predmeta koji se u tom trenutku obrađuje se poništavaju i aplikacija zatvara dijalog. Slučaj upotrebe se završava.
+-A2: Uneti podaci o datumima su pogrešno formatirani. Ukoliko korisnik u koracima 2.2 i 2.4 ne unese podatak o održavanju ispita u formatu datuma aplikacija prikazuje dijalog sa informacijom da mora da se unese podatak u ispravnom formatu. Slučaj upotrebe se nastavlja u koraku 2.
+-A3: Uneti podaci o vremenima su pogrešno formatirani. Ukoliko korisnik u koracima 2.3 i 2.5 ne unese podatak o održavanju ispita u formatu vremena aplikacija prikazuje dijalog sa informacijom da mora da se unese podatak u ispravnom formatu. Slučaj upotrebe se nastavlja u koraku 2.
+-A4: Uneta URL adresa nije važeća. Ukoliko korisnik u koraku 2.6 ne unese ispravan format URL adrese ili nevažeću adresu aplikacija prikazuje dijalog sa informacijom da mora da se unese podatak u ispravnom formatu. Slučaj upotrebe se nastavlja u koraku 2.
+
+
+
+Podtokovi: /
+
+Specijalni zahtevi: Aplikacija je povezana na internet radi proveravanja URL adrese.
+
+Dodatne informacije: Aplikacija kreira datoteku sa HTML sadržajem stranice na koju vodi adresa. Datoteka se koristi u slučaju upotrebe “Proveravanje rezultata”
+
+   	 
+   	 
