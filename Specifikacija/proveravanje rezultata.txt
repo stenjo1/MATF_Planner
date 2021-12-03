@@ -1,0 +1,20 @@
+Kratak opis: Aplikacija obavštava studenta o izašlim rezultatima ispita koje je asistent/professor objavio na svoj vec strani
+Akteri: Aplikacija – pamti početno stanje HTML-a veb strane asistenta/profesora i reaguje na promene
+Preduslovi: Student je uneo URL veb strane asistenta/profesora; asistent/profesor je objavio rezultate na svoj veb strani
+Postuslovi: Student je obavešten o izlasku rezultata
+Osnovni tok:
+1. Aplikacija pamti stanje HTML –a veb strane asistenta/profesora prilikom unošenja novog predmeta u dokumentu
+2. Student otvara aplikaciju – ponovna provera promene stanja
+	2.1 Student je ponovo pokrenuo aplikaciju
+	2.2 Aplikacija upoređuje trenutni HTML veb strane asistenta/profesora i sačuvani dokument
+2.3 Ako se podudaraju – nema akcije
+	2.4 Ako se ne podudaraju:
+		2.4.1 Aplikacija prikazuje prozor sa obaveštenjem o promeni
+		2.4.2 Aplikacija pamti novo stanje HTML-a u dokumentu
+		2.4.3 Student zatvara prozor
+ 
+Alternativni tok: /
+Podtokovi: /
+Specijalni zahtevi: Aplikacija je povezana na internet radi proveravanja HTML strane asistenta/profesora
+Dodatne informacije:  /
+
