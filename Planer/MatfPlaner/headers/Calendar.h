@@ -1,6 +1,6 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
-
+#include"headers/Exam.hpp"
 #include <QWidget>
 #include "headers/LoginPage.h"
 
@@ -14,6 +14,7 @@ class Calendar : public QWidget
 
 public:
     explicit Calendar(QWidget *parent = nullptr);
+    explicit Calendar(QList<Exam*> exams,QWidget *parent = nullptr);
     ~Calendar();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::Calendar *ui;
     LoginPage *loginWindow;
+    QList<Exam*> _exams;
 };
 
 #endif // CALENDAR_H

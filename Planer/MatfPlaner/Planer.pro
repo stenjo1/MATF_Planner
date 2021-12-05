@@ -64,6 +64,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    resources/exams.json \
     resources/i1o.json \
     resources/i2o.json \
     resources/i3o.json \

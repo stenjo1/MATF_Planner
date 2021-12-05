@@ -10,9 +10,19 @@ Calendar::Calendar(QWidget *parent) :
     ui->setupUi(this);
 }
 
+Calendar::Calendar(QList<Exam*> exams,QWidget *parent):
+    QWidget(parent),
+    ui(new Ui::Calendar){
+    ui->setupUi(this);
+}
+
+
 Calendar::~Calendar()
 {
     delete ui;
+    for (auto exam : _exams) {
+        delete exam;
+    }
 }
 
 void Calendar::on_pbNewExam_clicked()
