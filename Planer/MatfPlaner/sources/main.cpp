@@ -1,15 +1,19 @@
 #include "headers/Subject.hpp"
 #include <QApplication>
-#include<QList>
-#include<QFile>
-#include<QJsonDocument>
+#include <QList>
+#include <QFile>
+#include <QJsonDocument>
 #include <QJsonArray>
-#include"headers/Exam.hpp"
+#include "headers/Exam.hpp"
 #include "headers/Calendar.h"
 #include "headers/Student.hpp"
 #include "headers/Utils.h"
+
 int main(int argc, char *argv[])
-{   const QString JSON_FILE= "C:\\Users\\saram\\Desktop\\MatfPlaner\\15-Matf-Planer\\Planer\\MatfPlaner\\resources\\exams.json";
+{
+    QDir targetDir("../MatfPlaner/resources");
+    QString path = targetDir.absolutePath() + "/exams.json";
+    const QString JSON_FILE = path;
     QApplication a(argc, argv);
     QList<Exam*> exams = Utils::readJsonObjectsFromFile(JSON_FILE);
     if(exams.isEmpty()){
