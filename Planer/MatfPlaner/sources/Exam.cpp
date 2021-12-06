@@ -38,5 +38,8 @@ bool Exam::checkIfDatePassed(QDate date){
 
 bool Exam::seeChangesInUrl(){
 //vraca true ako je fajl promenjen
-    return true;
+    Request req;
+    req.download(_url);
+
+    return req.isFileChanged();
 }
