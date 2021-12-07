@@ -14,7 +14,7 @@ class Calendar : public QWidget
 
 public:
     explicit Calendar(QWidget *parent = nullptr);
-    explicit Calendar(QList<Exam*> exams,QWidget *parent = nullptr);
+    explicit Calendar( QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
 
 private slots:

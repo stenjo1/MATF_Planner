@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     QString path = targetDir.absolutePath() + "/exams.json";
     const QString JSON_FILE = path;
     QApplication a(argc, argv);
+    // to-do: isprazniti listu
     QList<Exam*> exams = Utils::readJsonObjectsFromFile(JSON_FILE);
     if(exams.isEmpty()){
         LoginPage lp;
