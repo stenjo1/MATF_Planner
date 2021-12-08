@@ -30,15 +30,21 @@ void Request::download(QString s_url)
                 QString filename = path + "/" + urlName;
                 QFile *file = new QFile(filename);
 
+                //mozda ovaj deo moze pametnije nmg sad
                 if(file->exists()){
-                    if(file->open(QFile::ReadOnly))
+                    if(file->open(QFile::ReadWrite))
                     {
                         QByteArray ba = reply->readAll();
                         if (file->readAll() == ba){
                             _fileChanged = false;
                         } else {
+                            //nisam sigurna
+                            file->resize(0);
+                            file->write(ba);
                             _fileChanged = true;
                         }
+                        file->flush();
+                        file->close();
                      }else{
                          qDebug()<<file->errorString();
                      }

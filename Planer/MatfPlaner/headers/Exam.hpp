@@ -1,9 +1,10 @@
 #ifndef EXAM_HPP
 #define EXAM_HPP
+
 #include "headers/Subject.hpp"
-#include "headers/Request.h"
-#include<QDate>
+#include <QDate>
 #include <QString>
+
 class Exam
 {
 public:
@@ -14,7 +15,9 @@ public:
     bool checkIfDatePassed(QDate date); //proverava da li je ispit pre datuma proslednjenog kao argument
     bool checkIfDatePassed(); //proverava da li je datum prosao od trenutnog vremena
     void writeToFile(QString pathname); // pise sebe u json fajl koji je zadat kao argument
-    bool seeChangesInUrl();
+
+    QString getUrl();
+
 private:
     QDate _date;
     QString _url;

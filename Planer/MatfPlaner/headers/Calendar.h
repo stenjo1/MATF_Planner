@@ -1,7 +1,11 @@
 #ifndef CALENDAR_H
 #define CALENDAR_H
-#include"headers/Exam.hpp"
+
 #include <QWidget>
+#include <QMessageBox>
+
+#include "headers/Exam.hpp"
+#include "headers/Request.h"
 #include "headers/LoginPage.h"
 
 namespace Ui {
@@ -17,9 +21,11 @@ public:
     explicit Calendar( QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
 
+    QVector<QString> checkResults();
+
 private slots:
     void on_pbNewExam_clicked();
-
+    void on_pbCheckUrl_clicked();
     void on_pbProfile_clicked();
 
 private:

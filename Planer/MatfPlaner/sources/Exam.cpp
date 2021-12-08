@@ -1,4 +1,4 @@
-#include"headers/Utils.h"
+#include "headers/Utils.h"
 #include "headers/Exam.hpp"
 
 
@@ -16,8 +16,6 @@ Exam::Exam(QJsonObject obj){
         _url = obj.value("_url").toString();
         QJsonObject subject =obj.value("_subject").toObject();
         _subject = Subject(subject);
-
-
 }
 
 void Exam::setPassed(){_passed = true;}
@@ -35,11 +33,7 @@ bool Exam::checkIfDatePassed(QDate date){
     return false;
 }
 
-
-bool Exam::seeChangesInUrl(){
-//vraca true ako je fajl promenjen
-    Request req;
-    req.download(_url);
-
-    return req.isFileChanged();
+QString Exam::getUrl(){
+    return _url;
 }
+
