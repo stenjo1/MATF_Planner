@@ -6,6 +6,7 @@
 
 #include "headers/Exam.hpp"
 #include "headers/Request.h"
+#include "headers/MailSender.h"
 #include "headers/LoginPage.h"
 
 namespace Ui {
@@ -27,6 +28,8 @@ private slots:
     void on_pbNewExam_clicked();
     void on_pbCheckUrl_clicked();
     void on_pbProfile_clicked();
+
+    void on_pbSendMail_clicked();
 
 private:
     Ui::Calendar *ui;
