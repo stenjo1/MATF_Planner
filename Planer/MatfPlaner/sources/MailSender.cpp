@@ -1,5 +1,4 @@
 #include "headers/MailSender.h"
-#include <QDir>
 
 MailSender::~MailSender(){}
 

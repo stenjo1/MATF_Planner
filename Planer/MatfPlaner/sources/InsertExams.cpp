@@ -5,18 +5,21 @@
 
 InsertExams::InsertExams(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::InsertExams)
+    ui(new Ui::InsertExams),
+    exams(new QList<Exam*>)
 {
     ui->setupUi(this);
-    QList<Exam*> *exams = new QList<Exam*>; //feels weird
+    //ui->comboBox->addItems(nepolozeni ispiti)
 }
 
 void InsertExams::addExam(){
-    QString dateString1 = ui->dateLineEdit1->text(); //postoji i DateTimeEdit, treba nam i vreme ispita, mozda je lakse preko toga
+    QString dateString1 = ui->dateLineEdit1->text();
     QDate date1 = Utils::fromQStringtoQDate(dateString1);
-    QString dateString2 = ui->dateLineEdit2->text(); //postoji i DateTimeEdit, treba nam i vreme ispita, mozda je lakse preko toga
+    //dodati za timeEdit
+    QString dateString2 = ui->dateLineEdit2->text();
     QDate date2 = Utils::fromQStringtoQDate(dateString2);
-    QString name = ui->examLineEdit->text();
+    //dodati za timeEdit
+
     Subject dummy; //ovde treba da prepoznas po imenu predmet i da povuces iz baze
     QString url = ui->urlLineEdit->text();
     Exam *exam1 =new Exam(date1,url,dummy,false,0);// NEMOJ DA ZOVES KONSTRUKTOR KAO U JAVI SARO
@@ -41,7 +44,7 @@ void InsertExams::on_addExamButton_clicked()
 
 void InsertExams::on_clearWidgetButton_clicked()
 {
-    ui->examLineEdit->clear();
+
     ui->urlLineEdit->clear();
     ui->dateLineEdit1->clear();
     ui->dateLineEdit2->clear();

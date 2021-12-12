@@ -86,7 +86,7 @@ void Calendar::on_pbProfile_clicked()
 void Calendar::on_pbSendMail_clicked()
 {
     MailSender ms;
-    QString recip = "peachey0212@gmail.com"; //dodajte mail koji isprobavate
+    QString recip = ""; //dodajte mail koji isprobavate
     auto res = ms.send(recip);
 
 

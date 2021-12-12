@@ -5,6 +5,7 @@
 #include <iostream>
 #include <QString>
 #include <QMessageBox>
+#include <QDir>
 
 
 class MailSender : public QObject
