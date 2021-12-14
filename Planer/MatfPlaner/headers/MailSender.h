@@ -1,7 +1,6 @@
 #ifndef MAILSENDER_H
 #define MAILSENDER_H
 
-#include <curl/curl.h>
 #include <iostream>
 #include <QString>
 #include <QMessageBox>
