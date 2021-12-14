@@ -6,7 +6,6 @@
 
 #include "headers/Exam.hpp"
 #include "headers/Request.h"
-#include "headers/MailSender.h"
 #include "headers/LoginPage.h"
 
 namespace Ui {

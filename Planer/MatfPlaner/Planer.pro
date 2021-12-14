@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-     sources/MailSender.cpp \
      sources/Request.cpp \
      sources/Utils.cpp \
      sources/InsertExams.cpp \
@@ -30,7 +29,6 @@ SOURCES += \
 
 
 HEADERS += \
-    headers/MailSender.h \
     headers/Request.h \
     headers/Utils.h \
     headers/InsertExams.h \
@@ -75,10 +73,4 @@ DISTFILES += \
     resources/i3o.json \
     resources/oi_predmeti.json
 
-unix|win32: LIBS += -L$$PWD/../../../../../../usr/lib/x86_64-linux-gnu/ -lcurl
 
-INCLUDEPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
-DEPENDPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
-
-win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/curl.lib
-else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/libcurl.a

@@ -85,18 +85,6 @@ void Calendar::on_pbProfile_clicked()
 
 void Calendar::on_pbSendMail_clicked()
 {
-    MailSender ms;
-    QString recip = ""; //dodajte mail koji isprobavate
-    auto res = ms.send(recip);
-
-
-    if (res != CURLE_OK) {
-       std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res);
-       QMessageBox::warning(this, "Email", "Slanje rasporeda nije uspelo.");
-     }
-     else
-       QMessageBox::information(this, "Email", "Raspored je poslat!");
-
 
 }
 
