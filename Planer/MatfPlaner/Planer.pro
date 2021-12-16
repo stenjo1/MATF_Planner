@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
      sources/Request.cpp \
+     sources/Schedule.cpp \
      sources/Utils.cpp \
      sources/InsertExams.cpp \
      sources/Calendar.cpp \
@@ -30,6 +31,7 @@ SOURCES += \
 
 HEADERS += \
     headers/Request.h \
+    headers/Schedule.h \
     headers/Utils.h \
     headers/InsertExams.h \
     headers/Calendar.h \
@@ -44,7 +46,7 @@ HEADERS += \
     headers/Student.hpp \
     headers/Subject.hpp \
     headers/ThirdYearI.h \
-    headers/ThirdYearMR.h \
+    headers/ThirdYearMR.h
 
 
 FORMS += \

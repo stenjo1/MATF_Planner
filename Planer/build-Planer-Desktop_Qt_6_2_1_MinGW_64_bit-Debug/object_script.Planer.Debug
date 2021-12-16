@@ -1,3 +1,5 @@
+debug/Request.o
+debug/Schedule.o
 debug/Utils.o
 debug/InsertExams.o
 debug/Calendar.o
@@ -14,6 +16,7 @@ debug/Subject.o
 debug/ThirdYearI.o
 debug/ThirdYearMR.o
 debug/main.o
+debug/moc_Request.o
 debug/moc_InsertExams.o
 debug/moc_Calendar.o
 debug/moc_FirstYearI.o

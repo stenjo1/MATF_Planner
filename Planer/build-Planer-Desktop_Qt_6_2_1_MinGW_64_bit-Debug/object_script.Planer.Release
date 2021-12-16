@@ -1,3 +1,5 @@
+release/Request.o
+release/Schedule.o
 release/Utils.o
 release/InsertExams.o
 release/Calendar.o
@@ -14,6 +16,7 @@ release/Subject.o
 release/ThirdYearI.o
 release/ThirdYearMR.o
 release/main.o
+release/moc_Request.o
 release/moc_InsertExams.o
 release/moc_Calendar.o
 release/moc_FirstYearI.o
