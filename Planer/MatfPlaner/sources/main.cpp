@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonArray>
+#include <QVector>
 #include "headers/Exam.hpp"
 #include "headers/Calendar.h"
 #include "headers/Student.hpp"
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
     const QString JSON_FILE = path;
     QApplication a(argc, argv);
     // to-do: isprazniti listu
-    QList<Exam*> exams = Utils::readJsonObjectsFromFile(JSON_FILE);
+    QVector<Exam*> exams = Utils::readJsonObjectsFromFile(JSON_FILE);
     if(exams.isEmpty()){
         LoginPage lp;
         lp.show();

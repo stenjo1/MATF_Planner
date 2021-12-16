@@ -33,7 +33,7 @@ private slots:
 private:
     Ui::Calendar *ui;
     LoginPage *loginWindow;
-    QList<Exam*> _exams;
+    QVector<Exam*> _exams;
 };
 
 #endif // CALENDAR_H

@@ -25,7 +25,7 @@ private slots:
 
 private:
     Ui::InsertExams *ui;
-    QList<Exam*> *exams;
+    QVector<Exam*> *exams;
 };
 
 #endif // INSERTEXAMS_H

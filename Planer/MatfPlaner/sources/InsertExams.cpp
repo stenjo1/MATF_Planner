@@ -6,7 +6,7 @@
 InsertExams::InsertExams(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::InsertExams),
-    exams(new QList<Exam*>)
+    exams(new QVector<Exam*>)
 {
     ui->setupUi(this);
     //ui->comboBox->addItems(nepolozeni ispiti)

@@ -1,8 +1,14 @@
 #include "headers/Schedule.h"
 
 
-Schedule::Schedule(std::vector<Exam*> exams)
+Schedule::Schedule(QVector<Exam*> exams)
 {
     _exams = exams;
+
+}
+
+
+void makeSchedule(QVector<Exam*> exams) {
+
 
 }

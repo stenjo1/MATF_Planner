@@ -26,7 +26,7 @@ QDate Utils::fromQStringtoQDate(QString string){
 }
 
 
-QList<Exam*> Utils::readJsonObjectsFromFile(const QString &fileName){
+QVector<Exam*> Utils::readJsonObjectsFromFile(const QString &fileName){
     QList<Exam*> exams;
     QFile file(fileName);
        if(!file.open(QIODevice::ReadOnly | QIODevice::Text))

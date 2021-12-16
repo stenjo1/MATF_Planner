@@ -7,7 +7,7 @@ class Utils
 public:
     Utils();
     static QDate fromQStringtoQDate(QString string);
-    static QList<Exam*> readJsonObjectsFromFile(const QString &filename);
+    static QVector<Exam*> readJsonObjectsFromFile(const QString &filename);
     static void clearFile(const QString &filename);
 };
 
