@@ -8,7 +8,7 @@
 class Exam
 {
 public:
-    Exam(QDate date,QString url,Subject subject, bool passed=false, unsigned numbersOfTry=0);
+    Exam(QDate date,QString url,Subject subject, int importantRate, bool passed=false, unsigned numbersOfTry=0);
     Exam(QJsonObject);
     bool writeExamInFile(); // todo: napisati funkciju koja u fajl gde cuvamo ispite dodaje ovaj podatak
     void setPassed(); // postavlja true ako student polozi ispit
@@ -17,6 +17,8 @@ public:
     void writeToFile(QString pathname); // pise sebe u json fajl koji je zadat kao argument
 
     QString getUrl();
+    QDate getDate();
+    int getImportanceRate();
 
 private:
     QDate _date;
@@ -24,6 +26,7 @@ private:
     Subject _subject;
     bool _passed;
     unsigned _numbersOfTry; //broj izlazaka na ovaj ispit
+    int _importanceRate; // broj koji korisnik unosi od 5 do 10 TODO
 };
 
 

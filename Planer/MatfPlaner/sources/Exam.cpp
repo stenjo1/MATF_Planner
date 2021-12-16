@@ -2,12 +2,13 @@
 #include "headers/Exam.hpp"
 
 
-Exam::Exam(QDate date,QString url,Subject subject, bool passed, unsigned numbersOfTry)
+Exam::Exam(QDate date,QString url,Subject subject, int importanceRate, bool passed, unsigned numbersOfTry)
 {
     _date = date;
     _url = url;
     _subject = subject;
     _numbersOfTry = numbersOfTry;
+    _importanceRate = importanceRate;
 }
 
 Exam::Exam(QJsonObject obj){
@@ -37,3 +38,10 @@ QString Exam::getUrl(){
     return _url;
 }
 
+QDate Exam::getDate() {
+    return _date;
+}
+
+int Exam::getImportanceRate() {
+    return _importanceRate;
+}
