@@ -5,6 +5,7 @@
 #include "headers/FirstYearI.h"
 #include "headers/FirstYearM.h"
 #include <QRegularExpression>
+#include "headers/Student.hpp"
 
 namespace Ui {
 class LoginPage;
@@ -16,6 +17,7 @@ class LoginPage : public QMainWindow
 
 public:
     explicit LoginPage(QWidget *parent = nullptr);
+    void setStudent(Student* student);
     ~LoginPage();
 
 private slots:
@@ -23,6 +25,7 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
+    Student* _student;
     FirstYearM* _mWindow;
     FirstYearI* _iWindow;
 };
