@@ -66,14 +66,12 @@ void LoginPage::on_nextButton_clicked()
     if(ui->info_department->isChecked()){
         _iWindow->setStudent(_student);
         _iWindow->show();
-        _student->writeToJson();
          hide();
          //nzm dal ode curi memorija
 
      }else if (ui->math_department->isChecked()){
         _mWindow->setStudent(_student);
         _mWindow->show();
-        _student->writeToJson();
         hide();
     }
 
