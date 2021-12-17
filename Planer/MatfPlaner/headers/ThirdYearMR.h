@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "headers/FourthYearMR.h"
-#include"headers/Student.hpp"
+
 namespace Ui {
 class ThirdYearMR;
 }
@@ -16,8 +16,8 @@ signals:
     void backSignal();
 public:
     explicit ThirdYearMR(QWidget *parent = nullptr);
-    void setStudent(Student* student);
     ~ThirdYearMR();
+    void setStudent(Student* student);
 
 private slots:
     void on_pbNext_clicked();
@@ -28,8 +28,8 @@ private slots:
 
 private:
     Ui::ThirdYearMR *ui;
-    Student* _student;
     FourthYearMR *fourthWindow;
+    Student *_student;
 };
 
 #endif // THIRDYEARMR_H

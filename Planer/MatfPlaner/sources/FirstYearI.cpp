@@ -8,6 +8,7 @@ FirstYearI::FirstYearI(QWidget *parent) :
     secondWindow(new SecondYearI)
 {
     ui->setupUi(this);
+    secondWindow->setStudent(_student);
     connect(secondWindow, &SecondYearI::backSignal, this, &QWidget::show);
 }
 
@@ -28,7 +29,7 @@ void FirstYearI::on_pbBack_clicked()
 
 void FirstYearI::on_pbNext_clicked()
 {
-    secondWindow->setStudent(_student);
+
     secondWindow->show();
     hide();
 }

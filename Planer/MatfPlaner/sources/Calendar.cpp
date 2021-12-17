@@ -1,12 +1,12 @@
 #include "headers/Calendar.h"
 #include "ui_Calendar.h"
-#include "headers/InsertExams.h"
 
 
 Calendar::Calendar(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Calendar),
-    loginWindow(new LoginPage)
+    loginWindow(new LoginPage),
+    insertExamsWindow(new InsertExams)
 {
     ui->setupUi(this);
 }
@@ -15,6 +15,7 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
      ui(new Ui::Calendar),
     loginWindow(new LoginPage),
+    insertExamsWindow(new InsertExams),
     _exams(exams)
 
 {
@@ -52,8 +53,8 @@ QVector<QString> Calendar::checkResults()
 
 void Calendar::on_pbNewExam_clicked()
 {
-    InsertExams *w = new InsertExams;
-    w->show();
+
+   insertExamsWindow->show();
 
 }
 

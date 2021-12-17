@@ -3,12 +3,13 @@
 
 #include "headers/Subject.hpp"
 #include <QDate>
+#include <QTime>
 #include <QString>
 
 class Exam
 {
 public:
-    Exam(QDate date,QString url,Subject subject, int importantRate, bool passed=false, unsigned numbersOfTry=0);
+    Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, bool passed=false, unsigned numbersOfTry=0);
     Exam(QJsonObject);
     bool writeExamInFile(); // todo: napisati funkciju koja u fajl gde cuvamo ispite dodaje ovaj podatak
     void setPassed(); // postavlja true ako student polozi ispit
@@ -22,11 +23,12 @@ public:
 
 private:
     QDate _date;
+    QTime _time;
     QString _url;
     Subject _subject;
     bool _passed;
-    unsigned _numbersOfTry; //broj izlazaka na ovaj ispit
-    int _importanceRate; // broj koji korisnik unosi od 5 do 10 TODO
+    unsigned _numbersOfTry; //broj izlazaka na ovaj ispit (sta je ovo?)
+    int _importanceRate; // broj koji korisnik unosi od 1 do 5
 };
 
 

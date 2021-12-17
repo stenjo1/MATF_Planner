@@ -2,9 +2,9 @@
 #include "headers/Exam.hpp"
 
 
-Exam::Exam(QDate date,QString url,Subject subject, int importanceRate, bool passed, unsigned numbersOfTry)
-{
+Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, bool passed, unsigned numbersOfTry) {
     _date = date;
+    _time = time;
     _url = url;
     _subject = subject;
     _numbersOfTry = numbersOfTry;

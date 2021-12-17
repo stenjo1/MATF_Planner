@@ -1,6 +1,7 @@
 #ifndef INSERTEXAMS_H
 #define INSERTEXAMS_H
 #include"headers/Exam.hpp"
+#include "headers/Student.hpp"
 #include <QWidget>
 
 namespace Ui {
@@ -14,7 +15,7 @@ class InsertExams : public QWidget
 public:
     explicit InsertExams(QWidget *parent = nullptr);
     ~InsertExams();
-    void addExam();
+
 
 private slots:
     void on_addExamButton_clicked();
@@ -26,6 +27,7 @@ private slots:
 private:
     Ui::InsertExams *ui;
     QVector<Exam*> *exams;
+
 };
 
 #endif // INSERTEXAMS_H

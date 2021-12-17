@@ -7,6 +7,7 @@
 #include "headers/Exam.hpp"
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
+#include "headers/InsertExams.h"
 
 namespace Ui {
 class Calendar;
@@ -33,7 +34,9 @@ private slots:
 private:
     Ui::Calendar *ui;
     LoginPage *loginWindow;
+    InsertExams *insertExamsWindow;
     QVector<Exam*> _exams;
+
 };
 
 #endif // CALENDAR_H

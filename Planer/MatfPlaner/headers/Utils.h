@@ -1,9 +1,17 @@
 #ifndef UTILS_H
 #define UTILS_H
-#include<QDate>
 #include "headers/Exam.hpp"
-class Utils
+#include "headers/InsertExams.h"
+#include<QFile>
+#include<QJsonDocument>
+#include<QDir>
+#include <QJsonArray>
+#include<QTextStream>
+#include <QMessageBox>
+
+class Utils : public QObject
 {
+    Q_OBJECT
 public:
     Utils();
     static QDate fromQStringtoQDate(QString string);
