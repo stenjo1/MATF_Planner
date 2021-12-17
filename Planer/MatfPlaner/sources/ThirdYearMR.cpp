@@ -4,6 +4,7 @@
 ThirdYearMR::ThirdYearMR(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ThirdYearMR),
+    _student(new Student),
     fourthWindow(new FourthYearMR)
 {
     ui->setupUi(this);
@@ -17,6 +18,7 @@ ThirdYearMR::~ThirdYearMR()
 
 void ThirdYearMR::on_pbNext_clicked()
 {
+    fourthWindow->setStudent(_student);
     fourthWindow->show();
     hide();
 }
@@ -34,3 +36,6 @@ void ThirdYearMR::on_pbEnd_clicked()
     hide();
 }
 
+void ThirdYearMR::setStudent(Student* student){
+    _student = student;
+}

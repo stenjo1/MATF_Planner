@@ -28,6 +28,7 @@ private:
     Student* _student;
     FirstYearM* _mWindow;
     FirstYearI* _iWindow;
+
 };
 
 #endif // LOGINPAGE_H

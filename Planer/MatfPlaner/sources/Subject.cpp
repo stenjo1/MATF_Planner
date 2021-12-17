@@ -4,7 +4,7 @@
 Subject::Subject(){
 
 }
-Subject::Subject(QString name,unsigned difficulty,unsigned espb,QString url,bool passed=false){
+Subject::Subject(QString name,unsigned difficulty,int espb,QString url,bool passed=false){
     if (difficulty>100 || difficulty < 0)
     {
         //TODO: greska
@@ -21,5 +21,12 @@ Subject::Subject(QJsonObject obj){
     _espb = obj.value("_espb").toInt();
     _difficulty = obj.value("_difficulty").toInt();
     _url = obj.value("_url").toString();
+}
+
+QJsonObject* Subject::toJson(){
+    QJsonObject *subjectJson = new QJsonObject();
+    subjectJson->insert("_name",_name);
+    subjectJson->insert("_espb",_espb);
+    return subjectJson;
 }
 

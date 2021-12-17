@@ -7,13 +7,14 @@
 
 class Subject{
     public:
-        Subject(QString name,unsigned difficulty,unsigned espb,QString url,bool passed);
+        Subject(QString name,unsigned difficulty,int espb,QString url,bool passed);
         Subject();
+        QJsonObject* toJson();
         Subject(QJsonObject);
 
     private:
         unsigned _difficulty;
-        unsigned _espb;
+        int _espb;
         QString _url; // ovde cemo da vidimo da li ima neka biblioteka za hendlovanje urla
         bool _passed;
         QString _name;

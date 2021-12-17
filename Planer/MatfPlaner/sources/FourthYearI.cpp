@@ -3,7 +3,8 @@
 
 FourthYearI::FourthYearI(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::FourthYearI)
+    ui(new Ui::FourthYearI),
+    _student(new Student)
 {
     ui->setupUi(this);
 }
@@ -16,6 +17,7 @@ FourthYearI::~FourthYearI()
 
 void FourthYearI::on_pbEnd_clicked()
 {
+    _student->writeToJson();
     hide();
 }
 
@@ -24,5 +26,9 @@ void FourthYearI::on_pbBack_clicked()
 {
     emit backSignal();
     hide();
+}
+
+void FourthYearI::setStudent(Student *student){
+    _student = student;
 }
 

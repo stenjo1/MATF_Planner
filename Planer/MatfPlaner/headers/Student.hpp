@@ -8,27 +8,33 @@
 #include<QFile>
 #include<QJsonDocument>
 #include<QVector>
+#include<QList>
 
 class Student
 {
 public:
-    Student(QString name,QString surname, QString email);
-    Student(QString name,QString surname,std::vector<Subject*> allSubjects,std::vector<Exam*> exams);
+    Student(QString name, QString email);
+    Student(QString name,QVector<Subject*> allSubjects,QVector<Exam*> exams);
     Student();
     ~Student();
     void addExam(Exam *exam); //dodaje ispit na studenta
     void jsonToSubjectList(QJsonArray arr); //izvlaci iz json fajla
-    void parseJsonToArray(QString pathname); //damo ime json fajla koji hocemo da
-                                            // isparsira do qjsonarrayja
+    QJsonArray parseJsonToArray(QString pathname); //damo ime json fajla koji hocemo da
+
+    void writeToJson();
+    // isparsira do qjsonarrayja
+    void setName(QString name);
+    void setEmail(QString email);
+    void setYearOfStudy(int year);
+
+    QVector<Subject*>* getAllSubjects();
 
 private:
     QString _name;
-    QString _surname;
-    QString _yearOfStudy;
+    int _yearOfStudy;
     QString _email;
-    std::vector<Subject*> _allSubjects;
-    std::vector<Exam*> _exams;
-
+    QVector<Subject*> _allSubjects;
+    QVector<Exam*> _exams;
 };
 
 #endif // STUDENT_HPP

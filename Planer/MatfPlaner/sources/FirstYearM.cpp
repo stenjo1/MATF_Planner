@@ -5,6 +5,7 @@
 FirstYearM::FirstYearM(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FirstYearM),
+    _student(new Student),
     secondWindow(new SecondYearMR)
 {
     ui->setupUi(this);
@@ -19,6 +20,7 @@ FirstYearM::~FirstYearM()
 
 void FirstYearM::on_pbNext_clicked()
 {
+    secondWindow->setStudent(_student);
     secondWindow->show();
     hide();
 
@@ -36,4 +38,9 @@ void FirstYearM::on_pbEnd_clicked()
 {
     hide();
 }
+
+void FirstYearM::setStudent(Student* student){
+    _student = student;
+}
+
 

@@ -4,7 +4,8 @@
 
 FourthYearMR::FourthYearMR(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::FourthYearMR)
+    ui(new Ui::FourthYearMR),
+    _student(new Student)
 {
     ui->setupUi(this);
 }
@@ -16,7 +17,7 @@ FourthYearMR::~FourthYearMR()
 
 void FourthYearMR::on_pbEnd_clicked()
 {
-
+    _student->writeToJson();
     hide();
     //nzm dal ovde curi memorija
 }
@@ -27,4 +28,9 @@ void FourthYearMR::on_pbBack_clicked()
     emit backSignal();
     hide();
 }
+
+void FourthYearMR::setStudent(Student* student){
+    _student = student;
+}
+
 

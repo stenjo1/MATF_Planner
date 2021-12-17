@@ -2,6 +2,7 @@
 #define FOURTHYEARMR_H
 
 #include <QWidget>
+#include"headers/Student.hpp"
 
 namespace Ui {
 class FourthYearMR;
@@ -16,6 +17,7 @@ signals:
 
 public:
     explicit FourthYearMR(QWidget *parent = nullptr);
+     void setStudent(Student* student);
     ~FourthYearMR();
 
 private slots:
@@ -25,6 +27,7 @@ private slots:
 
 private:
     Ui::FourthYearMR *ui;
+    Student* _student;
 };
 
 #endif // FOURTHYEARMR_H

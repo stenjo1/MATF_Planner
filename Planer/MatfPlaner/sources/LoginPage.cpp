@@ -1,19 +1,20 @@
 #include "headers/LoginPage.h"
 #include "ui_LoginPage.h"
 
+
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage),
     _student(new Student),
     _mWindow(new FirstYearM),
     _iWindow(new FirstYearI)
+
+
 {
     ui->setupUi(this);
-
     connect(_mWindow,  &FirstYearM::backSignal, this, &QWidget::show);
     connect(_iWindow,  &FirstYearI::backSignal, this, &QWidget::show);
 }
-
 
 LoginPage::~LoginPage()
 {
@@ -52,20 +53,34 @@ void LoginPage::on_nextButton_clicked()
         return;
     }
 
+    _student->setName(name);
+    _student->setEmail(mail);
+    _student->setYearOfStudy(year.toInt());
+    //_student->writeToJson();
+
     if(!ui->info_department->isChecked() && !ui->math_department->isChecked()) {
         ui->label_3->setText("Morati izabrati smer!");
         return;
     }
 
     if(ui->info_department->isChecked()){
-
-         _iWindow->show();
+        _iWindow->setStudent(_student);
+        _iWindow->show();
+        _student->writeToJson();
          hide();
          //nzm dal ode curi memorija
 
      }else if (ui->math_department->isChecked()){
+        _mWindow->setStudent(_student);
         _mWindow->show();
+        _student->writeToJson();
         hide();
     }
+
+
 }
+void LoginPage::setStudent(Student* student){
+    _student = student;
+}
+
 

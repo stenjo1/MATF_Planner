@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "headers/FourthYearI.h"
+#include "headers/Student.hpp"
 
 
 namespace Ui {
@@ -17,6 +18,7 @@ signals:
     void backSignal();
 public:
     explicit ThirdYearI(QWidget *parent = nullptr);
+    void setStudent(Student* student);
     ~ThirdYearI();
 
 private slots:
@@ -28,7 +30,10 @@ private slots:
 
 private:
     Ui::ThirdYearI *ui;
+     Student* _student;
     FourthYearI *fourthWindow;
+
+
 };
 
 #endif // THIRDYEARI_H
