@@ -18,8 +18,6 @@ FirstYearI::~FirstYearI()
     delete ui;
 }
 
-
-
 void FirstYearI::on_pbBack_clicked()
 {
     emit backSignal();
@@ -30,6 +28,12 @@ void FirstYearI::on_pbBack_clicked()
 void FirstYearI::on_pbNext_clicked()
 {
 
+    QVector<QCheckBox *> childCheckBoxes = ui->centralwidget->findChildren<QCheckBox *>(QString(), Qt::FindDirectChildrenOnly);
+    for (auto child : childCheckBoxes) {
+        if (child->isChecked()) {
+            _student->addSubject(new Subject(child->text()));
+        }
+    }
     secondWindow->show();
     hide();
 }

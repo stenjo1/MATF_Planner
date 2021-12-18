@@ -28,6 +28,10 @@ Student::~Student(){
 
 }
 
+void Student::addSubject(Subject* subj){
+    _allSubjects.push_back(subj);
+}
+
 void Student::addExam(Exam *exam){
     _exams.push_back(exam);
 }

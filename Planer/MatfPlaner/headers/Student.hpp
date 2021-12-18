@@ -28,6 +28,7 @@ public:
     void setYearOfStudy(int year);
 
     QVector<Subject*>* getAllSubjects();
+    void addSubject(Subject* subj);
 
 private:
     QString _name;
