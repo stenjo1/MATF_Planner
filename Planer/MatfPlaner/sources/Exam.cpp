@@ -1,5 +1,5 @@
 #include "headers/Utils.h"
-#include "headers/Exam.hpp"
+#include "headers/Exam.h"
 
 
 Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, bool passed, unsigned numbersOfTry) {

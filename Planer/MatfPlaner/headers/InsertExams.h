@@ -1,7 +1,7 @@
 #ifndef INSERTEXAMS_H
 #define INSERTEXAMS_H
-#include"headers/Exam.hpp"
-#include "headers/Student.hpp"
+#include"headers/Exam.h"
+#include "headers/Student.h"
 #include <QWidget>
 
 namespace Ui {

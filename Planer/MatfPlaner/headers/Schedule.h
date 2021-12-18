@@ -3,7 +3,7 @@
 
 #include <algorithm>
 
-#include "Exam.hpp"
+#include "Exam.h"
 
 class Schedule{
 

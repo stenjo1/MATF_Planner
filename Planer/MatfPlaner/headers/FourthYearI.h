@@ -2,7 +2,7 @@
 #define FOURTHYEARI_H
 
 #include <QWidget>
-#include"headers/Student.hpp"
+#include"headers/Student.h"
 
 namespace Ui {
 class FourthYearI;

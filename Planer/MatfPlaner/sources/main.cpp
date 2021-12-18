@@ -1,13 +1,13 @@
-#include "headers/Subject.hpp"
+#include "headers/Subject.h"
 #include <QApplication>
 #include <QList>
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QVector>
-#include "headers/Exam.hpp"
+#include "headers/Exam.h"
 #include "headers/Calendar.h"
-#include "headers/Student.hpp"
+#include "headers/Student.h"
 #include "headers/Utils.h"
 
 int main(int argc, char *argv[])

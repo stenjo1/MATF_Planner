@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+     sources/Profile.cpp \
      sources/Request.cpp \
      sources/Schedule.cpp \
      sources/Utils.cpp \
@@ -35,7 +36,7 @@ HEADERS += \
     headers/Utils.h \
     headers/InsertExams.h \
     headers/Calendar.h \
-    headers/Exam.hpp \
+    headers/Exam.h \
     headers/FirstYearI.h \
     headers/FirstYearM.h \
     headers/FourthYearI.h \
@@ -43,10 +44,11 @@ HEADERS += \
     headers/LoginPage.h \
     headers/SecondYearI.h \
     headers/SecondYearMR.h \
-    headers/Student.hpp \
-    headers/Subject.hpp \
+    headers/Student.h \
+    headers/Subject.h \
     headers/ThirdYearI.h \
-    headers/ThirdYearMR.h
+    headers/ThirdYearMR.h \
+    headers/Profile.h
 
 
 FORMS += \
@@ -61,6 +63,7 @@ FORMS += \
     forms/SecondYearMR.ui \
     forms/ThirdYearI.ui \
     forms/ThirdYearMR.ui \
+    forms/Profile.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -2,8 +2,8 @@
 #define STUDENT_HPP
 #include<QString>
 #include<vector>
-#include "Subject.hpp"
-#include "Exam.hpp"
+#include "Subject.h"
+#include "Exam.h"
 #include<QJsonArray>
 #include<QFile>
 #include<QJsonDocument>

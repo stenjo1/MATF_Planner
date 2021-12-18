@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "headers/SecondYearI.h"
-#include "headers/Student.hpp"
+#include "headers/Student.h"
 
 namespace Ui {
 class FirstYearI;

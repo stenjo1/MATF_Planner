@@ -1,7 +1,7 @@
 #ifndef EXAM_HPP
 #define EXAM_HPP
 
-#include "headers/Subject.hpp"
+#include "headers/Subject.h"
 #include <QDate>
 #include <QTime>
 #include <QString>

@@ -1,6 +1,6 @@
 #include "headers/InsertExams.h"
 #include "ui_InsertExams.h"
-#include "headers/Subject.hpp"
+#include "headers/Subject.h"
 #include"headers/Utils.h"
 
 InsertExams::InsertExams(QWidget *parent) :
