@@ -5,7 +5,6 @@
 #include "headers/FirstYearI.h"
 #include "headers/FirstYearM.h"
 #include <QRegularExpression>
-#include "headers/Student.h"
 
 namespace Ui {
 class LoginPage;

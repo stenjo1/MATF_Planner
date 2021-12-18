@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include "headers/ThirdYearMR.h"
-#include"headers/Student.h"
 
 namespace Ui {
 class SecondYearMR;

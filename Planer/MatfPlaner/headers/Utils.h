@@ -1,6 +1,5 @@
 #ifndef UTILS_H
 #define UTILS_H
-#include "headers/Exam.h"
 #include "headers/InsertExams.h"
 #include<QFile>
 #include<QJsonDocument>

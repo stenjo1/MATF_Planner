@@ -14,6 +14,21 @@
    <string>Form</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Profil</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
@@ -21,10 +36,24 @@
      </property>
     </widget>
    </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="labelName">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>E-mail:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="labelEmail">
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>
@@ -43,61 +72,62 @@
     </widget>
    </item>
    <item row="7" column="0">
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Položeni predmeti:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="labelName">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="labelEmail">
-     <property name="text">
-      <string/>
+      <string>Smer:</string>
      </property>
     </widget>
    </item>
    <item row="7" column="1">
-    <widget class="QLabel" name="labelPassedSubjects">
+    <widget class="QLabel" name="labelModule">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
    <item row="9" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Položeni predmeti:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="labelPassedSubjects">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
       <string>Broj ostvarenih ESPB:</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="11" column="1">
     <widget class="QLabel" name="labelESPB">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_11">
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
+   <item row="8" column="0" colspan="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="text">
-      <string>Profil</string>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>150</height>
+      </size>
      </property>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>

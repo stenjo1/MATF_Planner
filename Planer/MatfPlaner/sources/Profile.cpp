@@ -19,7 +19,10 @@ void Profile::setStudent(Student* s){
 }
 
 void Profile::fillSlot(){
+
     ui->labelName->setText(_student->getName());
     ui->labelEmail->setText(_student->getEmail());
     ui->labelYearOfStudy->setText(QString().setNum(_student->getYearOfStudy()));
+    ui->labelModule->setText(_student->getModuleString());
+    //TODO: iz jsona sa predmetima ispisati one koji nisu u listi nepolozenih (allSubjects)
 }

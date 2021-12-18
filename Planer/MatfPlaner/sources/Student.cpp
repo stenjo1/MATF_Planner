@@ -37,7 +37,13 @@ QString& Student::getEmail(){
 int Student::getYearOfStudy(){
     return _yearOfStudy;
 }
+QString Student::getModuleString() {
+    if(_module == Module::Informatika)
+        return QString("Informatika");
+    else if (_module == Module::Matematika)
+        return QString("Matematika");
 
+}
 void Student::addSubject(Subject* subj){
     _allSubjects.push_back(subj);
 }
@@ -68,6 +74,10 @@ void Student::setEmail(QString email){
 
 void Student::setYearOfStudy(int year){
     _yearOfStudy = year;
+}
+
+void Student::setModule(Module m){
+    _module = m;
 }
 
 QVector<Subject*>* Student::getAllSubjects()

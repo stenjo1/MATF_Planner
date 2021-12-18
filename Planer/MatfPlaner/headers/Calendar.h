@@ -4,11 +4,9 @@
 #include <QWidget>
 #include <QMessageBox>
 
-#include "headers/Exam.h"
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
 #include "headers/InsertExams.h"
-#include "headers/Student.h"
 #include "headers/Profile.h"
 
 namespace Ui {

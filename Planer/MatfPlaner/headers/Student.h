@@ -10,6 +10,9 @@
 #include<QVector>
 #include<QList>
 
+
+enum Module {None, Informatika, Matematika};
+
 class Student
 {
 public:
@@ -26,9 +29,11 @@ public:
     void setName(QString name);
     void setEmail(QString email);
     void setYearOfStudy(int year);
+    void setModule(Module m);
 
     QString& getName();
     QString& getEmail();
+    QString getModuleString();
     int getYearOfStudy();
     QVector<Subject*>* getAllSubjects();
 
@@ -41,6 +46,7 @@ private:
     QString _email;
     QVector<Subject*> _allSubjects;
     QVector<Exam*> _exams;
+    Module _module;
 };
 
 #endif // STUDENT_HPP
