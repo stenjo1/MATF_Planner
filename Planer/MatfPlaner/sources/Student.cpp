@@ -1,4 +1,4 @@
-#include "headers/Student.hpp"
+#include "headers/Student.h"
 
 Student::Student()
 {
@@ -26,6 +26,16 @@ Student::~Student(){
        delete element;
    }
 
+}
+
+QString& Student::getName(){
+    return _name;
+}
+QString& Student::getEmail(){
+    return _email;
+}
+int Student::getYearOfStudy(){
+    return _yearOfStudy;
 }
 
 void Student::addSubject(Subject* subj){

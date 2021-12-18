@@ -5,21 +5,33 @@
 Calendar::Calendar(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Calendar),
+    _student(new Student),
     loginWindow(new LoginPage),
-    insertExamsWindow(new InsertExams)
+    insertExamsWindow(new InsertExams),
+    profileWindow(new Profile)
 {
     ui->setupUi(this);
+    loginWindow->setStudent(_student);
+    insertExamsWindow->setStudent(_student);
+    profileWindow->setStudent(_student);
+    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
 }
 
 Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
-     ui(new Ui::Calendar),
+    ui(new Ui::Calendar),
+    _student(new Student),
     loginWindow(new LoginPage),
     insertExamsWindow(new InsertExams),
-    _exams(exams)
+    _exams(exams),
+     profileWindow(new Profile)
 
 {
     ui->setupUi(this);
+    loginWindow->setStudent(_student);
+    insertExamsWindow->setStudent(_student);
+    profileWindow->setStudent(_student);
+    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
 }
 
 
@@ -77,15 +89,24 @@ void Calendar::on_pbCheckUrl_clicked()
     msgBox.exec();
 }
 
-void Calendar::on_pbProfile_clicked()
-{
-    loginWindow->show();
-}
 
 
 
 void Calendar::on_pbSendMail_clicked()
 {
 
+}
+
+
+void Calendar::on_pbLogin_clicked()
+{
+    loginWindow->show();
+}
+
+
+void Calendar::on_pbProfile_clicked()
+{
+    emit fillProfileSignal();
+    profileWindow->show();
 }
 

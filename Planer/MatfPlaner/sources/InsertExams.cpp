@@ -21,6 +21,9 @@ InsertExams::~InsertExams()
         delete el;
 }
 
+void InsertExams::setStudent(Student* student){
+    _student=student;
+}
 
 void InsertExams::on_addExamButton_clicked()
 {

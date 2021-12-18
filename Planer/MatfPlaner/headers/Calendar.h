@@ -8,6 +8,8 @@
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
 #include "headers/InsertExams.h"
+#include "headers/Student.h"
+#include "headers/Profile.h"
 
 namespace Ui {
 class Calendar;
@@ -16,7 +18,8 @@ class Calendar;
 class Calendar : public QWidget
 {
     Q_OBJECT
-
+signals:
+    void fillProfileSignal();
 public:
     explicit Calendar(QWidget *parent = nullptr);
     explicit Calendar( QList<Exam*> exams = {}, QWidget *parent = nullptr);
@@ -31,11 +34,15 @@ private slots:
 
     void on_pbSendMail_clicked();
 
+    void on_pbLogin_clicked();
+
 private:
     Ui::Calendar *ui;
-    LoginPage *loginWindow;
-    InsertExams *insertExamsWindow;
+    Student* _student;
+    LoginPage* loginWindow;
+    InsertExams* insertExamsWindow;
     QVector<Exam*> _exams;
+    Profile* profileWindow;
 
 };
 

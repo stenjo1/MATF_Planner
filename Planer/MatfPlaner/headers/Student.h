@@ -27,8 +27,13 @@ public:
     void setEmail(QString email);
     void setYearOfStudy(int year);
 
+    QString& getName();
+    QString& getEmail();
+    int getYearOfStudy();
     QVector<Subject*>* getAllSubjects();
+
     void addSubject(Subject* subj);
+
 
 private:
     QString _name;

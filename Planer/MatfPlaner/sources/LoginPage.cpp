@@ -5,7 +5,6 @@
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage),
-    _student(new Student),
     _mWindow(new FirstYearM),
     _iWindow(new FirstYearI)
 
@@ -67,7 +66,7 @@ void LoginPage::on_nextButton_clicked()
         _iWindow->setStudent(_student);
         _iWindow->show();
          hide();
-         //nzm dal ode curi memorija
+         //nzm dal ovde curi memorija
 
      }else if (ui->math_department->isChecked()){
         _mWindow->setStudent(_student);

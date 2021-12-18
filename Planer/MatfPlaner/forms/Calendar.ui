@@ -23,6 +23,13 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
+      <widget class="QPushButton" name="pbLogin">
+       <property name="text">
+        <string>Pravljenje profila</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="pbProfile">
        <property name="text">
         <string>Profil</string>

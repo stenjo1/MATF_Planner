@@ -15,7 +15,10 @@ class Profile : public QWidget
 public:
     explicit Profile(QWidget *parent = nullptr);
     ~Profile();
+    void setStudent(Student* s);
 
+public slots:
+    void fillSlot();
 private:
     Ui::Profile *ui;
     Student* _student;

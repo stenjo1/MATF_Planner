@@ -15,6 +15,7 @@ class InsertExams : public QWidget
 public:
     explicit InsertExams(QWidget *parent = nullptr);
     ~InsertExams();
+    void setStudent(Student* student);
 
 
 private slots:
@@ -27,6 +28,7 @@ private slots:
 private:
     Ui::InsertExams *ui;
     QVector<Exam*> *exams;
+    Student* _student;
 
 };
 
