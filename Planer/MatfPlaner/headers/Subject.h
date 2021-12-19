@@ -10,7 +10,7 @@ class Subject{
         Subject(QString name);
         Subject();
         QJsonObject* toJson();
-        Subject(QJsonObject);
+        Subject(QJsonValue val);
 
     private:
         int _espb;

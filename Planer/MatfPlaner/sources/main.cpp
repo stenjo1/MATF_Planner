@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     const QString JSON_FILE = path;
     QApplication a(argc, argv);
     // to-do: isprazniti listu
-    QVector<Exam*> exams = Utils::readJsonObjectsFromFile(JSON_FILE);
+    QVector<Exam*> exams = Utils::readJsonExamsFromFile(JSON_FILE);
     if(exams.isEmpty()){
         LoginPage lp;
         lp.show();

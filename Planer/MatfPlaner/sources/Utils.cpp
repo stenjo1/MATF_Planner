@@ -1,6 +1,5 @@
 #include "headers/Utils.h"
 
-
 Utils::Utils()
 {
 
@@ -13,7 +12,7 @@ QDate Utils::fromQStringtoQDate(QString string){
 }
 
 
-QVector<Exam*> Utils::readJsonObjectsFromFile(const QString &fileName){
+QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
     QList<Exam*> exams;
     QFile file(fileName);
        if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -50,6 +49,27 @@ QVector<Exam*> Utils::readJsonObjectsFromFile(const QString &fileName){
        return exams;
 }
 
+QVector<Subject*> Utils::readJsonSubjectsFromFile(){
+    QDir targetDir("../MatfPlaner/resources");
+    QString path = targetDir.absolutePath() + "/i1o.json";
+    QFile inFile(path);
+    QByteArray data = inFile.readAll();
+    inFile.close();
+    QJsonParseError errorPtr;
+    QJsonDocument doc = QJsonDocument::fromJson(data, &errorPtr);
+        if (doc.isNull()) {
+            qDebug() << "Parse failed";
+        }
+    QJsonObject rootObj = doc.object();
+    QVector<Subject*> listSubjects;
+    QJsonArray subjArray = rootObj.value("firstYearInfSubjects").toArray();
+    foreach(const QJsonValue  &val, subjArray){
+            listSubjects.append(new Subject(val));
+        }
+
+    return listSubjects;
+
+}
 
 void Utils::clearFile(const QString &fileName){
    QFile file(fileName);

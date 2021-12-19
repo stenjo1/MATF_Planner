@@ -7,6 +7,7 @@
 #include <QJsonArray>
 #include<QTextStream>
 #include <QMessageBox>
+#include <QMainWindow>
 
 class Utils : public QObject
 {
@@ -14,8 +15,9 @@ class Utils : public QObject
 public:
     Utils();
     static QDate fromQStringtoQDate(QString string);
-    static QVector<Exam*> readJsonObjectsFromFile(const QString &filename);
+    static QVector<Exam*> readJsonExamsFromFile(const QString &filename);
     static void clearFile(const QString &filename);
+    static QVector<Subject*> readJsonSubjectsFromFile();
 };
 
 #endif // UTILS_H
