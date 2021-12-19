@@ -26,7 +26,7 @@ public:
     QVector<QString> checkResults();
 
 private:
-    void colorCells();
+    void colorCells(); //
 
 private slots:
     void on_pbNewExam_clicked();

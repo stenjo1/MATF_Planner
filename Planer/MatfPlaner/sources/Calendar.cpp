@@ -52,7 +52,7 @@ void Calendar::colorCells()
 
     for(auto& exam: _exams){
         QDate date = exam->getDate();
-        //test linija jer i dalje exam cita sve prazno
+        //test linija jer i dalje exam cita sve prazno kao i ono za url
         //QDate date(2021,12,12);
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
