@@ -11,6 +11,7 @@ class Subject{
         Subject();
         QJsonObject* toJson();
         Subject(QJsonValue val);
+        QString getName();
 
     private:
         int _espb;

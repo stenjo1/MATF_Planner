@@ -50,6 +50,7 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
 }
 
 QVector<Subject*> Utils::readJsonSubjectsFromFile(){
+
     QDir targetDir("../MatfPlaner/resources");
     QString path = targetDir.absolutePath() + "/i1o.json";
     QFile inFile(path);

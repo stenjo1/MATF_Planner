@@ -5,6 +5,7 @@
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage),
+    _student(new Student),
     _mWindow(new FirstYearM),
     _iWindow(new FirstYearI)
 

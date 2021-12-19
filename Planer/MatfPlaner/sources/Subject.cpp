@@ -9,6 +9,10 @@ Subject::Subject(QString name){
     _name = name;
 }
 
+QString Subject::getName(){
+    return _name;
+}
+
 Subject::Subject(QJsonValue val){
     _name=val.toObject().value("_name").toString();
     _espb=val.toObject().value("_espb").toInt();

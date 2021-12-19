@@ -4,11 +4,9 @@
 FirstYearI::FirstYearI(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FirstYearI),
-    _student(new Student),
     secondWindow(new SecondYearI)
 {
     ui->setupUi(this);
-    secondWindow->setStudent(_student);
     connect(secondWindow, &SecondYearI::backSignal, this, &QWidget::show);
 }
 
@@ -27,16 +25,21 @@ void FirstYearI::on_pbBack_clicked()
 
 void FirstYearI::on_pbNext_clicked()
 {
-
+    secondWindow->setStudent(_student);
     QVector<QCheckBox *> childCheckBoxes = ui->centralwidget->findChildren<QCheckBox *>(QString(), Qt::FindDirectChildrenOnly);
-        for (auto child : childCheckBoxes) {
+    QVector<Subject*> subjects = Utils::readJsonSubjectsFromFile();
+    for (auto child : childCheckBoxes) {
             if (child->isChecked()) {
-               _student->addSubject(new Subject(child->text()));
+               for(Subject* subject:subjects){
+                   if(child->text().compare(subject->getName())==0){
+                       _student->addSubject(subject);
+                   }
+               }
             }
-        }
 
     secondWindow->show();
     hide();
+    }
 }
 
 
