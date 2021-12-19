@@ -28,8 +28,8 @@ private slots:
 
 private:
     Ui::ThirdYearMR *ui;
-    FourthYearMR *fourthWindow;
     Student *_student;
+    FourthYearMR *fourthWindow;
 };
 
 #endif // THIRDYEARMR_H

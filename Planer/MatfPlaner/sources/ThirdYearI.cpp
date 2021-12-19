@@ -3,8 +3,8 @@
 
 ThirdYearI::ThirdYearI(QWidget *parent) :
     QMainWindow(parent),
-    _student(new Student),
     ui(new Ui::ThirdYearI),
+    _student(new Student),
     fourthWindow(new FourthYearI)
 {
     ui->setupUi(this);
