@@ -32,6 +32,8 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     insertExamsWindow->setStudent(_student);
     profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
+
+    colorCells();
 }
 
 
@@ -40,6 +42,19 @@ Calendar::~Calendar()
     delete ui;
     for (auto exam : _exams) {
         delete exam;
+    }
+}
+
+void Calendar::colorCells()
+{
+    QTextCharFormat fmt;
+    fmt.setBackground(Qt::magenta);
+
+    for(auto& exam: _exams){
+        QDate date = exam->getDate();
+        //test linija jer i dalje exam cita sve prazno
+        //QDate date(2021,12,12);
+        ui->calendarWidget->setDateTextFormat(date, fmt);
     }
 }
 
