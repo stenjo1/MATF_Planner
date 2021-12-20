@@ -20,6 +20,7 @@ public:
     QString getUrl();
     QDate getDate();
     int getImportanceRate();
+    Subject& getSubject();
 
 private:
     QDate _date;

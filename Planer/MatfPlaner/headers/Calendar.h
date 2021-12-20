@@ -6,7 +6,7 @@
 
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
-#include "headers/InsertExams.h"
+#include "headers/ExamsOverview.h"
 #include "headers/Profile.h"
 
 namespace Ui {
@@ -41,7 +41,7 @@ private:
     Ui::Calendar *ui;
     Student* _student;
     LoginPage* loginWindow;
-    InsertExams* insertExamsWindow;
+    ExamsOverview* examsOverviewWindow;
     QVector<Exam*> _exams;
     Profile* profileWindow;
 

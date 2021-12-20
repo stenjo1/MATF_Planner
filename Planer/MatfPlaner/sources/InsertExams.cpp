@@ -25,6 +25,21 @@ void InsertExams::setStudent(Student* student){
     _student=student;
 }
 
+QVector<Exam*>* InsertExams::getExams(){
+    return exams;
+}
+
+void InsertExams::removeExam(QString& name){
+    QVector<Exam*>* allExams = getExams();
+    for (Exam* e : *allExams) {
+        if (e->getSubject().getName().compare(name) == 0) {
+            int index = allExams->indexOf(e);
+            exams->remove(index);
+        }
+    }
+}
+
+
 void InsertExams::on_addExamButton_clicked()
 {
 
@@ -56,7 +71,7 @@ void InsertExams::on_addExamButton_clicked()
         return;
     }
 
-    int importanceRate = ui->importanceRateLineEdit->text().toInt();
+    int importanceRate = ui->horizontalSlider->value();
     QString url = ui->urlLabel->text();
 
     Exam *exam1 = new Exam(dummy, date1, time1, url, importanceRate);
@@ -64,6 +79,8 @@ void InsertExams::on_addExamButton_clicked()
 
     exams->push_back(exam1);
     exams->push_back(exam2);
+
+    emit reloadListWidget();
 }
 
 
@@ -74,15 +91,15 @@ void InsertExams::on_clearWidgetButton_clicked()
     ui->urlLineEdit->clear();
     ui->dateLineEdit1->clear();
     ui->dateLineEdit2->clear();
-    ui->importanceRateLineEdit->clear();
+    ui->horizontalSlider->setValue(1);
     ui->errorLabel->clear();
-    ui->comboBox->clear();
+    ui->comboBox->setCurrentText("Odabir predmeta:");
 
 }
 
 
 void InsertExams::on_endInputExamButton_clicked()
 {
-    close();
+    hide();
 }
 
