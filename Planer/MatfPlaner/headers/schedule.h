@@ -1,8 +1,9 @@
 #ifndef SCHEDULE_H
 #define SCHEDULE_H
 
-#include "Exam.h"
 #include <algorithm>
+
+#include "Exam.h"
 
 class Schedule
 {
