@@ -27,6 +27,10 @@ bool Exam::checkIfDatePassed(){
     return false;
 }
 
+Subject& Exam::getSubject(){
+    return _subject;
+}
+
 bool Exam::checkIfDatePassed(QDate date){
     if (_date < date)
         return true;

@@ -42,6 +42,8 @@ QString Student::getModuleString() {
         return QString("Informatika");
     else if (_module == Module::Matematika)
         return QString("Matematika");
+    else
+        return QString("/");
 
 }
 void Student::addSubject(Subject* subj){

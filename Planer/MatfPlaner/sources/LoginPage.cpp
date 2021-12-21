@@ -59,21 +59,25 @@ void LoginPage::on_nextButton_clicked()
     //_student->writeToJson();
 
     if(!ui->info_department->isChecked() && !ui->math_department->isChecked()) {
-        ui->label_3->setText("Morati izabrati smer!");
+        ui->label_3->setText("Morate izabrati smer!");
         return;
     }
 
     if(ui->info_department->isChecked()){
         _iWindow->setStudent(_student);
-        _iWindow->show();
         _student->setModule(Module::Informatika);
+        ui->label_3->clear();
+        _iWindow->show();
+
          hide();
          //nzm dal ovde curi memorija
 
      }else if (ui->math_department->isChecked()){
         _mWindow->setStudent(_student);
-        _mWindow->show();
         _student->setModule(Module::Matematika);
+        ui->label_3->clear();
+        _mWindow->show();
+
         hide();
     }
 

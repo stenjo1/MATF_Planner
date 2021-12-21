@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Ispit</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -80,7 +80,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Datum (dd.mm.yyyy):</string>
+        <string>Datum (dd.mm.yyyy.):</string>
        </property>
       </widget>
      </item>
@@ -94,7 +94,7 @@
      <item>
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Vreme (hh:mm):          </string>
+        <string>Vreme (hh:mm):           </string>
        </property>
       </widget>
      </item>
@@ -120,7 +120,7 @@
      <item>
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Datum (dd.mm.yyyy):</string>
+        <string>Datum (dd.mm.yyyy.):</string>
        </property>
       </widget>
      </item>
@@ -134,7 +134,7 @@
      <item>
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Vreme (hh:mm):          </string>
+        <string>Vreme (hh:mm):           </string>
        </property>
       </widget>
      </item>
@@ -204,7 +204,29 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="importanceRateLineEdit"/>
+    <widget class="QSlider" name="horizontalSlider">
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="tickPosition">
+      <enum>QSlider::TicksBelow</enum>
+     </property>
+     <property name="tickInterval">
+      <number>1</number>
+     </property>
+    </widget>
    </item>
    <item>
     <spacer name="horizontalSpacer">
@@ -222,21 +244,21 @@
    <item>
     <widget class="QPushButton" name="addExamButton">
      <property name="text">
-      <string>dodaj ispit</string>
+      <string>Dodaj ispit</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="clearWidgetButton">
      <property name="text">
-      <string>očisti prozor</string>
+      <string>Očisti prozor</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QPushButton" name="endInputExamButton">
      <property name="text">
-      <string>završi unos</string>
+      <string>Završi unos</string>
      </property>
     </widget>
    </item>

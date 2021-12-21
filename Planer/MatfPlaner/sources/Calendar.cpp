@@ -7,12 +7,12 @@ Calendar::Calendar(QWidget *parent) :
     ui(new Ui::Calendar),
     _student(new Student),
     loginWindow(new LoginPage),
-    insertExamsWindow(new InsertExams),
+    examsOverviewWindow(new ExamsOverview),
     profileWindow(new Profile)
 {
     ui->setupUi(this);
     loginWindow->setStudent(_student);
-    insertExamsWindow->setStudent(_student);
+    examsOverviewWindow->setStudent(_student);
     profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
 }
@@ -22,14 +22,14 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     ui(new Ui::Calendar),
     _student(new Student),
     loginWindow(new LoginPage),
-    insertExamsWindow(new InsertExams),
+    examsOverviewWindow(new ExamsOverview),
     _exams(exams),
      profileWindow(new Profile)
 
 {
     ui->setupUi(this);
     loginWindow->setStudent(_student);
-    insertExamsWindow->setStudent(_student);
+    examsOverviewWindow->setStudent(_student);
     profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
 
@@ -81,7 +81,7 @@ QVector<QString> Calendar::checkResults()
 void Calendar::on_pbNewExam_clicked()
 {
 
-   insertExamsWindow->show();
+   examsOverviewWindow->show();
 
 }
 

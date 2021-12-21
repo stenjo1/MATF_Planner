@@ -12,10 +12,14 @@ class InsertExams : public QWidget
 {
     Q_OBJECT
 
+signals:
+    void reloadListWidget();
 public:
     explicit InsertExams(QWidget *parent = nullptr);
     ~InsertExams();
     void setStudent(Student* student);
+     QVector<Exam*>* getExams();
+     void removeExam(QString& name);
 
 
 private slots:
