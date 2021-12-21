@@ -51,9 +51,9 @@ void Calendar::colorCells()
     fmt.setBackground(Qt::magenta);
 
     for(auto& exam: _exams){
-        QDate date = exam->getDate();
+        //QDate date = exam->getDate();
         //test linija jer i dalje exam cita sve prazno kao i ono za url
-        //QDate date(2021,12,12);
+        QDate date(2021,12,12);
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
 }
@@ -105,8 +105,6 @@ void Calendar::on_pbCheckUrl_clicked()
 }
 
 
-
-
 void Calendar::on_pbSendMail_clicked()
 {
 
@@ -123,5 +121,27 @@ void Calendar::on_pbProfile_clicked()
 {
     emit fillProfileSignal();
     profileWindow->show();
+}
+
+
+void Calendar::on_calendarWidget_clicked(const QDate &date)
+{
+    QMessageBox msgBox;
+    QString msg = "";
+    //test linija
+    //QDate testDate(2021,12,12);
+
+    for(auto& exam: _exams){
+        if(date == exam->getDate()){
+            //msg += "AAAAAHHHH";
+            //naravno ne radi jer exam ne vraca date
+            msg += exam->getSubject().getName();
+
+            msgBox.setText(msg);
+            msgBox.exec();
+
+            break;
+        }
+    }
 }
 

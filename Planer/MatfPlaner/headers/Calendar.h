@@ -32,10 +32,9 @@ private slots:
     void on_pbNewExam_clicked();
     void on_pbCheckUrl_clicked();
     void on_pbProfile_clicked();
-
     void on_pbSendMail_clicked();
-
     void on_pbLogin_clicked();
+    void on_calendarWidget_clicked(const QDate &date);
 
 private:
     Ui::Calendar *ui;
