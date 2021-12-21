@@ -35,7 +35,6 @@ void SecondYearI::on_pbNext_clicked()
             if (child->isChecked()) {
                for(Subject* subject:subjects){
                    if(child->text().compare(subject->getName())==0){
-                       std::cout<<child->text().toStdString();
                        _student->addSubject(subject);
                    }
                }
