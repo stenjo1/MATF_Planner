@@ -27,6 +27,18 @@ void ThirdYearI::on_pbBack_clicked()
 
 void ThirdYearI::on_pbNext_clicked()
 {
+    QVector<QCheckBox *> childCheckBoxes = ui->centralwidget->findChildren<QCheckBox *>(QString(), Qt::FindDirectChildrenOnly);
+    QVector<Subject*> subjects = Utils::readJsonSubjectsFromFile("i3o.json");
+    for (auto child : childCheckBoxes) {
+            if (child->isChecked()) {
+               for(Subject* subject:subjects){
+                   if(child->text().compare(subject->getName())==0){
+                       std::cout<<child->text().toStdString();
+                       _student->addSubject(subject);
+                   }
+               }
+            }
+    }
     fourthWindow->setStudent(_student);
     fourthWindow->show();
     hide();

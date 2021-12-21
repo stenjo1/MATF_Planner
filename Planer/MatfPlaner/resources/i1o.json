@@ -1,10 +1,10 @@
 
-{"firstYearInfSubjects": [
+{"_subjects": [
     { "_name":"Programiranje 1",
       "_espb": 8
     },
     {
-      "_name":"Uvod u organizaciju i arhitekturu racunara",
+      "_name":"Uvod u organizaciju i arhitekturu računara 1",
       "_espb": 6
     },
     {
@@ -20,8 +20,16 @@
         "_espb": 8
     },
     {
-        "_name":"Uvod u organizaciju i arhitekturu racunara",
+        "_name":"Uvod u organizaciju i arhitekturu računara 2",
         "_espb": 6
+    },
+    {
+        "_name":"Izborni predmet O1",
+        "_espb": 3
+    },
+    {
+        "_name":"Izborni predmet O2",
+        "_espb": 3
     },
     {
         "_name":"Diskretne strukture 2",

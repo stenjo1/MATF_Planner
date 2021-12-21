@@ -1,7 +1,95 @@
 {
     "_allSubjects": [
+        {
+            "_espb": 8,
+            "_name": "Programiranje 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Diskretne strukture 1"
+        },
+        {
+            "_espb": 3,
+            "_name": "Izborni predmet O1"
+        },
+        {
+            "_espb": 8,
+            "_name": "Programiranje 2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Diskretne strukture 2"
+        },
+        {
+            "_espb": 7,
+            "_name": "Analiza 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Algoritmi i strukture podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Objektno orijentisano programiranje"
+        },
+        {
+            "_espb": 6,
+            "_name": "Operativni sistemi"
+        },
+        {
+            "_espb": 6,
+            "_name": "Geometrija"
+        },
+        {
+            "_espb": 6,
+            "_name": "Analiza 2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Konstrukcija i analiza algoritama"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u veb i internet tehnologije"
+        },
+        {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        {
+            "_espb": 6,
+            "_name": "Algebra 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Relacione baze podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Prevođenje programskih jezika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Računarska grafika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Verovatnoća"
+        },
+        {
+            "_espb": 6,
+            "_name": "Veštačka inteligencija"
+        },
+        {
+            "_espb": 6,
+            "_name": "Programske paradigme"
+        },
+        {
+            "_espb": 6,
+            "_name": "Statistika"
+        }
     ],
-    "_email": "mkkkm@gmail.com",
-    "_name": "kkmg",
-    "_yearOfStudy": 4
+    "_email": "saram@gmail.com",
+    "_name": "sara",
+    "_yearOfStudy": 2
 }

@@ -17,7 +17,7 @@ public:
     static QDate fromQStringtoQDate(QString string);
     static QVector<Exam*> readJsonExamsFromFile(const QString &filename);
     static void clearFile(const QString &filename);
-    static QVector<Subject*> readJsonSubjectsFromFile();
+    static QVector<Subject*> readJsonSubjectsFromFile(QString fileName);
 };
 
 #endif // UTILS_H

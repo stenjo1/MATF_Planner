@@ -1,57 +1,39 @@
 {
-    "subjects":[
+    "_subjects":[
     { "_name":"Relacione baze podataka",
-      "_espb": 6,
-      "difficulty": null,
-      "url" : null
+      "_espb": 6
     },
     {
-      "_name":"Prevodjenje programskih jezika",
-      "_espb": 6,
-      "difficulty": null,
-      "url" : null
+      "_name":"Prevođenje programskih jezika",
+      "_espb": 6
     },
     {
-        "_name":"Racunarska grafika",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_name":"Računarska grafika",
+        "_espb": 6
     },
     {
-        "_name":"Verovatnoca",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_name":"Verovatnoća",
+        "_espb": 6
     },
     {
-        "_name":"Uvod u numeicku matematiku",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_name":"Uvod u numeičku matematiku",
+        "_espb": 6
     },
     {
-        "_name":"Vestacka inteligencija",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_name":"Veštačka inteligencija",
+        "_espb": 6
     },
     {
         "_name":"Istrazivanje podataka",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_espb": 6
     },
     {
         "_name":"Programske paradigme",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_espb": 6
     },
     {
         "_name":"Statistika",
-        "_espb": 6,
-        "difficulty": null,
-        "url" : null
+        "_espb": 6
     }
 
   ]

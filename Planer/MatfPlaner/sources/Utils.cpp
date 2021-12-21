@@ -49,13 +49,11 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
        return exams;
 }
 
-QVector<Subject*> Utils::readJsonSubjectsFromFile(){
-
-    QDir targetDir("../MatfPlaner/resources");
-    QString path = targetDir.absolutePath() + "/i1o.json";
-    QFile inFile(path);
-    QByteArray data = inFile.readAll();
-    inFile.close();
+QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
+    QFile file("../MatfPlaner/resources/"+fileName);
+    file.open(QFile::ReadOnly);
+    QByteArray data = file.readAll();
+    file.close();
     QJsonParseError errorPtr;
     QJsonDocument doc = QJsonDocument::fromJson(data, &errorPtr);
         if (doc.isNull()) {
@@ -63,7 +61,7 @@ QVector<Subject*> Utils::readJsonSubjectsFromFile(){
         }
     QJsonObject rootObj = doc.object();
     QVector<Subject*> listSubjects;
-    QJsonArray subjArray = rootObj.value("firstYearInfSubjects").toArray();
+    QJsonArray subjArray = rootObj.value("_subjects").toArray();
     foreach(const QJsonValue  &val, subjArray){
             listSubjects.append(new Subject(val));
         }
