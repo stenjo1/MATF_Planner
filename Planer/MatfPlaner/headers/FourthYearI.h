@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include"headers/Student.h"
+#include"headers/Utils.h"
 
 namespace Ui {
 class FourthYearI;
