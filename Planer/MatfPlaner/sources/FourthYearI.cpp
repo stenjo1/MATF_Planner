@@ -17,11 +17,10 @@ FourthYearI::~FourthYearI()
 
 void FourthYearI::on_pbEnd_clicked()
 {
-    QVector<QCheckBox *> childCheckBoxes = ui->centralwidget->findChildren<QCheckBox *>(QString(), Qt::FindDirectChildrenOnly);
+    QVector<QCheckBox *> childCheckBoxes = ui->centralwidget_2->findChildren<QCheckBox *>(QString(), Qt::FindDirectChildrenOnly);
     QVector<Subject*> subjects = Utils::readJsonSubjectsFromFile("i4o.json");
     for (auto child : childCheckBoxes) {
             if (child->isChecked()) {
-                std::cout<<child->text().toStdString()<<std::endl;
                for(Subject* subject:subjects){
                    if(child->text().compare(subject->getName())==0){
                        _student->addSubject(subject);

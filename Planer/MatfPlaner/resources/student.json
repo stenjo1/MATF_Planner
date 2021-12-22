@@ -1,7 +1,23 @@
 {
     "_allSubjects": [
+        {
+            "_espb": 6,
+            "_name": "Računarske mreže"
+        },
+        {
+            "_espb": 6,
+            "_name": "Razvoj softvera"
+        },
+        {
+            "_espb": 6,
+            "_name": "Projektovanje baza podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Specijalni kurs"
+        }
     ],
-    "_email": "rf@rbt.uj",
-    "_name": "ref",
+    "_email": "hr@rt.tj",
+    "_name": "rth",
     "_yearOfStudy": 1
 }

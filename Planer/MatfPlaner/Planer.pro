@@ -79,6 +79,7 @@ DISTFILES += \
     resources/i1o.json \
     resources/i2o.json \
     resources/i3o.json \
+    resources/i4o.json \
     resources/oi_predmeti.json \
     resources/student.json
 
