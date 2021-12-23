@@ -34,6 +34,7 @@ private:
     QLabel *label;
     QPushButton *nextButton;
     QPushButton *previousButton;
+    QPushButton *endButton;
 
     QVector<QCheckBox*> checkBoxes;
 
@@ -42,6 +43,7 @@ private:
 private slots:
     void setupNextWindow();
     void setupPreviousWindow();
+    void closeWindow();
 };
 
 #endif // WINDOW_H

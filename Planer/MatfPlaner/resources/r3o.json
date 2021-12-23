@@ -1,0 +1,53 @@
+{"_subjects": [
+    { "_name":"Programske paradigme",
+      "_espb": 5
+    },
+    {
+      "_name":"Diferencijalne jednačine",
+      "_espb": 5
+    },
+    {
+        "_name":"Verovatnoća i statistika A",
+        "_espb": 5
+    },
+    {
+        "_name":"Leksička analiza i njene primene",
+        "_espb": 5
+    },
+    {
+        "_name":"Kompleksne funkcije",
+        "_espb": 5
+    },
+    {
+        "_name":"Konstrukcija i analiza algoritama",
+        "_espb": 5
+    },
+    {
+        "_name":"Verovatnoća i statistika B",
+        "_espb": 5
+    },
+    {
+        "_name":"Numeričke metode",
+        "_espb": 5
+    },
+    {
+        "_name":"Kompilacija programskih jezika",
+        "_espb": 5
+    },
+    {
+        "_name":"Dizajn programskih jezika",
+        "_espb": 5
+    },
+    {
+        "_name":"Teorija mere i integracije",
+        "_espb": 5
+    },
+    {
+        "_name":"Izborni blok MR4",
+        "_espb": 5
+    }
+
+  ]
+
+
+}

@@ -81,7 +81,12 @@ void LoginPage::on_nextButton_clicked()
         _mWindow->setStudent(_student);
         _student->setModule(Module::Matematika);
         ui->label_3->clear();
-        _mWindow->show();
+        //_mWindow->show();
+
+        window = new Window();
+        window->setFilename("r1o.json");
+        window->setupWindow();
+        window->show();
 
         hide();
     }

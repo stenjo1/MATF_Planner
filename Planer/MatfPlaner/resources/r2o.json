@@ -1,0 +1,41 @@
+{"_subjects": [
+    { "_name":"Analiza 2",
+      "_espb": 18
+    },
+    {
+      "_name":"Uvod u organizaciju i arhitekturu računara 1",
+      "_espb": 5
+    },
+    {
+        "_name":"Geometrija 2",
+        "_espb": 6
+    },
+    {
+        "_name":"Algebra 1",
+        "_espb": 6
+    },
+    {
+        "_name":"Izborni blok MR1",
+        "_espb": 5
+    },
+    {
+        "_name":"Objektno orijentisano programiranje",
+        "_espb": 5
+    },
+    {
+        "_name":"Geometrija 3",
+        "_espb": 5
+    },
+    {
+        "_name":"Uvod u numeričku matematiku",
+        "_espb": 5
+    },
+    {
+        "_name":"Algebra 2",
+        "_espb": 5
+    }
+
+  ]
+
+
+}

@@ -1,0 +1,33 @@
+{"_subjects": [
+    { "_name":"Analiza 1",
+      "_espb": 20
+    },
+    {
+      "_name":"Linearna algebra",
+      "_espb": 13
+    },
+    {
+        "_name":"Uvod u matematičku logiku",
+        "_espb": 5
+    },
+    {
+        "_name":"Programiranje 1",
+        "_espb": 6
+    },
+    {
+        "_name":"Strani jezik",
+        "_espb": 4
+    },
+    {
+        "_name":"Geometrija 1",
+        "_espb": 6
+    },
+    {
+        "_name":"Programiranje 2",
+        "_espb": 6
+    }
+
+  ]
+
+
+}

@@ -1,0 +1,53 @@
+{"_subjects": [
+    { "_name":"Uvod u relacione baze podataka",
+      "_espb": 5
+    },
+    {
+      "_name":"Matematička logika u računarstvu",
+      "_espb": 5
+    },
+    {
+        "_name":"Operativni sistemi",
+        "_espb": 5
+    },
+    {
+        "_name":"Metodika nastave matematike i računarstva",
+        "_espb": 5
+    },
+    {
+        "_name":"Arhitektura računara 1",
+        "_espb": 5
+    },
+    {
+        "_name":"Izborni blok MR5",
+        "_espb": 5
+    },
+    {
+        "_name":"Programiranje baza podataka",
+        "_espb": 5
+    },
+    {
+        "_name":"Istorija i filozofija matematike",
+        "_espb": 3
+    },
+    {
+        "_name":"Računarske mreže",
+        "_espb": 5
+    },
+    {
+        "_name":"Teorija algoritama",
+        "_espb": 6
+    },
+    {
+        "_name":"Izborni blok MR6",
+        "_espb": 5
+    },
+    {
+        "_name":"Izborni blok MR7",
+        "_espb": 6
+    }
+
+  ]
+
+
+}
