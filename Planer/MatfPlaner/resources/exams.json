@@ -1,7 +1,7 @@
 {   "_exams": [
     {
-        "exam1":{
-                "_date":"18.01.2020",
+        "exam":{
+                "_date":"18.12.2021",
                  "_url": "https://matf.nikolaajzenhamer.rs/",
                  "_subject":{
                             "_name":"Programiranje 1",
@@ -13,10 +13,10 @@
                  "url" : "unknown"
       },
       {
-         "exam2":
+         "exam":
          {
-                "_date":"18.04.2020",
-                "_url": "https://matf.markoaajzenhamer.rs/",
+                "_date":"16.12.2021",
+                "_url": "http://178.148.148.201:8989/1/index.html",
                 "_subject":{
                     "_name":"Programiranje 5",
                       "_espb": "4",

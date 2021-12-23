@@ -21,8 +21,16 @@ void Request::download(QString s_url)
                 QString path = dir.absolutePath();
 
                 //mozda je efikasnije sa regexom
+                //ime mu je od poslednjeg / do .
+                //ako je poslednji / bas poslednji karakter
+                //onda krecemo od pretposlednjeg /
                 QString urlName = s_url;
-                int startPos = urlName.indexOf('/') + 1;
+                int urlLength = urlName.length();
+                int startPos = urlName.lastIndexOf('/') + 1;
+                if (startPos == urlLength){
+                    urlName = urlName.remove(urlLength-1, 1);
+                    startPos = urlName.lastIndexOf('/') + 1;
+                }
                 int endPos = urlName.lastIndexOf('.');
                 int length = endPos - startPos;
                 urlName =  urlName.mid(startPos, length) + ".txt";

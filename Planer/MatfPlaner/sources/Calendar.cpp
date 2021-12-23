@@ -51,9 +51,9 @@ void Calendar::colorCells()
     fmt.setBackground(Qt::magenta);
 
     for(auto& exam: _exams){
-        //QDate date = exam->getDate();
+        QDate date = exam->getDate();
         //test linija jer i dalje exam cita sve prazno kao i ono za url
-        QDate date(2021,12,12);
+        //QDate date(2021,12,12);
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
 }
@@ -69,7 +69,7 @@ QVector<QString> Calendar::checkResults()
             req.download(url);
             if (req.isFileChanged()){
                 //TODO: add exam name
-                changedExams.push_back("Ime ispita");
+                changedExams.push_back(exam->getSubject().getName());
                 qDebug()<<"Web page is updated!";
             }
         }

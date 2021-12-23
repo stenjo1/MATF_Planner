@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "headers/FirstYearI.h"
 #include "headers/FirstYearM.h"
+#include "headers/Window.h"
 #include <QRegularExpression>
 
 namespace Ui {
@@ -27,7 +28,7 @@ private:
     Student* _student;
     FirstYearM* _mWindow;
     FirstYearI* _iWindow;
-
+    Window* window;
 };
 
 #endif // LOGINPAGE_H

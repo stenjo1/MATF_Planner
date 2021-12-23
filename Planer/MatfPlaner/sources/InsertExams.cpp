@@ -45,29 +45,30 @@ void InsertExams::on_addExamButton_clicked()
 
     Subject dummy; //ovde treba da prepoznas po imenu predmet i da povuces iz baze
     QString dateString1 = ui->dateLineEdit1->text();
-    QDate date1 = QDate::fromString(dateString1, "dd'.'MM'.'YYYY'.'");
+
+    QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy");
     printf("%s\n", date1.toString().toStdString().c_str());
     if (!(date1.isValid())){
-        ui->errorLabel->setText("Uneseni datum nije validan!");
+        ui->errorLabel->setText("Uneseni datum1 nije validan!");
         return ;
     }
     QString timeString1 = ui->timeLineEdit1->text();
-    QTime time1 = QTime::fromString(timeString1, "hh:mm");
+    QTime time1 = QTime::fromString(timeString1, "HH:mm");
     printf("%s\n", timeString1.toStdString().c_str());
     if (!time1.isValid()) {
-        ui->errorLabel->setText("Uneseno vreme nije validno!");
+        ui->errorLabel->setText("Uneseno vreme1 nije validno!");
         return;
     }
     QString dateString2 = ui->dateLineEdit2->text();
-    QDate date2 = QDate::fromString(dateString2, "dd.MM.YYYY.");
+    QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy");
     if (!date2.isValid()) {
-        ui->errorLabel->setText("Uneseni datum nije validan!");
+        ui->errorLabel->setText("Uneseni datum2 nije validan!");
         return ;
     }
     QString timeString2 = ui->timeLineEdit2->text();
-    QTime time2 = QTime::fromString(timeString2, "hh:mm");
+    QTime time2 = QTime::fromString(timeString2, "HH:mm");
     if (!time2.isValid()) {
-        ui->errorLabel->setText("Uneseno vreme nije validno!");
+        ui->errorLabel->setText("Uneseno vreme2 nije validno!");
         return;
     }
 

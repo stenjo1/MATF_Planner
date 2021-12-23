@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+     sources/Window.cpp \
      sources/ExamsOverview.cpp \
      sources/Profile.cpp \
      sources/Request.cpp \
@@ -32,6 +33,7 @@ SOURCES += \
 
 
 HEADERS += \
+    headers/Window.h \
     headers/Request.h \
     headers/Schedule.h \
     headers/Utils.h \

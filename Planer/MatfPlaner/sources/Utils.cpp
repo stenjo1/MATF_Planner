@@ -5,6 +5,10 @@ Utils::Utils()
 
 }
 
+//nepotrebno
+
+//mozda da svuda filename bude isti komad putanje?
+
 QDate Utils::fromQStringtoQDate(QString string){
     QDate date = QDate::fromString(string);
 
@@ -32,7 +36,6 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
        {
            qDebug() << "No target value";
        }
-       qDebug() << rootObject.keys();
 
        QJsonValue jsonValue = rootObject.value("_exams");
        if(!jsonValue.isArray())
@@ -42,10 +45,10 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
        QJsonArray jsonArray = jsonValue.toArray();
 
        for(auto iter = jsonArray.constBegin(); iter != jsonArray.constEnd(); ++iter)
-       {    Exam *exam = new Exam((*iter).toObject());
+       {
+           Exam *exam = new Exam((*iter).toObject());
            exams.push_back(exam);
        }
-       qDebug() << rootObject.keys();
        return exams;
 }
 

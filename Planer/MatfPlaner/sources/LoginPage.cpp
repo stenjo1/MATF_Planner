@@ -67,9 +67,14 @@ void LoginPage::on_nextButton_clicked()
         _iWindow->setStudent(_student);
         _student->setModule(Module::Informatika);
         ui->label_3->clear();
-        _iWindow->show();
+        //_iWindow->show();
 
-         hide();
+        window = new Window();
+        window->setFilename("i1o.json");
+        window->setupWindow();
+        window->show();
+
+        hide();
          //nzm dal ovde curi memorija
 
      }else if (ui->math_department->isChecked()){

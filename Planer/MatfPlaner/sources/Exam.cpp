@@ -12,10 +12,24 @@ Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceR
 }
 
 Exam::Exam(QJsonObject obj){
-       QString _dateString = obj.value("_date").toString();
-        _date = Utils::fromQStringtoQDate(_dateString);
-        _url = obj.value("_url").toString();
-        QJsonObject subject =obj.value("_subject").toObject();
+    //TODO:: fix exams.json or utils func
+    //Kratko objasnjenje
+    //Json fajl je formatiran tako da ima listu kljuceva(ime ispita) i vrednosti(json objekat)
+    //Ovde se prosledjuje objekat koji ima samo jedan kljuc i vrednost tipa exam1 : {}
+    //tako da je vrednost zapravo novi json objekat
+    //koji se onda tek moze parsirati
+
+    //ako se drzimo starog json formata moralo bi nesto ovako
+    //morala sam u jsonu umesto exam1 exam2 da stavim samo exam
+    //takodje promenila sam datume
+        QJsonValue jv = obj.value("exam");
+        QJsonObject jo = jv.toObject();
+        QString _dateString = jo.value("_date").toString();
+        _date = QDate::fromString(_dateString, "dd.MM.yyyy");
+        //msm da je ova funkcija nepotrebna u utils
+        //_date = Utils::fromQStringtoQDate(_dateString);
+        _url = jo.value("_url").toString();
+        QJsonObject subject =jo.value("_subject").toObject();
         _subject = Subject(subject);
 }
 
