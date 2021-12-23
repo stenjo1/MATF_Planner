@@ -11,6 +11,8 @@
 #include <QPushButton>
 #include <QLabel>
 
+#include "headers/Student.h"
+
 class Window : public QWidget
 {
     Q_OBJECT
@@ -19,6 +21,7 @@ public:
     ~Window();
 
     void setFilename(QString filename);
+    void setStudent(Student* student);
     void setupWindow();
 
 private:
@@ -28,13 +31,15 @@ private:
     Window *previousYear;
     Window *nextYear = nullptr;
 
+    Student* _student;
+    QVector<Subject*> _subjects;
+
     QVBoxLayout *verticalLayout;
     QButtonGroup *buttonGroup;
 
     QLabel *label;
     QPushButton *nextButton;
     QPushButton *previousButton;
-    QPushButton *endButton;
 
     QVector<QCheckBox*> checkBoxes;
 
@@ -43,7 +48,6 @@ private:
 private slots:
     void setupNextWindow();
     void setupPreviousWindow();
-    void closeWindow();
 };
 
 #endif // WINDOW_H

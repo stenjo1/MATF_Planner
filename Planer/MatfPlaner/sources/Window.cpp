@@ -13,7 +13,6 @@ Window::~Window()
     delete label;
     delete nextButton;
     delete previousButton;
-    delete endButton;
     for(auto& cb : checkBoxes){
         delete cb;
     }
@@ -28,6 +27,11 @@ void Window::setFilename(QString filename)
     if (year == -1){
         qDebug()<<"JSON BADLY NAMED";
     }
+}
+
+void Window::setStudent(Student* student)
+{
+    _student = student;
 }
 
 void Window::setupWindow()
@@ -48,8 +52,8 @@ void Window::setupWindow()
 
     verticalLayout->addWidget(label);
 
-    QVector<Subject*> subjects = Utils::readJsonSubjectsFromFile(_filename);
-    for(auto& subject: subjects){
+    _subjects = Utils::readJsonSubjectsFromFile(_filename);
+    for(auto& subject: _subjects){
         QCheckBox *cb = new QCheckBox(this);
         cb->setText(subject->getName());
         cb->setStyleSheet("QCheckBox {color: black; background-color: white; font-size: 15pt}");
@@ -61,27 +65,25 @@ void Window::setupWindow()
     }
 
     nextButton = new QPushButton();
-    nextButton->setText("Dalje");
+    if(year == 4){
+        nextButton->setText("Kraj");
+    } else{
+        nextButton->setText("Dalje");
+    }
 
     previousButton = new QPushButton();
     previousButton->setText("Nazad");
-
-    endButton = new QPushButton();
-    endButton->setText("Kraj");
 
     //TODO:: check how to add button group to layout
     buttonGroup = new QButtonGroup();
     buttonGroup->addButton(nextButton);
     buttonGroup->addButton(previousButton);
-    buttonGroup->addButton(endButton);
 
     verticalLayout->addWidget(nextButton);
     verticalLayout->addWidget(previousButton);
-    verticalLayout->addWidget(endButton);
 
     connect(nextButton, &QPushButton::clicked, this, &Window::setupNextWindow);
     connect(previousButton, &QPushButton::clicked, this, &Window::setupPreviousWindow);
-    connect(endButton, &QPushButton::clicked, this, &Window::closeWindow);
 
     setLayout(verticalLayout);
     setMinimumSize(800, 600);
@@ -89,6 +91,22 @@ void Window::setupWindow()
 
 void Window::setupNextWindow()
 {
+    //add checked subjs and remove unchecked
+    //mozda moze efikasnije ali sam pokrila situaciju da on ode dalje i onda se vrati i odluci da nesto uncheckira nzm
+
+    for(auto& cb : checkBoxes){
+        for(auto& subject : _subjects){
+            if(subject->getName() == cb->text()){
+                if(cb->isChecked()){
+                    _student->addSubject(subject);
+                } else{
+                    _student->removeSubject(subject);
+                }
+            }
+        }
+    }
+
+    //setup next window
     QString newFilename = _filename;
 
     switch (year) {
@@ -99,6 +117,9 @@ void Window::setupNextWindow()
         case 3: newFilename.replace('3', '4');
                 break;
         case 4: this->hide();
+                //test
+                //for(auto& subj : *_student->getAllSubjects())
+                //    qDebug()<<subj->getName();
                 return;
         default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;
     }
@@ -107,6 +128,7 @@ void Window::setupNextWindow()
         nextYear = new Window();
         nextYear->setFilename(newFilename);
         nextYear->setupWindow();
+        nextYear->setStudent(_student);
     }
 
     nextYear->previousYear = this;
@@ -120,11 +142,6 @@ void Window::setupPreviousWindow()
     if(year != 1){
         this->previousYear->show();
     }
-}
-
-void Window::closeWindow()
-{
-    this->hide();
 }
 
 QString Window::nameLabel(QString filename)

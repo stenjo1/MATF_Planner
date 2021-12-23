@@ -38,7 +38,7 @@ public:
     QVector<Subject*>* getAllSubjects();
 
     void addSubject(Subject* subj);
-
+    void removeSubject(Subject* subj);
 
 private:
     QString _name;

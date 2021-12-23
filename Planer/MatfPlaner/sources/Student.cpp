@@ -47,7 +47,28 @@ QString Student::getModuleString() {
 
 }
 void Student::addSubject(Subject* subj){
-    _allSubjects.push_back(subj);
+    int i=0;
+
+    while(i<_allSubjects.length() && _allSubjects[i]->getName() != subj->getName()){
+        i++;
+    }
+
+    if(i == _allSubjects.length()){
+        _allSubjects.push_back(subj);
+    }
+}
+
+void Student::removeSubject(Subject *subj)
+{
+    int i=0;
+
+    while(i<_allSubjects.length() && _allSubjects[i]->getName() != subj->getName()){
+        i++;
+    }
+
+    if(i < _allSubjects.length()){
+        _allSubjects.removeAt(i);
+    }
 }
 
 void Student::addExam(Exam *exam){

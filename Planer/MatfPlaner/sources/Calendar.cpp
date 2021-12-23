@@ -68,7 +68,6 @@ QVector<QString> Calendar::checkResults()
             Request req;
             req.download(url);
             if (req.isFileChanged()){
-                //TODO: add exam name
                 changedExams.push_back(exam->getSubject().getName());
                 qDebug()<<"Web page is updated!";
             }
@@ -133,8 +132,6 @@ void Calendar::on_calendarWidget_clicked(const QDate &date)
 
     for(auto& exam: _exams){
         if(date == exam->getDate()){
-            //msg += "AAAAAHHHH";
-            //naravno ne radi jer exam ne vraca date
             msg += exam->getSubject().getName();
 
             msgBox.setText(msg);

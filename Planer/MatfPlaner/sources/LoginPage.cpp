@@ -5,7 +5,6 @@
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage),
-    _student(new Student),
     _mWindow(new FirstYearM),
     _iWindow(new FirstYearI)
 
@@ -71,6 +70,7 @@ void LoginPage::on_nextButton_clicked()
 
         window = new Window();
         window->setFilename("i1o.json");
+        window->setStudent(_student);
         window->setupWindow();
         window->show();
 
@@ -85,6 +85,7 @@ void LoginPage::on_nextButton_clicked()
 
         window = new Window();
         window->setFilename("r1o.json");
+        window->setStudent(_student);
         window->setupWindow();
         window->show();
 
