@@ -116,10 +116,13 @@ void Window::setupNextWindow()
                 break;
         case 3: newFilename.replace('3', '4');
                 break;
-        case 4: this->hide();
+        case 4: //stigao je do kraja tj napravio je profil
+                //nek zapamti sad to u json
+                _student->writeToJson();
                 //test
                 //for(auto& subj : *_student->getAllSubjects())
                 //    qDebug()<<subj->getName();
+                this->hide();
                 return;
         default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;
     }

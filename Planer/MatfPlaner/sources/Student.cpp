@@ -107,6 +107,7 @@ QVector<Subject*>* Student::getAllSubjects()
 {
     return &_allSubjects;
 }
+
 QJsonArray Student::parseJsonToArray(QString pathname){
     QString content_json;
     QFile file;
@@ -134,7 +135,10 @@ void Student::writeToJson()
     jsonObjStudent.insert("_email",_email);
     jsonObjStudent.insert("_allSubjects",allSubjectsJson);
 
-    QFile jsonFile("../MatfPlaner/resources/student.json");
+    QDir dir("..");
+    QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
+
+    QFile jsonFile(path);
     jsonFile.open(QFile::WriteOnly);
     QJsonDocument doc(jsonObjStudent);
     jsonFile.write(doc.toJson());

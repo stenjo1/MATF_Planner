@@ -5,6 +5,7 @@
 #include "Subject.h"
 #include "Exam.h"
 #include<QJsonArray>
+#include<QDir>
 #include<QFile>
 #include<QJsonDocument>
 #include<QVector>
