@@ -1,11 +1,79 @@
 {
     "_allSubjects": [
         {
-            "_espb": 6,
+            "_espb": 8,
             "_name": "Programiranje 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u organizaciju i arhitekturu računara 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Diskretne strukture 1"
+        },
+        {
+            "_espb": 7,
+            "_name": "Linearna algebra i analitička geometrija"
+        },
+        {
+            "_espb": 8,
+            "_name": "Programiranje 2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u organizaciju i arhitekturu računara 2"
+        },
+        {
+            "_espb": 3,
+            "_name": "Izborni predmet O1"
+        },
+        {
+            "_espb": 3,
+            "_name": "Izborni predmet O2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Diskretne strukture 2"
+        },
+        {
+            "_espb": 7,
+            "_name": "Analiza 1"
+        },
+        {
+            "_espb": 6,
+            "_name": "Algoritmi i strukture podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Objektno orijentisano programiranje"
+        },
+        {
+            "_espb": 6,
+            "_name": "Operativni sistemi"
+        },
+        {
+            "_espb": 6,
+            "_name": "Geometrija"
+        },
+        {
+            "_espb": 6,
+            "_name": "Analiza 2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Konstrukcija i analiza algoritama"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u veb i internet tehnologije"
+        },
+        {
+            "_espb": 6,
+            "_name": "Algebra 1"
         }
     ],
-    "_email": "m@g.c",
-    "_name": "m",
+    "_email": "marija@gmail.com",
+    "_name": "Marija",
     "_yearOfStudy": 4
 }

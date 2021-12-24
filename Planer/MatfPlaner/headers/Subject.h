@@ -7,11 +7,12 @@
 
 class Subject{
     public:
-        Subject(QString name);
+        Subject(QString name, int espb);
         Subject();
         QJsonObject* toJson();
         Subject(QJsonValue val);
         QString getName();
+        int getEspb();
 
     private:
         int _espb;

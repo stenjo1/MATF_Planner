@@ -22,10 +22,11 @@ Exam::Exam(QJsonObject obj){
     //ako se drzimo starog json formata moralo bi nesto ovako
     //morala sam u jsonu umesto exam1 exam2 da stavim samo exam
     //takodje promenila sam datume
-        QJsonValue jv = obj.value("exam");
+        QJsonValue jv = obj.value("");
         QJsonObject jo = jv.toObject();
         QString _dateString = jo.value("_date").toString();
-        _date = QDate::fromString(_dateString, "dd.MM.yyyy");
+        _date = QDate::fromString(_dateString);
+        QString _timeString = jo.value("_time").toString();
         //msm da je ova funkcija nepotrebna u utils
         //_date = Utils::fromQStringtoQDate(_dateString);
         _url = jo.value("_url").toString();
@@ -62,4 +63,17 @@ QDate Exam::getDate() {
 
 int Exam::getImportanceRate() {
     return _importanceRate;
+}
+
+QJsonObject* Exam::toJson(){
+
+    QJsonObject *examJson = new QJsonObject();
+    examJson->insert("_date",_date.toString());
+    examJson->insert("_time",_time.toString());
+    examJson->insert("_url",_url);
+    examJson->insert("_importanceRate",_importanceRate);
+    examJson->insert("_subject", *_subject.toJson());
+
+    return examJson;
+
 }

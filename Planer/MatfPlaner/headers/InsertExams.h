@@ -18,10 +18,12 @@ public:
     explicit InsertExams(QWidget *parent = nullptr);
     ~InsertExams();
     void setStudent(Student* student);
-     QVector<Exam*>* getExams();
+     QVector<Exam*> getExams();
      void removeExam(QString& name);
 
+public slots:
 
+     void loadComboBox();
 private slots:
     void on_addExamButton_clicked();
 
@@ -29,10 +31,13 @@ private slots:
 
     void on_endInputExamButton_clicked();
 
+    void on_comboBox_activated(int index);
+
 private:
     Ui::InsertExams *ui;
-    QVector<Exam*> *exams;
+    QVector<Exam*> _exams;
     Student* _student;
+    void writeToJson();
 
 };
 

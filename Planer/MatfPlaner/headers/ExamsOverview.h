@@ -13,6 +13,8 @@ class ExamsOverview : public QWidget
 {
     Q_OBJECT
 
+signals:
+   void loadComboBox();
 public:
     explicit ExamsOverview(QWidget *parent = nullptr);
     ~ExamsOverview();

@@ -28,6 +28,12 @@ Student::~Student(){
 
 }
 
+void Student::emptyAllSubjects(){
+    for (auto s : _allSubjects)
+        delete s;
+    _allSubjects.resize(0);
+}
+
 QString& Student::getName(){
     return _name;
 }
@@ -103,9 +109,9 @@ void Student::setModule(Module m){
     _module = m;
 }
 
-QVector<Subject*>* Student::getAllSubjects()
+QVector<Subject*> Student::getAllSubjects()
 {
-    return &_allSubjects;
+    return _allSubjects;
 }
 
 QJsonArray Student::parseJsonToArray(QString pathname){

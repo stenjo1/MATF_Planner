@@ -15,7 +15,7 @@ public:
     void setPassed(); // postavlja true ako student polozi ispit
     bool checkIfDatePassed(QDate date); //proverava da li je ispit pre datuma proslednjenog kao argument
     bool checkIfDatePassed(); //proverava da li je datum prosao od trenutnog vremena
-    void writeToFile(QString pathname); // pise sebe u json fajl koji je zadat kao argument
+    QJsonObject* toJson();
 
     QString getUrl();
     QDate getDate();

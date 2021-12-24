@@ -120,8 +120,8 @@ void Window::setupNextWindow()
                 //nek zapamti sad to u json
                 _student->writeToJson();
                 //test
-                //for(auto& subj : *_student->getAllSubjects())
-                //    qDebug()<<subj->getName();
+//                for(auto& subj : _student->getAllSubjects())
+//                  qDebug()<<subj->getName();
                 this->hide();
                 return;
         default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;

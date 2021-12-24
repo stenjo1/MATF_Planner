@@ -1,31 +1,62 @@
-{   "_exams": [
+[
     {
-        "exam":{
-                "_date":"18.12.2021",
-                 "_url": "https://matf.nikolaajzenhamer.rs/",
-                 "_subject":{
-                            "_name":"Programiranje 1",
-                              "_espb": "8",
-                              "difficulty": "0",
-                              "url" : "unknown"
-                              }
-                },
-                 "url" : "unknown"
-      },
-      {
-         "exam":
-         {
-                "_date":"16.12.2021",
-                "_url": "http://178.148.148.201:8989/1/index.html",
-                "_subject":{
-                    "_name":"Programiranje 5",
-                      "_espb": "4",
-                      "difficulty": "0",
-                      "url" : "unknown"
-                     },
-         "url" : "unknown"
-          }
-      }
-   ]
-
-}
+        "_date": "Sat Jan 15 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    },
+    {
+        "_date": "Tue Feb 8 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    },
+    {
+        "_date": "Sat Jan 15 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    },
+    {
+        "_date": "Tue Feb 8 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    },
+    {
+        "_date": "Sat Jan 15 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    },
+    {
+        "_date": "Tue Feb 8 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        "_time": "09:00:00",
+        "_url": "URL do stranice za proveravanje rezultata:"
+    }
+]

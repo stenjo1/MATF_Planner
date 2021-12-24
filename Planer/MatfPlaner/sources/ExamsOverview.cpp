@@ -9,8 +9,10 @@ ExamsOverview::ExamsOverview(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->listWidget->addItem("test");
+
     loadExamList();
     connect(insertExamsWindow, &InsertExams::reloadListWidget, this, &ExamsOverview::loadExamList);
+    connect(this, &ExamsOverview::loadComboBox, insertExamsWindow, &InsertExams::loadComboBox);
 }
 
 ExamsOverview::~ExamsOverview()
@@ -20,6 +22,7 @@ ExamsOverview::~ExamsOverview()
 
 void ExamsOverview::setStudent(Student* student){
     _student=student;
+     insertExamsWindow->setStudent(_student);
 }
 
 void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
@@ -50,13 +53,14 @@ void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 
 void ExamsOverview::on_pbAddExam_clicked()
 {
+    //emit loadComboBox();
     insertExamsWindow->show();
 }
 
 
 void ExamsOverview::loadExamList(){
-    QVector<Exam*>* allExams = insertExamsWindow->getExams();
-    for (Exam* e : *allExams) {
+    QVector<Exam*> allExams = insertExamsWindow->getExams();
+    for (Exam* e : allExams) {
         ui->listWidget->addItem(e->getSubject().getName());
     }
 }

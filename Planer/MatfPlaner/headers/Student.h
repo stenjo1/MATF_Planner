@@ -9,7 +9,6 @@
 #include<QFile>
 #include<QJsonDocument>
 #include<QVector>
-#include<QList>
 
 
 enum Module {None, Informatika, Matematika};
@@ -31,12 +30,13 @@ public:
     void setEmail(QString email);
     void setYearOfStudy(int year);
     void setModule(Module m);
+    void emptyAllSubjects();
 
     QString& getName();
     QString& getEmail();
     QString getModuleString();
     int getYearOfStudy();
-    QVector<Subject*>* getAllSubjects();
+    QVector<Subject*> getAllSubjects();
 
     void addSubject(Subject* subj);
     void removeSubject(Subject* subj);

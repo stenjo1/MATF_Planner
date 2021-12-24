@@ -4,9 +4,10 @@
 Subject::Subject(){
 
 }
-Subject::Subject(QString name){
+Subject::Subject(QString name, int espb){
 
     _name = name;
+    _espb = espb;
 }
 
 QString Subject::getName(){
@@ -25,3 +26,6 @@ QJsonObject* Subject::toJson(){
     return subjectJson;
 }
 
+int Subject::getEspb(){
+    return _espb;
+}

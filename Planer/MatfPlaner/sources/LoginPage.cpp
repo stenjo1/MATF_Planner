@@ -69,6 +69,7 @@ void LoginPage::on_nextButton_clicked()
         _student->setName(name);
         _student->setEmail(mail);
         _student->setYearOfStudy(year.toInt());
+        _student->emptyAllSubjects();
 
 
         if(ui->info_department->isChecked()) {

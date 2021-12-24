@@ -25,4 +25,16 @@ void Profile::fillSlot(){
     ui->labelYearOfStudy->setText(QString().setNum(_student->getYearOfStudy()));
     ui->labelModule->setText(_student->getModuleString());
     //TODO: iz jsona sa predmetima ispisati one koji nisu u listi nepolozenih (allSubjects)
+
+     QString text = "";
+     int espbSum=0;
+     for (Subject* subj : _student->getAllSubjects()) {
+         text += subj->getName() + "\n";
+         espbSum+=subj->getEspb();
+     }
+
+     ui->plainTextEdit->insertPlainText(text);
+     ui->labelESPB->setNum(espbSum);
+
+
 }
