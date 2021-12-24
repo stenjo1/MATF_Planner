@@ -2,20 +2,20 @@
 #include "ui_Calendar.h"
 
 
-Calendar::Calendar(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Calendar),
-    _student(new Student),
-    loginWindow(new LoginPage),
-    examsOverviewWindow(new ExamsOverview),
-    profileWindow(new Profile)
-{
-    ui->setupUi(this);
-    loginWindow->setStudent(_student);
-    examsOverviewWindow->setStudent(_student);
-    profileWindow->setStudent(_student);
-    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
-}
+//Calendar::Calendar(QWidget *parent) :
+//    QWidget(parent),
+//    ui(new Ui::Calendar),
+//    _student(new Student),
+//    loginWindow(new LoginPage),
+//    examsOverviewWindow(new ExamsOverview),
+//    profileWindow(new Profile)
+//{
+//    ui->setupUi(this);
+//    loginWindow->setStudent(_student);
+//    examsOverviewWindow->setStudent(_student);
+//    profileWindow->setStudent(_student);
+//    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
+//}
 
 Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
@@ -48,19 +48,17 @@ Calendar::~Calendar()
 void Calendar::colorCells()
 {
     QTextCharFormat fmt;
-    fmt.setBackground(Qt::magenta);
+    fmt.setBackground(Qt::GlobalColor::darkMagenta);
 
     for(auto& exam: _exams){
         QDate date = exam->getDate();
-        //test linija jer i dalje exam cita sve prazno kao i ono za url
-        //QDate date(2021,12,12);
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
 }
 
-QVector<QString> Calendar::checkResults()
+QVector<QPair<QString,QString>> Calendar::checkResults()
 {
-    QVector<QString> changedExams;
+    QVector<QPair<QString,QString>> changedExams;
     for(auto& exam: _exams){
         if (exam->checkIfDatePassed()){
             QString url = exam->getUrl();
@@ -68,7 +66,7 @@ QVector<QString> Calendar::checkResults()
             Request req;
             req.download(url);
             if (req.isFileChanged()){
-                changedExams.push_back(exam->getSubject().getName());
+                changedExams.push_back(QPair<QString,QString>(exam->getSubject().getName(), exam->getUrl()));
                 qDebug()<<"Web page is updated!";
             }
         }
@@ -87,26 +85,31 @@ void Calendar::on_pbNewExam_clicked()
 //exam vraca prazan url i ne moze da se posalje net zahtev
 void Calendar::on_pbCheckUrl_clicked()
 {
-    QMessageBox msgBox;
-    QString msg;
-
-    QVector<QString> changedExams = checkResults();
+    bool hasChanged=false;
+    QVector<QPair<QString,QString>> changedExams = checkResults();
     for(auto& exam : changedExams){
-        msg += exam + " website has changed.\n";
+        QMessageBox::information(this,"Rezultat provere","Došlo je do promene na web stranici za ispit " + exam.first + ".\n" + QUrl(exam.second).toString());
+        hasChanged=true;
     }
 
-    if(msg.isEmpty()){
-        msg = "Nothing's changed ...";
+    if(!hasChanged){
+        QMessageBox::information(this,"Rezultat provere","Nema promena na web stranicama.");
     }
-
-    msgBox.setText(msg);
-    msgBox.exec();
 }
 
 
 void Calendar::on_pbSendMail_clicked()
 {
+//        MailSender ms;
+//        QString recip = ""; //dodajte mail koji isprobavate
+//        auto res = ms.send(recip);
 
+//        if (res != CURLE_OK) {
+//           std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res);
+//           QMessageBox::warning(this, "Email", "Slanje rasporeda nije uspelo.");
+//         }
+//         else
+//           QMessageBox::information(this, "Email", "Raspored je poslat!");
 }
 
 
@@ -125,18 +128,10 @@ void Calendar::on_pbProfile_clicked()
 
 void Calendar::on_calendarWidget_clicked(const QDate &date)
 {
-    QMessageBox msgBox;
-    QString msg = "";
-    //test linija
-    //QDate testDate(2021,12,12);
 
     for(auto& exam: _exams){
         if(date == exam->getDate()){
-            msg += exam->getSubject().getName();
-
-            msgBox.setText(msg);
-            msgBox.exec();
-
+            QMessageBox::information(this,"Ispit",exam->getSubject().getName());
             break;
         }
     }

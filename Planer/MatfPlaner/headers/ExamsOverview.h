@@ -27,8 +27,6 @@ private slots:
 
     void on_pbAddExam_clicked();
 
-    void on_pbRemoveExam_clicked();
-
 private:
     Ui::ExamsOverview *ui;
     Student* _student;

@@ -46,7 +46,7 @@ void Window::setupWindow()
     verticalLayout = new QVBoxLayout();
 
     label = new QLabel();
-    label->setText(nameLabel(_filename));
+    label->setText(nameLabel());
 
     label->setStyleSheet("QLabel {color: black; background-color: white; font-weight:bold; font-size: 30pt}");
 
@@ -142,12 +142,18 @@ void Window::setupNextWindow()
 void Window::setupPreviousWindow()
 {
     this->hide();
-    if(year != 1){
+    if(year == 1){
+        emit showLogin();
+    }
+    else {
         this->previousYear->show();
     }
+//    if (year!=1){
+//        this->previousYear->show();
+//    }
 }
 
-QString Window::nameLabel(QString filename)
+QString Window::nameLabel()
 {
     QString name = "Predmeti";
 

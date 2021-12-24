@@ -16,6 +16,9 @@
 class Window : public QWidget
 {
     Q_OBJECT
+
+signals:
+    void showLogin();
 public:
     explicit Window(QWidget *parent = nullptr, QString filename = "i1o.json");
     ~Window();
@@ -43,7 +46,7 @@ private:
 
     QVector<QCheckBox*> checkBoxes;
 
-    QString nameLabel(QString filename);
+    QString nameLabel();
 
 private slots:
     void setupNextWindow();

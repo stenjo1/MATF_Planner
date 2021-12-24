@@ -2,8 +2,6 @@
 #define LOGINPAGE_H
 
 #include <QMainWindow>
-#include "headers/FirstYearI.h"
-#include "headers/FirstYearM.h"
 #include "headers/Window.h"
 #include <QRegularExpression>
 
@@ -26,9 +24,11 @@ private slots:
 private:
     Ui::LoginPage *ui;
     Student* _student;
-    FirstYearM* _mWindow;
-    FirstYearI* _iWindow;
-    Window* window;
+    Window* _firstWindowI;
+    Window* _firstWindowM;
+    bool _windowISet;
+    bool _windowMSet;
+    void setupFirstWindow(QString filename, Window* &firstWindow, bool& windowSet);
 };
 
 #endif // LOGINPAGE_H

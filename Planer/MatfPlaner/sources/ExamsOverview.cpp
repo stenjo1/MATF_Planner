@@ -54,12 +54,6 @@ void ExamsOverview::on_pbAddExam_clicked()
 }
 
 
-
-void ExamsOverview::on_pbRemoveExam_clicked()
-{
-    QMessageBox::information(this, "Uklanjanje ispita", "Potrebno je da duplim klikom odaberete ispit u listi unetih ispita.");
-}
-
 void ExamsOverview::loadExamList(){
     QVector<Exam*>* allExams = insertExamsWindow->getExams();
     for (Exam* e : *allExams) {

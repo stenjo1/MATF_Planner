@@ -5,14 +5,11 @@
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginPage),
-    _mWindow(new FirstYearM),
-    _iWindow(new FirstYearI)
-
-
+    _windowISet(false),
+    _windowMSet(false)
 {
     ui->setupUi(this);
-    connect(_mWindow,  &FirstYearM::backSignal, this, &QWidget::show);
-    connect(_iWindow,  &FirstYearI::backSignal, this, &QWidget::show);
+
 }
 
 LoginPage::~LoginPage()
@@ -21,79 +18,77 @@ LoginPage::~LoginPage()
 }
 
 
-void LoginPage::on_nextButton_clicked()
-{
+void LoginPage::setupFirstWindow(QString filename, Window* &firstWindow, bool& windowSet){
 
-    QString name = ui->lineEdit->text();
-    QString mail = ui->lineEdit_3->text();
-    QString year = ui->lineEdit_4->text();
-
-    QRegularExpression mailRegex;
-    mailRegex.setPattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
-
-    if(name == ""){
-        ui->label_3->setText("Morate uneti ime!");
-        return;
+    if(windowSet) {
+        firstWindow->show();
+    } else {
+        firstWindow = new Window();
+        connect(firstWindow,  &Window::showLogin, this, &QWidget::show);
+        firstWindow->setFilename(filename);
+        firstWindow->setStudent(_student);
+        firstWindow->setupWindow();
+        firstWindow->show();
+        windowSet = true;
     }
 
-    QRegularExpressionMatch match = mailRegex.match(mail);
-    bool hasMatch = match.hasMatch();
-
-    if(!hasMatch) {
-        ui->label_3->setText("Email adresa nije u ispravnom formatu!");
-        return;
-    }
-
-    bool okYear;
-    year.toInt(&okYear, 10);
-
-    if(!okYear) {
-        ui->label_3->setText("Godina studija mora biti broj!");
-        return;
-    }
-
-    _student->setName(name);
-    _student->setEmail(mail);
-    _student->setYearOfStudy(year.toInt());
-    //_student->writeToJson();
-
-    if(!ui->info_department->isChecked() && !ui->math_department->isChecked()) {
-        ui->label_3->setText("Morate izabrati smer!");
-        return;
-    }
-
-    if(ui->info_department->isChecked()){
-        _iWindow->setStudent(_student);
-        _student->setModule(Module::Informatika);
-        ui->label_3->clear();
-        //_iWindow->show();
-
-        window = new Window();
-        window->setFilename("i1o.json");
-        window->setStudent(_student);
-        window->setupWindow();
-        window->show();
-
-        hide();
-         //nzm dal ovde curi memorija
-
-     }else if (ui->math_department->isChecked()){
-        _mWindow->setStudent(_student);
-        _student->setModule(Module::Matematika);
-        ui->label_3->clear();
-        //_mWindow->show();
-
-        window = new Window();
-        window->setFilename("r1o.json");
-        window->setStudent(_student);
-        window->setupWindow();
-        window->show();
-
-        hide();
-    }
-
+    hide();
 
 }
+
+void LoginPage::on_nextButton_clicked()
+{
+        QString name = ui->lineEdit->text();
+        QString mail = ui->lineEdit_3->text();
+        QString year = ui->lineEdit_4->text();
+
+        QRegularExpression mailRegex;
+        mailRegex.setPattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+
+        if(name == ""){
+            ui->label_3->setText("Morate uneti ime!");
+            return;
+        }
+
+        QRegularExpressionMatch match = mailRegex.match(mail);
+        bool hasMatch = match.hasMatch();
+
+        if(!hasMatch) {
+            ui->label_3->setText("Email adresa nije u ispravnom formatu!");
+            return;
+        }
+
+        bool okYear;
+        year.toInt(&okYear, 10);
+
+        if(!okYear) {
+            ui->label_3->setText("Godina studija mora biti broj!");
+            return;
+        }
+
+        _student->setName(name);
+        _student->setEmail(mail);
+        _student->setYearOfStudy(year.toInt());
+
+
+        if(ui->info_department->isChecked()) {
+            _student->setModule(Module::Informatika);
+            setupFirstWindow("i1o.json", _firstWindowI, _windowISet);
+
+        }
+        else if(ui->math_department->isChecked()) {
+            _student->setModule(Module::Matematika);
+            setupFirstWindow("r1o.json", _firstWindowM, _windowMSet);
+        }
+        else {
+            ui->label_3->setText("Morate izabrati smer!");
+            return;
+        }
+
+        ui->label_3->clear();
+
+}
+
 void LoginPage::setStudent(Student* student){
     _student = student;
 }

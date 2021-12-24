@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMessageBox>
 
+//#include "headers/MailSender.h"
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
 #include "headers/ExamsOverview.h"
@@ -19,11 +20,11 @@ class Calendar : public QWidget
 signals:
     void fillProfileSignal();
 public:
-    explicit Calendar(QWidget *parent = nullptr);
+  //  explicit Calendar(QWidget *parent = nullptr);
     explicit Calendar( QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
 
-    QVector<QString> checkResults();
+    QVector<QPair<QString,QString>> checkResults();
 
 private:
     void colorCells(); //
