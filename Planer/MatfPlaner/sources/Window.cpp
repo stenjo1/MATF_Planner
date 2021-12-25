@@ -160,8 +160,8 @@ QString Window::nameLabel()
     switch (year) {
         case 1: name = "Prva godina"; break;
         case 2: name = "Druga godina"; break;
-        case 3: name = "Treca godina"; break;
-        case 4: name = "Cetvrta godina"; break;
+        case 3: name = "Treća godina"; break;
+        case 4: name = "Četvrta godina"; break;
         default: qDebug()<<"JSON BADLY NAMED"; break;
     }
 
