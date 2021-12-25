@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "headers/Student.h"
 #include "headers/InsertExams.h"
+#include "headers/Schedule.h"
 
 namespace Ui {
 class ExamsOverview;
@@ -38,6 +39,7 @@ private:
     Ui::ExamsOverview *ui;
     Student* _student;
     InsertExams* insertExamsWindow;
+    Schedule* schedule;
 };
 
 #endif // EXAMSOVERVIEW_H
