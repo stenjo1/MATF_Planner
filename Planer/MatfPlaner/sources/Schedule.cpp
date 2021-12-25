@@ -7,29 +7,43 @@ Schedule::Schedule(QVector<Exam*> exams)
 
 }
 
+Schedule::~Schedule() {
+    for (auto e : _exams) {
+        delete e;
+    }
+}
 
-void Schedule::makeSchedule(QVector<Exam*> exams) {
+void Schedule::makeSchedule() {
 
-    int n = exams.length();
+    int n = _exams.length();
+    const int freeDays = 2; // minimum days between two exams
 
-    std::sort(exams.begin(), exams.end(),
+    std::sort(_exams.begin(), _exams.end(),
     [](Exam* a, Exam* b) {
-        return a->getDate().addDays(a->getImportanceRate() - 3)  < b->getDate().addDays(b->getImportanceRate() - 3);    // 3 test value, try make it better!!!
+        return a->getDate().addDays(a->getImportanceRate() + freeDays)  < b->getDate().addDays(b->getImportanceRate() + freeDays);
     });
 
-    int numberOfExams = 1;
+    // int numberOfExams = 1;
 
-    QDate end = exams[0]->getDate().addDays(exams[0]->getImportanceRate() - 3 );
+    QDate end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
 
+    QVector<Exam*> suggestedExams;
+
+    suggestedExams.append(_exams[0]);
 
     for (int i = 1; i < n; i++)
 
-     if (exams[i]->getDate() >= end) {
+     if (_exams[i]->getDate() >= end) {
 
-         numberOfExams++;
-         end = exams[i]->getDate().addDays(exams[i]->getImportanceRate() - 3);
+         suggestedExams.append(_exams[i]);
+
+         end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
 
      }
 
-    std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
+    // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
+
+    for(auto e : suggestedExams) {
+        std::cout << e->getSubject().getName().toStdString() << "  ";
+    }
 }

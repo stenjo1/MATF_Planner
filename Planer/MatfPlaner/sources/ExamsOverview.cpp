@@ -19,6 +19,7 @@ ExamsOverview::ExamsOverview(QWidget *parent) :
 ExamsOverview::~ExamsOverview()
 {
     delete ui;
+    delete schedule;
 }
 
 void ExamsOverview::setStudent(Student* student){
@@ -70,6 +71,10 @@ void ExamsOverview::loadExamList(){
 void ExamsOverview::on_pbConfirm_clicked()
 {
     //TO-DO: pozvati pravljenje rasporeda
+    schedule = new Schedule(insertExamsWindow->getExams());
+
+    schedule->makeSchedule();
+
     emit loadExamsJson();
     emit fillCalendarSignal();
     hide();

@@ -9,7 +9,8 @@ class Schedule{
 
 public:
     Schedule(QVector<Exam*> exams);
-    void makeSchedule(QVector<Exam*> exams);
+    void makeSchedule();
+    ~Schedule();
 
 private:
     QVector<Exam*> _exams;
