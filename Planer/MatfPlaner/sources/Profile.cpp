@@ -34,7 +34,7 @@ void Profile::fillSlot(){
      }
 
      ui->plainTextEdit->insertPlainText(text);
-     ui->labelESPB->setNum(espbSum);
+     ui->labelESPB->setNum(240-espbSum);
 
 
 }

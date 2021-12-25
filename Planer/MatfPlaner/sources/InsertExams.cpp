@@ -17,8 +17,9 @@ InsertExams::~InsertExams()
 
 void InsertExams::loadComboBox()
 {
-    for (Subject* subj : _student->getAllSubjects()) {
-
+//ovo je prazno debilko ne zaboravi da napravis profil
+    for (auto& subj : _student->getAllSubjects()) {
+        ui->comboBox->addItem(subj->getName());
     }
     ui->errorLabel->setText("govno");
 
@@ -44,16 +45,19 @@ void InsertExams::removeExam(QString& name){
 
 void InsertExams::on_addExamButton_clicked()
 {
-    Subject* subject = new Subject("Analiza 3", 6);
+    Subject subject;
 
     //ovde puca stoka
-//    for (Subject* subj : _student->getAllSubjects()) {
-//       if (subj->getName().compare(ui->lineEdit->text()) == 0)
-//           subject = subj;
-//    }
+    //stef: u sustini if mu ne nalazi
+    //tj on u poredjuje sa onim rendom poljem a ne izabranim xd ajmo opet
+    for (auto& subj : _student->getAllSubjects()) {
+       if (subj->getName().compare(ui->lineEdit->text()) == 0){
+           subject = *subj;
+       }
+    }
     QString dateString1 = ui->dateLineEdit1->text();
 
-    QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy.");
+    QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy");
     printf("%s\n", date1.toString().toStdString().c_str());
     if (!(date1.isValid())){
         ui->errorLabel->setText("Uneseni datum1 nije validan!");
@@ -67,7 +71,7 @@ void InsertExams::on_addExamButton_clicked()
         return;
     }
     QString dateString2 = ui->dateLineEdit2->text();
-    QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy.");
+    QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy");
     if (!date2.isValid()) {
         ui->errorLabel->setText("Uneseni datum2 nije validan!");
         return ;
@@ -80,10 +84,10 @@ void InsertExams::on_addExamButton_clicked()
     }
 
     int importanceRate = ui->horizontalSlider->value();
-    QString url = ui->urlLabel->text();
+    QString url = ui->urlLineEdit->text();
 
-    Exam *exam1 = new Exam(*subject, date1, time1, url, importanceRate);
-    Exam *exam2 = new Exam(*subject, date2, time2, url, importanceRate);
+    Exam *exam1 = new Exam(subject, date1, time1, url, importanceRate);
+    Exam *exam2 = new Exam(subject, date2, time2, url, importanceRate);
 
     _exams.push_back(exam1);
     _exams.push_back(exam2);

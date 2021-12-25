@@ -30,19 +30,19 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
        {
            qDebug() << QString("JsonParseError: %1").arg(jsonParseError.errorString());
        }
-       QJsonObject rootObject = jsonDocument.object();
+       //QJsonObject rootObject = jsonDocument.object();
 
-       if(!rootObject.keys().contains("_exams"))
-       {
-           qDebug() << "No target value";
-       }
+       //if(!rootObject.keys().contains("_exams"))
+       //{
+       //    qDebug() << "No target value";
+       //}
 
-       QJsonValue jsonValue = rootObject.value("_exams");
-       if(!jsonValue.isArray())
-       {
-           qDebug() << "No target array";
-       }
-       QJsonArray jsonArray = jsonValue.toArray();
+       //QJsonValue jsonValue = rootObject.value("_exams");
+       //if(!jsonValue.isArray())
+       //{
+       //    qDebug() << "No target array";
+       //}
+       QJsonArray jsonArray = jsonDocument.array();
 
        for(auto iter = jsonArray.constBegin(); iter != jsonArray.constEnd(); ++iter)
        {

@@ -22,15 +22,15 @@ Exam::Exam(QJsonObject obj){
     //ako se drzimo starog json formata moralo bi nesto ovako
     //morala sam u jsonu umesto exam1 exam2 da stavim samo exam
     //takodje promenila sam datume
-        QJsonValue jv = obj.value("");
-        QJsonObject jo = jv.toObject();
-        QString _dateString = jo.value("_date").toString();
-        _date = QDate::fromString(_dateString);
-        QString _timeString = jo.value("_time").toString();
+
+    //ovo sada je sa ispravljenim jsonom i funkcijom za citanje
+        QString _dateString = obj.value("_date").toString();
+        _date = QDate::fromString(_dateString, Qt::TextDate);
+        QString _timeString = obj.value("_time").toString();
         //msm da je ova funkcija nepotrebna u utils
         //_date = Utils::fromQStringtoQDate(_dateString);
-        _url = jo.value("_url").toString();
-        QJsonObject subject =jo.value("_subject").toObject();
+        _url = obj.value("_url").toString();
+        QJsonObject subject =obj.value("_subject").toObject();
         _subject = Subject(subject);
 }
 

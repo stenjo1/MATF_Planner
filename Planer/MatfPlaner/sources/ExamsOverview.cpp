@@ -53,7 +53,7 @@ void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 
 void ExamsOverview::on_pbAddExam_clicked()
 {
-    //emit loadComboBox();
+    emit loadComboBox();
     insertExamsWindow->show();
 }
 
