@@ -30,7 +30,6 @@ void Profile::fillSlot(){
      int espbSum=0;
      for (Subject* subj : _student->getAllSubjects()) {
          text += subj->getName() + "\n";
-         std::cout<<subj->getEspb()<<std::endl;
          espbSum+=subj->getEspb();
      }
 

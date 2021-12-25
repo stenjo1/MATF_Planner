@@ -88,7 +88,7 @@
    <item row="9" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>Nepoloženi predmeti:</string>
+      <string>Položeni predmeti:</string>
      </property>
     </widget>
    </item>
