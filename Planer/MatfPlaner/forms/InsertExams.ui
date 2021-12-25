@@ -51,9 +51,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEdit"/>
-   </item>
-   <item>
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -75,6 +72,13 @@
      </property>
      <property name="text">
       <string>Ispit u prvom roku:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox1">
+     <property name="text">
+      <string>Preskoči unos</string>
      </property>
     </widget>
    </item>
@@ -107,6 +111,19 @@
     </layout>
    </item>
    <item>
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
@@ -115,6 +132,13 @@
      </property>
      <property name="text">
       <string>Ispit u drugom roku:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox2">
+     <property name="text">
+      <string>Preskoči unos</string>
      </property>
     </widget>
    </item>

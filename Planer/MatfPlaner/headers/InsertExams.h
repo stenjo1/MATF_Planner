@@ -22,7 +22,7 @@ public:
      void removeExam(QString& name);
 
 public slots:
-
+     void writeToJson();
      void loadComboBox();
 private slots:
     void on_addExamButton_clicked();
@@ -31,13 +31,11 @@ private slots:
 
     void on_endInputExamButton_clicked();
 
-    void on_comboBox_activated(int index);
 
 private:
     Ui::InsertExams *ui;
     QVector<Exam*> _exams;
     Student* _student;
-    void writeToJson();
 
 };
 

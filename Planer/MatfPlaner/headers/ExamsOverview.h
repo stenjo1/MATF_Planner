@@ -15,6 +15,9 @@ class ExamsOverview : public QWidget
 
 signals:
    void loadComboBox();
+   void fillCalendarSignal();
+   void loadExamsJson();
+
 public:
     explicit ExamsOverview(QWidget *parent = nullptr);
     ~ExamsOverview();
@@ -28,6 +31,8 @@ private slots:
     void on_listWidget_doubleClicked(const QModelIndex &index);
 
     void on_pbAddExam_clicked();
+
+    void on_pbConfirm_clicked();
 
 private:
     Ui::ExamsOverview *ui;

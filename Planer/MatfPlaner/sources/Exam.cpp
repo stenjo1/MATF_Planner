@@ -2,12 +2,12 @@
 #include "headers/Exam.h"
 
 
-Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, bool passed, unsigned numbersOfTry) {
+Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, int order) {
     _date = date;
     _time = time;
     _url = url;
     _subject = subject;
-    _numbersOfTry = numbersOfTry;
+    _order = order;
     _importanceRate = importanceRate;
 }
 
@@ -24,17 +24,18 @@ Exam::Exam(QJsonObject obj){
     //takodje promenila sam datume
 
     //ovo sada je sa ispravljenim jsonom i funkcijom za citanje
-        QString _dateString = obj.value("_date").toString();
-        _date = QDate::fromString(_dateString, Qt::TextDate);
-        QString _timeString = obj.value("_time").toString();
+        QString dateString = obj.value("_date").toString();
+        _date = QDate::fromString(dateString, Qt::TextDate);
+        QString timeString = obj.value("_time").toString();
+        _time = QTime::fromString(timeString);
         //msm da je ova funkcija nepotrebna u utils
         //_date = Utils::fromQStringtoQDate(_dateString);
         _url = obj.value("_url").toString();
         QJsonObject subject =obj.value("_subject").toObject();
         _subject = Subject(subject);
+
 }
 
-void Exam::setPassed(){_passed = true;}
 bool Exam::checkIfDatePassed(){
     if (_date < _date.currentDate())
         return true;
@@ -51,6 +52,9 @@ bool Exam::checkIfDatePassed(QDate date){
         return true;
 
     return false;
+}
+int Exam::getOrder(){
+    return _order;
 }
 
 QString Exam::getUrl(){

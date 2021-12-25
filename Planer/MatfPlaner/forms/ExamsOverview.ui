@@ -56,6 +56,13 @@
      </property>
     </widget>
    </item>
+   <item>
+    <widget class="QPushButton" name="pbConfirm">
+     <property name="text">
+      <string>Potvrdi</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

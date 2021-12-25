@@ -13,6 +13,7 @@ ExamsOverview::ExamsOverview(QWidget *parent) :
     loadExamList();
     connect(insertExamsWindow, &InsertExams::reloadListWidget, this, &ExamsOverview::loadExamList);
     connect(this, &ExamsOverview::loadComboBox, insertExamsWindow, &InsertExams::loadComboBox);
+    connect(this, &ExamsOverview::loadExamsJson,insertExamsWindow, &InsertExams::writeToJson);
 }
 
 ExamsOverview::~ExamsOverview()
@@ -27,7 +28,6 @@ void ExamsOverview::setStudent(Student* student){
 
 void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 {
-
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Question);
     Qt::WindowFlags flags = msgBox.windowFlags();
@@ -59,8 +59,19 @@ void ExamsOverview::on_pbAddExam_clicked()
 
 
 void ExamsOverview::loadExamList(){
+
+    ui->listWidget->clear();
     QVector<Exam*> allExams = insertExamsWindow->getExams();
     for (Exam* e : allExams) {
-        ui->listWidget->addItem(e->getSubject().getName());
+        ui->listWidget->addItem(QString::number(e->getOrder()) + ".rok: " + e->getSubject().getName());
     }
 }
+
+void ExamsOverview::on_pbConfirm_clicked()
+{
+    //TO-DO: pozvati pravljenje rasporeda
+    emit loadExamsJson();
+    emit fillCalendarSignal();
+    hide();
+}
+

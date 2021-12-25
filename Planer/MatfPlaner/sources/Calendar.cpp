@@ -32,6 +32,7 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     examsOverviewWindow->setStudent(_student);
     profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
+    connect(examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCells);
 
     colorCells();
 }

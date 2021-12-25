@@ -1,62 +1,12 @@
 [
     {
-        "_date": "Sat Jan 15 2022",
-        "_importanceRate": 3,
+        "_date": "Fri Feb 4 2022",
+        "_importanceRate": 4,
         "_subject": {
             "_espb": 6,
-            "_name": "Analiza 3"
+            "_name": "Diskretne strukture 1"
         },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
-    },
-    {
-        "_date": "Tue Feb 8 2022",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
-        },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
-    },
-    {
-        "_date": "Sat Jan 15 2022",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
-        },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
-    },
-    {
-        "_date": "Tue Feb 8 2022",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
-        },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
-    },
-    {
-        "_date": "Sat Jan 15 2022",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
-        },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
-    },
-    {
-        "_date": "Tue Feb 8 2022",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
-        },
-        "_time": "09:00:00",
-        "_url": "URL do stranice za proveravanje rezultata:"
+        "_time": "11:00:00",
+        "_url": "kacsj"
     }
 ]
