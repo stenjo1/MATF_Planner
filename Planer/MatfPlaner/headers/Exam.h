@@ -22,6 +22,7 @@ public:
     int getImportanceRate();
     Subject& getSubject();
     int getOrder();
+    QTime getTime();
 
 private:
     QDate _date;

@@ -1,12 +1,22 @@
 [
     {
-        "_date": "Fri Feb 4 2022",
-        "_importanceRate": 4,
+        "_date": "Mon Jan 10 2022",
+        "_importanceRate": 3,
         "_subject": {
-            "_espb": 6,
-            "_name": "Diskretne strukture 1"
+            "_espb": 3,
+            "_name": "Izborni predmet O2"
+        },
+        "_time": "09:00:00",
+        "_url": "judshfidsiu"
+    },
+    {
+        "_date": "Fri Jan 28 2022",
+        "_importanceRate": 3,
+        "_subject": {
+            "_espb": 3,
+            "_name": "Izborni predmet O2"
         },
         "_time": "11:00:00",
-        "_url": "kacsj"
+        "_url": "judshfidsiu"
     }
 ]

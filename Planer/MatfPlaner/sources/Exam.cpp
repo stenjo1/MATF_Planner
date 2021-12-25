@@ -65,6 +65,10 @@ QDate Exam::getDate() {
     return _date;
 }
 
+QTime Exam::getTime(){
+    return _time;
+}
+
 int Exam::getImportanceRate() {
     return _importanceRate;
 }

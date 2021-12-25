@@ -32,7 +32,7 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
     examsOverviewWindow->setStudent(_student);
     profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
-    connect(examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCells);
+    connect(examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCellsSlot);
 
     colorCells();
 }
@@ -55,6 +55,10 @@ void Calendar::colorCells()
         QDate date = exam->getDate();
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
+}
+
+void Calendar::colorCellsSlot(){
+    colorCells();
 }
 
 QVector<QPair<QString,QString>> Calendar::checkResults()
@@ -132,7 +136,7 @@ void Calendar::on_calendarWidget_clicked(const QDate &date)
 
     for(auto& exam: _exams){
         if(date == exam->getDate()){
-            QMessageBox::information(this,"Ispit",exam->getSubject().getName());
+            QMessageBox::information(this,"Ispit",exam->getSubject().getName().append("\n").append(exam->getTime().toString()));
             break;
         }
     }

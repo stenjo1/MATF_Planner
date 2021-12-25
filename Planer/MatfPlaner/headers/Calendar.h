@@ -26,8 +26,8 @@ public:
 
     QVector<QPair<QString,QString>> checkResults();
 
-private:
-    void colorCells(); //
+public slots:
+    void colorCellsSlot(); //
 
 private slots:
     void on_pbNewExam_clicked();
@@ -44,6 +44,7 @@ private:
     ExamsOverview* examsOverviewWindow;
     QVector<Exam*> _exams;
     Profile* profileWindow;
+    void colorCells();
 
 };
 
