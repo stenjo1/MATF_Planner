@@ -73,7 +73,7 @@ QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
 
 }
 
-void Utils::clearFile(const QString &fileName){
+void Utils::clearExamFile(const QString &fileName){
    QFile file(fileName);
    file.open(QIODevice::WriteOnly | QIODevice::Text);
    QTextStream out(&file);

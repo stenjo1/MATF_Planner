@@ -17,10 +17,9 @@
 //    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
 //}
 
-Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
+Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
     ui(new Ui::Calendar),
-    _student(new Student),
     loginWindow(new LoginPage),
     examsOverviewWindow(new ExamsOverview),
     _exams(exams),
@@ -28,6 +27,7 @@ Calendar::Calendar(QList<Exam*> exams, QWidget *parent):
 
 {
     ui->setupUi(this);
+    _student = student;
     loginWindow->setStudent(_student);
     examsOverviewWindow->setStudent(_student);
     profileWindow->setStudent(_student);

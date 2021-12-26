@@ -158,6 +158,8 @@ void Student::readFromJson(){
     QFile file(path);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QByteArray array = file.readAll();
+    if(array.isEmpty())
+        _name = "";
     file.close();
     QJsonParseError jsonParseError;
     QJsonDocument jsonDocument(QJsonDocument::fromJson(array, &jsonParseError));
@@ -172,4 +174,15 @@ void Student::readFromJson(){
     jsonToSubjectList(rootObj.value("_allSubjects").toArray());
 
 
+}
+
+void Student::clearStudentFile(){
+    QDir targetDir("../MatfPlaner/resources");
+    QString path = targetDir.absolutePath() + "/student.json";
+    QFile file(path);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream out(&file);
+    out.seek(0);
+    out<<"{}";
+    file.close();
 }

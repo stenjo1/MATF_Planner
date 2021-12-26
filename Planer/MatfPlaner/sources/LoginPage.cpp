@@ -71,7 +71,6 @@ void LoginPage::on_nextButton_clicked()
         _student->setYearOfStudy(year.toInt());
         _student->emptyAllSubjects();
 
-
         if(ui->info_department->isChecked()) {
             _student->setModule(Module::Informatika);
             setupFirstWindow("i1o.json", _firstWindowI, _windowISet);

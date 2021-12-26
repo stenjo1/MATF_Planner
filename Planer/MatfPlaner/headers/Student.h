@@ -25,6 +25,7 @@ public:
     QJsonArray parseJsonToArray(QString pathname); //damo ime json fajla koji hocemo da
     void readFromJson();
     void writeToJson();
+    void clearStudentFile();
     // isparsira do qjsonarrayja
     void setName(QString name);
     void setEmail(QString email);

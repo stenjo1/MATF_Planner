@@ -21,7 +21,7 @@ signals:
     void fillProfileSignal();
 public:
   //  explicit Calendar(QWidget *parent = nullptr);
-    explicit Calendar( QList<Exam*> exams = {}, QWidget *parent = nullptr);
+    explicit Calendar(Student* student, QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
 
     QVector<QPair<QString,QString>> checkResults();

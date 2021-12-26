@@ -1,5 +1,5 @@
 #include "headers/Window.h"
-#include "headers/Utils.h"
+
 
 Window::Window(QWidget *parent, QString filename) : QWidget(parent)
 {
@@ -124,7 +124,7 @@ void Window::setupNextWindow()
 //                  qDebug()<<subj->getName();
                 this->hide();
                 return;
-        default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;
+      //  default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;
     }
 
     if(nextYear == nullptr){

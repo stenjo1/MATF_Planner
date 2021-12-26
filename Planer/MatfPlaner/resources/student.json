@@ -1,59 +1,27 @@
 {
     "_allSubjects": [
         {
-            "_espb": 8,
-            "_name": "Programiranje 1"
+            "_espb": 6,
+            "_name": "Razvoj softvera"
         },
         {
             "_espb": 6,
-            "_name": "Uvod u organizaciju i arhitekturu računara 1"
+            "_name": "Izborni predmet R2"
         },
         {
             "_espb": 6,
-            "_name": "Diskretne strukture 1"
-        },
-        {
-            "_espb": 7,
-            "_name": "Linearna algebra i analitička geometrija"
-        },
-        {
-            "_espb": 8,
-            "_name": "Programiranje 2"
+            "_name": "Izborni predmet R3"
         },
         {
             "_espb": 6,
-            "_name": "Uvod u organizaciju i arhitekturu računara 2"
-        },
-        {
-            "_espb": 3,
-            "_name": "Izborni predmet O1"
-        },
-        {
-            "_espb": 3,
-            "_name": "Izborni predmet O2"
-        },
-        {
-            "_espb": 6,
-            "_name": "Diskretne strukture 2"
-        },
-        {
-            "_espb": 7,
-            "_name": "Analiza 1"
-        },
-        {
-            "_espb": 6,
-            "_name": "Objektno orijentisano programiranje"
-        },
-        {
-            "_espb": 6,
-            "_name": "Programske paradigme"
+            "_name": "Projektovanje baza podataka"
         },
         {
             "_espb": 6,
             "_name": "Izborni predmet R4"
         }
     ],
-    "_email": "sara@gmail.com",
-    "_name": "sara",
+    "_email": "lena@gmail.com",
+    "_name": "lena",
     "_yearOfStudy": 4
 }

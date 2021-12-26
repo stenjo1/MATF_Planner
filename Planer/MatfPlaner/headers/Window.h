@@ -11,7 +11,9 @@
 #include <QPushButton>
 #include <QLabel>
 
+#include "headers/Utils.h"
 #include "headers/Student.h"
+
 
 class Window : public QWidget
 {
