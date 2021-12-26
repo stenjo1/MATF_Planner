@@ -23,7 +23,7 @@ public:
     void addExam(Exam *exam); //dodaje ispit na studenta
     void jsonToSubjectList(QJsonArray arr); //izvlaci iz json fajla
     QJsonArray parseJsonToArray(QString pathname); //damo ime json fajla koji hocemo da
-
+    void readFromJson();
     void writeToJson();
     // isparsira do qjsonarrayja
     void setName(QString name);

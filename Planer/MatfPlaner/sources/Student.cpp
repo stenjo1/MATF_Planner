@@ -120,6 +120,7 @@ QJsonArray Student::parseJsonToArray(QString pathname){
     file.setFileName(pathname);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     content_json = file.readAll();
+    file.close();
     QJsonDocument sd = QJsonDocument::fromJson(content_json.toUtf8());
     QJsonArray array = sd.array();
 
@@ -143,9 +144,32 @@ void Student::writeToJson()
 
     QDir dir("..");
     QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
-
     QFile jsonFile(path);
     jsonFile.open(QFile::WriteOnly);
     QJsonDocument doc(jsonObjStudent);
     jsonFile.write(doc.toJson());
+}
+
+void Student::readFromJson(){
+
+    QDir targetDir("../MatfPlaner/resources");
+    QString path = targetDir.absolutePath() + "/student.json";
+    // to-do: isprazniti listu
+    QFile file(path);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QByteArray array = file.readAll();
+    file.close();
+    QJsonParseError jsonParseError;
+    QJsonDocument jsonDocument(QJsonDocument::fromJson(array, &jsonParseError));
+    if(QJsonParseError::NoError != jsonParseError.error)
+    {
+        qDebug() << QString("JsonParseError: %1").arg(jsonParseError.errorString());
+    }
+    QJsonObject rootObj = jsonDocument.object();
+    _name = rootObj.value("_name").toString();
+    _email = rootObj.value("_email").toString();
+    _yearOfStudy = rootObj.value("_yearOfStudy").toInt();
+    jsonToSubjectList(rootObj.value("_allSubjects").toArray());
+
+
 }

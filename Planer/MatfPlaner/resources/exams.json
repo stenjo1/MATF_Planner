@@ -1,52 +1,42 @@
 [
     {
-        "_date": "Sat Jan 9 2021",
+        "_date": "Fri Jan 14 2022",
         "_importanceRate": 3,
         "_subject": {
-            "_espb": 6,
-            "_name": "Algoritmi i strukture podataka"
+            "_espb": 5,
+            "_name": "Verovatnoća i statistika B"
         },
         "_time": "09:00:00",
-        "_url": ""
+        "_url": "oeijeoic.com"
     },
     {
-        "_date": "Sat Jan 16 2021",
-        "_importanceRate": 4,
+        "_date": "Mon Jan 17 2022",
+        "_importanceRate": 3,
         "_subject": {
-            "_espb": 6,
-            "_name": "Analiza 3"
+            "_espb": 5,
+            "_name": "Verovatnoća i statistika B"
         },
-        "_time": "09:00:00",
-        "_url": ""
+        "_time": "17:00:00",
+        "_url": "oeijeoic.com"
     },
     {
-        "_date": "Sat Jan 16 2021",
-        "_importanceRate": 4,
+        "_date": "Tue Jan 18 2022",
+        "_importanceRate": 5,
         "_subject": {
-            "_espb": 6,
-            "_name": "Prevođenje programskih jezika"
+            "_espb": 5,
+            "_name": "Numeričke metode"
         },
         "_time": "09:00:00",
-        "_url": ""
+        "_url": "oeijeoic.com"
     },
     {
-        "_date": "Tue Jan 19 2021",
-        "_importanceRate": 1,
+        "_date": "Thu Feb 17 2022",
+        "_importanceRate": 5,
         "_subject": {
-            "_espb": 6,
-            "_name": "Verovatnoća"
+            "_espb": 5,
+            "_name": "Numeričke metode"
         },
-        "_time": "09:00:00",
-        "_url": ""
-    },
-    {
-        "_date": "Fri Jan 22 2021",
-        "_importanceRate": 1,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Uvod u numeričku matematiku"
-        },
-        "_time": "09:00:00",
-        "_url": ""
+        "_time": "17:00:00",
+        "_url": "oeijeoic.com"
     }
 ]

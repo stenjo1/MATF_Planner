@@ -1,39 +1,59 @@
 {
     "_allSubjects": [
         {
-            "_espb": 6,
-            "_name": "Algoritmi i strukture podataka"
+            "_espb": 8,
+            "_name": "Programiranje 1"
         },
         {
             "_espb": 6,
-            "_name": "Analiza 2"
+            "_name": "Uvod u organizaciju i arhitekturu računara 1"
         },
         {
             "_espb": 6,
-            "_name": "Analiza 3"
+            "_name": "Diskretne strukture 1"
+        },
+        {
+            "_espb": 7,
+            "_name": "Linearna algebra i analitička geometrija"
+        },
+        {
+            "_espb": 8,
+            "_name": "Programiranje 2"
         },
         {
             "_espb": 6,
-            "_name": "Prevođenje programskih jezika"
+            "_name": "Uvod u organizaciju i arhitekturu računara 2"
+        },
+        {
+            "_espb": 3,
+            "_name": "Izborni predmet O1"
+        },
+        {
+            "_espb": 3,
+            "_name": "Izborni predmet O2"
         },
         {
             "_espb": 6,
-            "_name": "Verovatnoća"
+            "_name": "Diskretne strukture 2"
+        },
+        {
+            "_espb": 7,
+            "_name": "Analiza 1"
         },
         {
             "_espb": 6,
-            "_name": "Uvod u numeričku matematiku"
+            "_name": "Objektno orijentisano programiranje"
         },
         {
             "_espb": 6,
-            "_name": "Istraživanje podataka"
+            "_name": "Programske paradigme"
         },
         {
             "_espb": 6,
-            "_name": "Statistika"
+            "_name": "Izborni predmet R4"
         }
     ],
-    "_email": "stefan@mail.com",
-    "_name": "stefan",
+    "_email": "sara@gmail.com",
+    "_name": "sara",
     "_yearOfStudy": 4
 }
