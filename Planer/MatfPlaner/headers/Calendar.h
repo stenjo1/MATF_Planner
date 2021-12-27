@@ -26,6 +26,8 @@ public:
 
     QVector<QPair<QString,QString>> checkResults();
 
+    LoginPage* loginWindow;
+
 public slots:
     void colorCellsSlot(); //
 
@@ -40,7 +42,7 @@ private slots:
 private:
     Ui::Calendar *ui;
     Student* _student;
-    LoginPage* loginWindow;
+
     ExamsOverview* examsOverviewWindow;
     QVector<Exam*> _exams;
     Profile* profileWindow;

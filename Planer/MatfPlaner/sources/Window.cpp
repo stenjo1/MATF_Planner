@@ -96,7 +96,7 @@ void Window::setupNextWindow()
 
     for(auto& cb : checkBoxes){
         for(auto& subject : _subjects){
-            if(subject->getName() == cb->text()){
+            if(subject->getName().compare(cb->text()) == 0){
                 if(cb->isChecked()){
                     _student->addSubject(subject);
                 } else{

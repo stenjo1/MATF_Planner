@@ -52,10 +52,12 @@ QString Student::getModuleString() {
         return QString("/");
 
 }
+
+//TODO:: empty checks
 void Student::addSubject(Subject* subj){
     int i=0;
 
-    while(i<_allSubjects.length() && _allSubjects[i]->getName() != subj->getName()){
+    while(i<_allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0 )){
         i++;
     }
 
@@ -68,7 +70,7 @@ void Student::removeSubject(Subject *subj)
 {
     int i=0;
 
-    while(i<_allSubjects.length() && _allSubjects[i]->getName() != subj->getName()){
+    while(i<_allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0 )){
         i++;
     }
 

@@ -18,11 +18,9 @@ int main(int argc, char *argv[])
     Student *student = new Student();
     student->readFromJson();
     if(student->getName().compare("")==0){
-        LoginPage lp;
         Calendar w = Calendar(student,exams);
         w.show();
-        lp.setStudent(student);
-        lp.show();
+        w.loginWindow->show();
         return a.exec();
     }else{
         Calendar w = Calendar(student,exams);

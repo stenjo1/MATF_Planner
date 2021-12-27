@@ -1,27 +1,35 @@
 {
     "_allSubjects": [
         {
-            "_espb": 6,
-            "_name": "Razvoj softvera"
+            "_espb": 20,
+            "_name": "Analiza 1"
         },
         {
-            "_espb": 6,
-            "_name": "Izborni predmet R2"
+            "_espb": 5,
+            "_name": "Verovatnoća i statistika B"
         },
         {
-            "_espb": 6,
-            "_name": "Izborni predmet R3"
+            "_espb": 5,
+            "_name": "Kompilacija programskih jezika"
         },
         {
-            "_espb": 6,
-            "_name": "Projektovanje baza podataka"
+            "_espb": 5,
+            "_name": "Dizajn programskih jezika"
         },
         {
-            "_espb": 6,
-            "_name": "Izborni predmet R4"
+            "_espb": 5,
+            "_name": "Izborni blok MR1"
+        },
+        {
+            "_espb": 5,
+            "_name": "Numeričke metode"
+        },
+        {
+            "_espb": 5,
+            "_name": "Izborni blok MR5"
         }
     ],
-    "_email": "lena@gmail.com",
-    "_name": "lena",
+    "_email": "stef@c.c",
+    "_name": "stef",
     "_yearOfStudy": 4
 }
