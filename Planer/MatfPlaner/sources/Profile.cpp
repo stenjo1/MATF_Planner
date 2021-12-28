@@ -24,17 +24,14 @@ void Profile::fillSlot(){
     ui->labelEmail->setText(_student->getEmail());
     ui->labelYearOfStudy->setText(QString().setNum(_student->getYearOfStudy()));
     ui->labelModule->setText(_student->getModuleString());
-    //TODO: iz jsona sa predmetima ispisati one koji nisu u listi nepolozenih (allSubjects)
 
-     QString text = "";
      int espbSum=0;
      for (Subject* subj : _student->getAllSubjects()) {
-         text += subj->getName() + "\n";
+         ui->listWidget->addItem(subj->getName());
          espbSum+=subj->getEspb();
      }
 
-     ui->plainTextEdit->insertPlainText(text);
-     ui->labelESPB->setNum(240-espbSum);
+     ui->labelESPB->setNum(espbSum);
 
 
 }

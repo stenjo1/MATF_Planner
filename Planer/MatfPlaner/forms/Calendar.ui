@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>MatfPlaner</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
@@ -32,7 +32,7 @@
      <item>
       <widget class="QPushButton" name="pbProfile">
        <property name="text">
-        <string>Profil</string>
+        <string>Pregled profila</string>
        </property>
       </widget>
      </item>
@@ -56,14 +56,14 @@
      <item>
       <widget class="QPushButton" name="pbSendMail">
        <property name="text">
-        <string>Pošalji raspored </string>
+        <string>Slanje rasporeda</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pbCheckUrl">
        <property name="text">
-        <string>Proveri rezultate</string>
+        <string>Provera rezultata</string>
        </property>
       </widget>
      </item>
@@ -104,7 +104,7 @@
      <item>
       <widget class="QPushButton" name="pbNewExam">
        <property name="text">
-        <string>Unesi ispit</string>
+        <string>Pregled ispita</string>
        </property>
       </widget>
      </item>

@@ -24,8 +24,8 @@ private slots:
 private:
     Ui::LoginPage *ui;
     Student* _student;
-    Window* _firstWindowI;
-    Window* _firstWindowM;
+    Window* _firstWindowI = nullptr;
+    Window* _firstWindowM = nullptr;
     bool _windowISet = false;
     bool _windowMSet = false;
     void setupFirstWindow(QString filename, Window* &firstWindow, bool& windowSet);

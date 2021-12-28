@@ -25,14 +25,13 @@ int main(int argc, char *argv[])
         a.setStyleSheet(styleSheet);
     }
 
-    // to-do: isprazniti listu
     QVector<Exam*> exams = Utils::readJsonExamsFromFile(examsPath);
     Student *student = new Student();
     student->readFromJson();
     if(student->getName().compare("")==0){
         Calendar w = Calendar(student,exams);
         w.show();
-        w.loginWindow->show();
+        w.getLoginPage()->show();
         return a.exec();
     }else{
         Calendar w = Calendar(student,exams);

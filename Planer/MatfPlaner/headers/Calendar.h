@@ -17,19 +17,20 @@ class Calendar;
 class Calendar : public QWidget
 {
     Q_OBJECT
+
 signals:
     void fillProfileSignal();
+
 public:
-  //  explicit Calendar(QWidget *parent = nullptr);
+
     explicit Calendar(Student* student, QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
 
+    LoginPage* getLoginPage() const;
     QVector<QPair<QString,QString>> checkResults();
 
-    LoginPage* loginWindow;
-
-public slots:
-    void colorCellsSlot(); //
+//public slots:
+//    void colorCellsSlot(); //
 
 private slots:
     void on_pbNewExam_clicked();
@@ -42,11 +43,14 @@ private slots:
 private:
     Ui::Calendar *ui;
     Student* _student;
-
-    ExamsOverview* examsOverviewWindow;
     QVector<Exam*> _exams;
-    Profile* profileWindow;
+    LoginPage* _loginWindow;
+    ExamsOverview* _examsOverviewWindow;
+    Profile* _profileWindow;
+
     void colorCells();
+
+
 
 };
 

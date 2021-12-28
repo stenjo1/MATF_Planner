@@ -2,17 +2,16 @@
 #include "ui_InsertExams.h"
 #include "headers/Subject.h"
 
-InsertExams::InsertExams(QWidget *parent) :
+InsertExams::InsertExams(QVector<Exam*>& allExams, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::InsertExams)
+    ui(new Ui::InsertExams),
+    _exams(allExams)
 {
     ui->setupUi(this);
 }
 InsertExams::~InsertExams()
 {
     delete ui;
-    for (auto el: _exams)
-        delete el;
 }
 
 void InsertExams::loadComboBox()
@@ -27,20 +26,18 @@ void InsertExams::setStudent(Student* student){
     _student=student;
 }
 
-QVector<Exam*> InsertExams::getExams(){
-    return _exams;
-}
+//QVector<Exam*> InsertExams::getExams(){
+//    return _exams;
+//}
 
 void InsertExams::removeExam(QString& name){
 
-    QVector<Exam*> allExams = getExams();
-    QStringList parsed = name.split(" ");
     int index = name.indexOf(" ");
     int order = name.sliced(0,1).toInt();
     name = name.sliced(index+1);
 
-    for (int i=0; i<allExams.length(); ++i) {
-        if (allExams[i]->getSubject().getName().compare(name) == 0 and order==allExams[i]->getOrder()) {
+    for (int i=0; i<_exams.length(); ++i) {
+        if (_exams[i]->getSubject().getName().compare(name) == 0 and order==_exams[i]->getOrder()) {
             _exams.remove(i);
             break;
         }

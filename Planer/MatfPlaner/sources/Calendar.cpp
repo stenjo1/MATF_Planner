@@ -1,38 +1,23 @@
 #include "headers/Calendar.h"
 #include "ui_Calendar.h"
 
-
-//Calendar::Calendar(QWidget *parent) :
-//    QWidget(parent),
-//    ui(new Ui::Calendar),
-//    _student(new Student),
-//    loginWindow(new LoginPage),
-//    examsOverviewWindow(new ExamsOverview),
-//    profileWindow(new Profile)
-//{
-//    ui->setupUi(this);
-//    loginWindow->setStudent(_student);
-//    examsOverviewWindow->setStudent(_student);
-//    profileWindow->setStudent(_student);
-//    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
-//}
-
 Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
     ui(new Ui::Calendar),
-    loginWindow(new LoginPage),
-    examsOverviewWindow(new ExamsOverview),
     _exams(exams),
-     profileWindow(new Profile)
+    _loginWindow(new LoginPage),
+    _examsOverviewWindow(new ExamsOverview(_exams)),
+    _profileWindow(new Profile)
+
 
 {
     ui->setupUi(this);
     _student = student;
-    loginWindow->setStudent(_student);
-    examsOverviewWindow->setStudent(_student);
-    profileWindow->setStudent(_student);
-    connect(this, &Calendar::fillProfileSignal, profileWindow, &Profile::fillSlot);
-    connect(examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCellsSlot);
+    _loginWindow->setStudent(_student);
+    _examsOverviewWindow->setStudent(_student);
+    _profileWindow->setStudent(_student);
+    connect(this, &Calendar::fillProfileSignal, _profileWindow, &Profile::fillSlot);
+    connect(_examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCells);
 
     colorCells();
 }
@@ -41,13 +26,22 @@ Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
 Calendar::~Calendar()
 {
     delete ui;
+    delete _profileWindow;
+    delete _examsOverviewWindow;
+    delete _loginWindow;
+    delete _student;
     for (auto exam : _exams) {
         delete exam;
     }
 }
 
+LoginPage* Calendar::getLoginPage() const{
+    return _loginWindow;
+}
+
 void Calendar::colorCells()
 {
+    //namestiti nekako da se obrisu sva prethodno obojena polja
     QTextCharFormat fmt;
     fmt.setBackground(QColor(169, 109, 142));
 
@@ -57,9 +51,6 @@ void Calendar::colorCells()
     }
 }
 
-void Calendar::colorCellsSlot(){
-    colorCells();
-}
 
 QVector<QPair<QString,QString>> Calendar::checkResults()
 {
@@ -83,11 +74,10 @@ QVector<QPair<QString,QString>> Calendar::checkResults()
 void Calendar::on_pbNewExam_clicked()
 {
 
-   examsOverviewWindow->show();
+   _examsOverviewWindow->show();
 
 }
 
-//exam vraca prazan url i ne moze da se posalje net zahtev
 void Calendar::on_pbCheckUrl_clicked()
 {
     bool hasChanged=false;
@@ -120,25 +110,32 @@ void Calendar::on_pbSendMail_clicked()
 
 void Calendar::on_pbLogin_clicked()
 {
-    loginWindow->show();
+    _loginWindow->show();
 }
 
 
 void Calendar::on_pbProfile_clicked()
 {
     emit fillProfileSignal();
-    profileWindow->show();
+    _profileWindow->show();
 }
 
 
 void Calendar::on_calendarWidget_clicked(const QDate &date)
 {
-
+    bool hasExam = false;
     for(auto& exam: _exams){
         if(date == exam->getDate()){
             QMessageBox::information(this,"Ispit",exam->getSubject().getName().append("\n").append(exam->getTime().toString()));
+            hasExam = true;
             break;
         }
     }
+//    // ako ne uspemo da resimo drugacije, nek bude bar ovo da kad klikne na obojeno polje sa kog je obrisan ispit,
+//    if (!hasExam){
+//        QTextCharFormat fmt;
+//        fmt.setBackground(QColor(50, 9, 142)); //namestiti na boju pozadine kalendara
+//        ui->calendarWidget->setDateTextFormat(date, fmt);
+//    }
 }
 
