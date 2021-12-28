@@ -93,6 +93,9 @@ DISTFILES += \
     resources/r4o.json \
     resources/student.json
 
+RESOURCES += \
+    resources/logo.qrc
+
 #unix|win32: LIBS += -L$$PWD/../../../../../../usr/lib/x86_64-linux-gnu/ -lcurl
 
 #INCLUDEPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
