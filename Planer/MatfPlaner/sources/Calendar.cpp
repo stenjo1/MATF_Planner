@@ -49,7 +49,7 @@ Calendar::~Calendar()
 void Calendar::colorCells()
 {
     QTextCharFormat fmt;
-    fmt.setBackground(Qt::GlobalColor::darkMagenta);
+    fmt.setBackground(QColor(169, 109, 142));
 
     for(auto& exam: _exams){
         QDate date = exam->getDate();

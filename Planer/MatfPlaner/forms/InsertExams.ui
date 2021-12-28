@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>600</height>
+    <height>676</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Podaci o ispitu</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt;&quot;&gt;Podaci o ispitu&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -87,12 +87,16 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Datum (dd.mm.yyyy.):</string>
+        <string>Datum :</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="dateLineEdit1"/>
+      <widget class="QLineEdit" name="dateLineEdit1">
+       <property name="placeholderText">
+        <string>dd.mm.yyyy.</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -101,12 +105,16 @@
      <item>
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Vreme (hh:mm):           </string>
+        <string>Vreme :           </string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="timeLineEdit1"/>
+      <widget class="QLineEdit" name="timeLineEdit1">
+       <property name="placeholderText">
+        <string>hh:mm</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -147,12 +155,16 @@
      <item>
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Datum (dd.mm.yyyy.):</string>
+        <string>Datum :</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="dateLineEdit2"/>
+      <widget class="QLineEdit" name="dateLineEdit2">
+       <property name="placeholderText">
+        <string>dd.mm.yyyy.</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -161,12 +173,16 @@
      <item>
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Vreme (hh:mm):           </string>
+        <string>Vreme :           </string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="timeLineEdit2"/>
+      <widget class="QLineEdit" name="timeLineEdit2">
+       <property name="placeholderText">
+        <string>hh:mm</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

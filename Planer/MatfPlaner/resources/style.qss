@@ -1,0 +1,248 @@
+QWidget
+{
+    background-color: #e2c9c3;
+    selection-background-color: #ff7675;
+
+    color: #7e3d4a;
+    selection-color: #dfe6e9;
+
+    font-size: 15px;
+    font-family: "Century Gothic",Verdana,sans-serif;
+}
+
+QLabel
+{
+    font-weight: bold;
+    background-color: transparent;
+}
+
+QPushButton
+{
+    background-color: #7e3d4a;
+    color:  #e0b9ca;
+    border-radius: 10px;
+    padding: 5px;
+
+    min-height: 15px;
+    min-width: 15px;
+
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+QPushButton::hover
+{
+     background-color: #a96d8e;
+     border: 2px solid #7e3d4a;
+}
+
+QPushButton::pressed
+{
+     background-color: #a96d8e;
+     border: 4px solid #7e3d4a;
+}
+
+QLineEdit
+{
+    background-color: white;
+    border: 1px solid #e2c9c3;
+    border-radius: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+
+    color: black;
+}
+
+QTextEdit
+{
+    background-color:  #e0b9ca;
+    border: 1px solid #e2c9c3;
+    border-radius: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+
+    color:  #7e3d4a;
+}
+
+QPlainTextEdit
+{
+    background-color:  #e0b9ca;
+    border: 1px solid #e2c9c3;
+    border-radius: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+
+    color:  #7e3d4a;
+}
+
+QListWidget
+{
+    background-color: #e0b9ca;
+    color: #7e3d4a;
+}
+
+QComboBox
+{
+    background-color: #e0b9ca;
+    border: 1px solid #e2c9c3;
+    border-radius: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+
+    color: #7e3d4a;
+    height: 20px;
+}
+
+QComboBox::disabled
+{
+    background-color: #404040;
+    color: #656565;
+    border-color: #656565;
+}
+
+QComboBox QAbstractItemView
+{
+    background-color: #e0b9ca;
+    selection-background-color: #bbcacc;
+
+    padding: 6px;
+
+    color: #7e3d4a;
+    selection-color: #fff;
+    outline: 0;
+}
+
+QCalendarWidget QToolButton
+{
+    height: 60px;
+    width: 100px;
+    color: #7e3d4a;
+    font-size: 15px;
+    icon-size: 20px, 20px;
+    background-color: #e2c9c3;
+}
+
+QCalendarWidget QMenu
+{
+    width: 120px;
+    left: 20px;
+    color: #7e3d4a;
+    font-size: 15px;
+    background-color: #e2c9c3;
+    selection-background-color: #bbcacc;
+}
+
+QCalendarWidget QSpinBox
+{
+    width: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #7e3d4a;
+    background-color: #e2c9c3;
+    selection-background-color: #e2c9c3;
+    selection-color: #7e3d4a;
+}
+
+QCalendarWidget QSpinBox::up-button
+{
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width:25px;
+}
+
+QCalendarWidget QSpinBox::down-button
+{
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+    width: 25px;
+}
+
+QCalendarWidget QSpinBox::up-arrow
+{
+    width:56px;
+    height:56px;
+}
+
+QCalendarWidget QSpinBox::down-arrow
+{
+    width:56px;
+    height:56px;
+}
+
+  /* header row */
+QCalendarWidget QWidget
+{
+    alternate-background-color: #e2c9c3;
+}
+
+  /* normal days */
+QCalendarWidget QAbstractItemView:enabled
+{
+    font-size: 15px;
+    color: #7e3d4a;
+    background-color: #e2c9c3;
+    selection-background-color: #7e3d4a;
+    selection-color: #e2c9c3;
+}
+
+  /* days in other months */
+  /* navigation bar */
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{
+    background-color: #e2c9c3;
+}
+
+QCalendarWidget QAbstractItemView:disabled
+{
+    color: #404040;
+}
+
+QCheckBox
+{
+    background-color: transparent;
+    color:  #7e3d4a;
+
+    font-size: 20px;
+
+    border: 1px solid  #e2c9c3;
+}
+
+QCheckBox::indicator
+{
+    background-color: #e0b9ca;
+    border: 1px solid #e2c9c3;
+    width: 15px;
+    height: 15px;
+}
+
+
+QCheckBox::indicator:checked
+{
+    image: url("../MatfPlaner/resources/images/check.png");
+    background-color: #bbcacc;
+    border: 1px solid  #e2c9c3;
+}
+
+
+QCheckBox::indicator:unchecked:hover
+{
+    border: 1px solid #e2c9c3;
+}
+
+
+QCheckBox::disabled
+{
+    color: #656565;
+}
+
+
+QCheckBox::indicator:disabled
+{
+    background-color: #656565;
+    color: #656565;
+    border: 1px solid #656565;
+}

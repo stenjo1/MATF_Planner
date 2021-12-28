@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>799</width>
     <height>600</height>
    </rect>
   </property>
@@ -15,7 +15,19 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
-    <item alignment="Qt::AlignHCenter">
+    <property name="leftMargin">
+     <number>30</number>
+    </property>
+    <property name="topMargin">
+     <number>30</number>
+    </property>
+    <property name="rightMargin">
+     <number>30</number>
+    </property>
+    <property name="bottomMargin">
+     <number>30</number>
+    </property>
+    <item>
      <widget class="QLabel" name="label_6">
       <property name="font">
        <font>
@@ -23,14 +35,33 @@
        </font>
       </property>
       <property name="text">
-       <string>MatfPlaner</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/logo/images/slika.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Minimum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
      <layout class="QFormLayout" name="formLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_login_ime">
         <property name="font">
          <font>
           <pointsize>17</pointsize>
@@ -45,7 +76,7 @@
        <widget class="QLineEdit" name="lineEdit"/>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="label_login_email">
         <property name="font">
          <font>
           <pointsize>17</pointsize>
@@ -60,7 +91,7 @@
        <widget class="QLineEdit" name="lineEdit_3"/>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="label_login_god">
         <property name="font">
          <font>
           <pointsize>17</pointsize>
@@ -85,7 +116,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="label_login_smer">
         <property name="font">
          <font>
           <pointsize>17</pointsize>

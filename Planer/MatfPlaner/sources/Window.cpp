@@ -36,19 +36,20 @@ void Window::setStudent(Student* student)
 
 void Window::setupWindow()
 {
-    //TODO:: style window
-
     if(_filename.isEmpty()){
         qDebug()<<"First setup filename";
         return;
     }
 
     verticalLayout = new QVBoxLayout();
+    verticalLayout->setContentsMargins(30,30,30,30);
 
     label = new QLabel();
     label->setText(nameLabel());
-
-    label->setStyleSheet("QLabel {color: black; background-color: white; font-weight:bold; font-size: 30pt}");
+    label->setStyleSheet("QLabel { background-color: transparent;"
+                         "         font-size: 50px; "
+                         "         text-transform: uppercase;"
+                         "        }");
 
     verticalLayout->addWidget(label);
 
@@ -56,13 +57,14 @@ void Window::setupWindow()
     for(auto& subject: _subjects){
         QCheckBox *cb = new QCheckBox(this);
         cb->setText(subject->getName());
-        cb->setStyleSheet("QCheckBox {color: black; background-color: white; font-size: 15pt}");
         checkBoxes.append(cb);
     }
 
     for(auto& cb: checkBoxes){
         verticalLayout->addWidget(cb);
     }
+
+    verticalLayout->addSpacing(40);
 
     nextButton = new QPushButton();
     if(year == 4){

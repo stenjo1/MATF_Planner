@@ -10,11 +10,23 @@
 
 int main(int argc, char *argv[])
 {
-    QDir targetDir("../MatfPlaner/resources");
-    QString path = targetDir.absolutePath() + "/exams.json";
     QApplication a(argc, argv);
+
+    QDir targetDir("../MatfPlaner/resources");
+    QString examsPath = targetDir.absolutePath() + "/exams.json";
+    QString stylePath = targetDir.absolutePath() + "/style.qss";
+
+    QFile file(stylePath);
+    if(file.open(QFile::ReadOnly) == file.error()){
+        qDebug()<<file.errorString();
+    }
+    else{
+        QString styleSheet = file.readAll();
+        a.setStyleSheet(styleSheet);
+    }
+
     // to-do: isprazniti listu
-    QVector<Exam*> exams = Utils::readJsonExamsFromFile(path);
+    QVector<Exam*> exams = Utils::readJsonExamsFromFile(examsPath);
     Student *student = new Student();
     student->readFromJson();
     if(student->getName().compare("")==0){
