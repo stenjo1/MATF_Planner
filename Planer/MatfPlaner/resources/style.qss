@@ -213,7 +213,7 @@ QCheckBox
 
 QCheckBox::indicator
 {
-    background-color: #e0b9ca;
+    background-color: white;
     border: 1px solid #e2c9c3;
     width: 15px;
     height: 15px;
