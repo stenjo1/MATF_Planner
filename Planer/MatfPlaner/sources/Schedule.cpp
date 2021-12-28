@@ -29,17 +29,24 @@ void Schedule::makeSchedule() {
 
     QVector<Exam*> suggestedExams;
 
-    suggestedExams.append(_exams[0]);
+    if(_exams.length() > 0) {
+        suggestedExams.append(_exams[0]);
 
-    for (int i = 1; i < n; i++)
+    }
 
-     if (_exams[i]->getDate() >= end) {
+    if(_exams.length() > 1) {
 
-         suggestedExams.append(_exams[i]);
+        for (int i = 1; i < n; i++)
 
-         end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+         if (_exams[i]->getDate() >= end) {
 
-     }
+             suggestedExams.append(_exams[i]);
+
+             end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+
+         }
+
+    }
 
     // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
 
