@@ -1,62 +1,12 @@
 [
     {
-        "_date": "Mon Dec 13 2021",
-        "_importanceRate": 2,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Uvod u organizaciju i arhitekturu računara 1"
-        },
-        "_time": "12:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
-    },
-    {
-        "_date": "Mon Dec 27 2021",
-        "_importanceRate": 2,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Uvod u organizaciju i arhitekturu računara 1"
-        },
-        "_time": "13:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
-    },
-    {
-        "_date": "Fri Dec 17 2021",
+        "_date": "Wed Feb 2 2022",
         "_importanceRate": 3,
         "_subject": {
             "_espb": 6,
-            "_name": "Diskretne strukture 1"
+            "_name": "Programiranje 1"
         },
-        "_time": "12:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
-    },
-    {
-        "_date": "Fri Dec 31 2021",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Diskretne strukture 1"
-        },
-        "_time": "13:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
-    },
-    {
-        "_date": "Sun Dec 19 2021",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Algoritmi i strukture podataka"
-        },
-        "_time": "12:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
-    },
-    {
-        "_date": "Sat Jan 2 2021",
-        "_importanceRate": 3,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Algoritmi i strukture podataka"
-        },
-        "_time": "13:00:00",
-        "_url": "https://matf.nikolaajzenhamer.rs/"
+        "_time": "11:00:00",
+        "_url": ""
     }
 ]

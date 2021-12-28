@@ -22,7 +22,7 @@ class Window : public QWidget
 signals:
     void showLogin();
 public:
-    explicit Window(QWidget *parent = nullptr, QString filename = "i1o.json");
+    explicit Window(QWidget *parent = nullptr);
     ~Window();
 
     void setFilename(QString filename);

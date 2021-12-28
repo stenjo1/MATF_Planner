@@ -4,9 +4,7 @@
 
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::LoginPage),
-    _windowISet(false),
-    _windowMSet(false)
+    ui(new Ui::LoginPage)
 {
     ui->setupUi(this);
 
@@ -14,6 +12,10 @@ LoginPage::LoginPage(QWidget *parent) :
 
 LoginPage::~LoginPage()
 {
+    if (_firstWindowI!=nullptr)
+        delete _firstWindowI;
+    if (_firstWindowM!=nullptr)
+        delete _firstWindowM;
     delete ui;
 }
 
@@ -69,7 +71,7 @@ void LoginPage::on_nextButton_clicked()
         _student->setName(name);
         _student->setEmail(mail);
         _student->setYearOfStudy(year.toInt());
-        //_student->emptyAllSubjects();
+        _student->emptyAllSubjects();
 
         if(ui->info_department->isChecked()) {
             _student->setModule(Module::Informatika);

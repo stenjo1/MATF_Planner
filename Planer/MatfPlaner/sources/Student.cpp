@@ -32,15 +32,16 @@ void Student::emptyAllSubjects(){
     for (auto s : _allSubjects)
         delete s;
     _allSubjects.resize(0);
+    qDebug()<<_allSubjects.size();
 }
 
-QString& Student::getName(){
+QString Student::getName() const{
     return _name;
 }
-QString& Student::getEmail(){
+QString Student::getEmail() const{
     return _email;
 }
-int Student::getYearOfStudy(){
+int Student::getYearOfStudy() const{
     return _yearOfStudy;
 }
 QString Student::getModuleString() {
@@ -54,7 +55,7 @@ QString Student::getModuleString() {
 }
 
 //TODO:: empty checks
-void Student::addSubject(Subject* subj){
+void Student::addSubject(Subject *subj){
     int i=0;
 
     while(i<_allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0 )){
@@ -62,7 +63,7 @@ void Student::addSubject(Subject* subj){
     }
 
     if(i == _allSubjects.length()){
-        _allSubjects.push_back(subj);
+        _allSubjects.push_back(new Subject(subj));
     }
 }
 
@@ -111,7 +112,7 @@ void Student::setModule(Module m){
     _module = m;
 }
 
-QVector<Subject*> Student::getAllSubjects()
+QVector<Subject*> Student::getAllSubjects() const
 {
     return _allSubjects;
 }

@@ -26,8 +26,8 @@ private:
     Student* _student;
     Window* _firstWindowI;
     Window* _firstWindowM;
-    bool _windowISet;
-    bool _windowMSet;
+    bool _windowISet = false;
+    bool _windowMSet = false;
     void setupFirstWindow(QString filename, Window* &firstWindow, bool& windowSet);
 };
 

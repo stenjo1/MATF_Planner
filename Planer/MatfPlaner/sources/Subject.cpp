@@ -10,7 +10,11 @@ Subject::Subject(QString name, int espb){
     _espb = espb;
 }
 
-QString Subject::getName(){
+Subject::Subject(const Subject* other) {
+    _name = other->_name;
+    _espb = other->_espb;
+}
+QString Subject::getName() const {
     return _name;
 }
 
@@ -19,13 +23,13 @@ Subject::Subject(QJsonValue val){
     _espb=val.toObject().value("_espb").toInt();
 }
 
-QJsonObject* Subject::toJson(){
+QJsonObject* Subject::toJson() const{
     QJsonObject *subjectJson = new QJsonObject();
     subjectJson->insert("_name",_name);
     subjectJson->insert("_espb",_espb);
     return subjectJson;
 }
 
-int Subject::getEspb(){
+int Subject::getEspb() const{
     return _espb;
 }

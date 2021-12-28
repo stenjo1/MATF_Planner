@@ -9,10 +9,11 @@ class Subject{
     public:
         Subject(QString name, int espb);
         Subject();
-        QJsonObject* toJson();
+        Subject(const Subject* other);
+        QJsonObject* toJson() const;
         Subject(QJsonValue val);
-        QString getName();
-        int getEspb();
+        QString getName() const;
+        int getEspb() const;
 
     private:
         int _espb;

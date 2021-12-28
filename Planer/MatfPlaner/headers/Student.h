@@ -33,11 +33,11 @@ public:
     void setModule(Module m);
     void emptyAllSubjects();
 
-    QString& getName();
-    QString& getEmail();
+    QString getName() const;
+    QString getEmail() const;
     QString getModuleString();
-    int getYearOfStudy();
-    QVector<Subject*> getAllSubjects();
+    int getYearOfStudy() const;
+    QVector<Subject*> getAllSubjects() const;
 
     void addSubject(Subject* subj);
     void removeSubject(Subject* subj);

@@ -1,7 +1,7 @@
 #include "headers/Window.h"
 
 
-Window::Window(QWidget *parent, QString filename) : QWidget(parent)
+Window::Window(QWidget *parent) : QWidget(parent)
 {
     //TODO:: check if new should be here
 }
@@ -96,17 +96,23 @@ void Window::setupNextWindow()
     //add checked subjs and remove unchecked
     //mozda moze efikasnije ali sam pokrila situaciju da on ode dalje i onda se vrati i odluci da nesto uncheckira nzm
 
-    for(auto& cb : checkBoxes){
-        for(auto& subject : _subjects){
-            if(subject->getName().compare(cb->text()) == 0){
-                if(cb->isChecked()){
-                    _student->addSubject(subject);
+    for(int i=0; i<checkBoxes.size(); ++i){
+//        for(auto& subject : _subjects){
+//            qDebug()<<"sledeci subject";
+//            if(subject->getName().compare(cb->text()) == 0){
+//                qDebug()<<"uradio getName";
+                if(checkBoxes[i]->isChecked()){
+                    _student->addSubject(_subjects[i]);
+                    qDebug()<<"checked";
                 } else{
-                    _student->removeSubject(subject);
+                    _student->removeSubject(_subjects[i]);
+                    qDebug()<<"unchecked";
                 }
+              //  break;
             }
-        }
-    }
+
+
+
 
     //setup next window
     QString newFilename = _filename;
