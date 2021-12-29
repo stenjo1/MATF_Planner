@@ -23,15 +23,17 @@ void Schedule::makeSchedule() {
     });
 
     QVector<Exam*> suggestedExams;
+    QDate end;
 
     for(int freeDays = 3; freeDays > 0; freeDays--) {
 
         suggestedExams.empty();
 
-        QDate end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
 
 
         if(_exams.length() > 0) {
+
+            end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
             suggestedExams.append(_exams[0]);
 
         }
