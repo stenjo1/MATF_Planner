@@ -5,35 +5,34 @@ Student::Student()
 
 }
 
-Student::Student(QString name, QString email)
-    : _name(name), _email(email)
-{
-
-}
-
-Student::Student(QString name,QVector<Subject*> allSubjects,QVector<Exam*> exams){
-    _name = name;
-    _allSubjects = allSubjects;
-    _exams = exams;
-}
-
 Student::~Student(){
    for(auto element : _allSubjects){
        delete element;
    }
-
-   for(auto element : _exams){
-       delete element;
-   }
-
 }
 
-void Student::emptyAllSubjects(){
-    for (auto s : _allSubjects)
-        delete s;
-    _allSubjects.resize(0);
-    qDebug()<<_allSubjects.size();
+
+void Student::setName(QString name){
+    _name = name;
 }
+
+void Student::setEmail(QString email){
+    _email = email;
+}
+
+void Student::setYearOfStudy(int year){
+    _yearOfStudy = year;
+}
+
+void Student::setModule(Module m){
+    _module = m;
+}
+
+QVector<Subject*> Student::getAllSubjects() const
+{
+    return _allSubjects;
+}
+
 
 QString Student::getName() const{
     return _name;
@@ -54,7 +53,17 @@ QString Student::getModuleString() {
 
 }
 
-//TODO:: empty checks
+Module Student::moduleFromString(QString string) {
+    if (string.compare("Informatika") == 0)
+        return Module::Informatika;
+    else if (string.compare("Matematika") == 0)
+        return Module::Matematika;
+    else
+        return Module::None;
+}
+
+
+
 void Student::addSubject(Subject *subj){
     int i=0;
 
@@ -80,8 +89,10 @@ void Student::removeSubject(Subject *subj)
     }
 }
 
-void Student::addExam(Exam *exam){
-    _exams.push_back(exam);
+void Student::emptyAllSubjects(){
+    for (auto s : _allSubjects)
+        delete s;
+    _allSubjects.resize(0);
 }
 
 
@@ -96,39 +107,20 @@ void Student::jsonToSubjectList(QJsonArray arr){
    }
 }
 
-void Student::setName(QString name){
-    _name = name;
-}
 
-void Student::setEmail(QString email){
-    _email = email;
-}
 
-void Student::setYearOfStudy(int year){
-    _yearOfStudy = year;
-}
+//QJsonArray Student::parseJsonToArray(QString pathname){
+//    QString content_json;
+//    QFile file;
+//    file.setFileName(pathname);
+//    file.open(QIODevice::ReadOnly | QIODevice::Text);
+//    content_json = file.readAll();
+//    file.close();
+//    QJsonDocument sd = QJsonDocument::fromJson(content_json.toUtf8());
+//    QJsonArray array = sd.array();
 
-void Student::setModule(Module m){
-    _module = m;
-}
-
-QVector<Subject*> Student::getAllSubjects() const
-{
-    return _allSubjects;
-}
-
-QJsonArray Student::parseJsonToArray(QString pathname){
-    QString content_json;
-    QFile file;
-    file.setFileName(pathname);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    content_json = file.readAll();
-    file.close();
-    QJsonDocument sd = QJsonDocument::fromJson(content_json.toUtf8());
-    QJsonArray array = sd.array();
-
-    return array;
-}
+//    return array;
+//}
 
 void Student::writeToJson()
 {
@@ -144,13 +136,22 @@ void Student::writeToJson()
     jsonObjStudent.insert("_yearOfStudy",_yearOfStudy);
     jsonObjStudent.insert("_email",_email);
     jsonObjStudent.insert("_allSubjects",allSubjectsJson);
+    jsonObjStudent.insert("_module",getModuleString());
 
-    QDir dir("..");
-    QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
-    QFile jsonFile(path);
-    jsonFile.open(QFile::WriteOnly);
-    QJsonDocument doc(jsonObjStudent);
-    jsonFile.write(doc.toJson());
+
+        QDir dir("..");
+        QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
+        QFile jsonFile(path);
+        if(!jsonFile.open(QIODevice::WriteOnly)) {
+           // QMessageBox::information(0,"error",jsonFile.errorString());
+        }
+        QJsonDocument doc(jsonObjStudent);
+        jsonFile.write(doc.toJson());
+        jsonFile.close();
+
+
+
+
 }
 
 void Student::readFromJson(){
@@ -174,6 +175,7 @@ void Student::readFromJson(){
     _name = rootObj.value("_name").toString();
     _email = rootObj.value("_email").toString();
     _yearOfStudy = rootObj.value("_yearOfStudy").toInt();
+    _module = moduleFromString(rootObj.value("_module").toString());
     jsonToSubjectList(rootObj.value("_allSubjects").toArray());
 
 

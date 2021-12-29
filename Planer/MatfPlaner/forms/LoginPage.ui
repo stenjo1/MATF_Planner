@@ -28,14 +28,12 @@
      <number>30</number>
     </property>
     <item>
-     <widget class="QLabel" name="label_6">
-      <property name="font">
-       <font>
-        <pointsize>22</pointsize>
-       </font>
+     <widget class="QLabel" name="label_login_title">
+      <property name="autoFillBackground">
+       <bool>true</bool>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/logo/images/slika.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;MAT&lt;/span&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; color:#b32025;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-size:48pt; font-weight:600;&quot;&gt;Planer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

@@ -43,6 +43,7 @@ private:
     QButtonGroup *buttonGroup;
 
     QLabel *label;
+    QLabel *infoLabel;
     QPushButton *nextButton;
     QPushButton *previousButton;
 

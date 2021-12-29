@@ -14,10 +14,10 @@ int main(int argc, char *argv[])
 
     QDir targetDir("../MatfPlaner/resources");
     QString examsPath = targetDir.absolutePath() + "/exams.json";
-    QString stylePath = targetDir.absolutePath() + "/style.qss";
+    QString stylePath = targetDir.absolutePath() + "/style3.qss";
 
     QFile file(stylePath);
-    if(file.open(QFile::ReadOnly) == file.error()){
+    if(!file.open(QFile::ReadOnly)){
         qDebug()<<file.errorString();
     }
     else{
@@ -25,18 +25,19 @@ int main(int argc, char *argv[])
         a.setStyleSheet(styleSheet);
     }
 
-    // to-do: isprazniti listu
     QVector<Exam*> exams = Utils::readJsonExamsFromFile(examsPath);
     Student *student = new Student();
     student->readFromJson();
     if(student->getName().compare("")==0){
         Calendar w = Calendar(student,exams);
         w.show();
-        w.loginWindow->show();
+        w.getLoginPage()->show();
         return a.exec();
     }else{
         Calendar w = Calendar(student,exams);
         w.show();
         return a.exec();
     }
+
+    //delete student;
 }

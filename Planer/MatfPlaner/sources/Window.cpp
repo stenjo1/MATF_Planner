@@ -8,9 +8,9 @@ Window::Window(QWidget *parent) : QWidget(parent)
 
 Window::~Window()
 {
-    //TODO:: delete windows
     delete verticalLayout;
     delete label;
+    delete infoLabel;
     delete nextButton;
     delete previousButton;
     for(auto& cb : checkBoxes){
@@ -22,7 +22,6 @@ void Window::setFilename(QString filename)
 {
     _filename = filename;
 
-    //TODO:: here?
     year = _filename.at(1).digitValue();
     if (year == -1){
         qDebug()<<"JSON BADLY NAMED";
@@ -52,6 +51,10 @@ void Window::setupWindow()
                          "        }");
 
     verticalLayout->addWidget(label);
+
+    infoLabel =  new QLabel();
+    infoLabel->setText("Obeležiti nepoložene predmete:");
+     verticalLayout->addWidget(infoLabel);
 
     _subjects = Utils::readJsonSubjectsFromFile(_filename);
     for(auto& subject: _subjects){
@@ -93,26 +96,17 @@ void Window::setupWindow()
 
 void Window::setupNextWindow()
 {
-    //add checked subjs and remove unchecked
-    //mozda moze efikasnije ali sam pokrila situaciju da on ode dalje i onda se vrati i odluci da nesto uncheckira nzm
-
     for(int i=0; i<checkBoxes.size(); ++i){
+
 //        for(auto& subject : _subjects){
-//            qDebug()<<"sledeci subject";
 //            if(subject->getName().compare(cb->text()) == 0){
-//                qDebug()<<"uradio getName";
+
                 if(checkBoxes[i]->isChecked()){
                     _student->addSubject(_subjects[i]);
-                    qDebug()<<"checked";
                 } else{
                     _student->removeSubject(_subjects[i]);
-                    qDebug()<<"unchecked";
                 }
-              //  break;
-            }
-
-
-
+    }
 
     //setup next window
     QString newFilename = _filename;
@@ -124,15 +118,11 @@ void Window::setupNextWindow()
                 break;
         case 3: newFilename.replace('3', '4');
                 break;
-        case 4: //stigao je do kraja tj napravio je profil
-                //nek zapamti sad to u json
+        case 4:
+
                 _student->writeToJson();
-                //test
-//                for(auto& subj : _student->getAllSubjects())
-//                  qDebug()<<subj->getName();
                 this->hide();
                 return;
-      //  default: qDebug()<<"SETUP NEXT WINDOW ERROR"; return;
     }
 
     if(nextYear == nullptr){

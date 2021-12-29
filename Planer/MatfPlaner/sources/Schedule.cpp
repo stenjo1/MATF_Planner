@@ -8,9 +8,7 @@ Schedule::Schedule(QVector<Exam*> exams)
 }
 
 Schedule::~Schedule() {
-    for (auto e : _exams) {
-        delete e;
-    }
+
 }
 
 void Schedule::makeSchedule() {
