@@ -16,41 +16,45 @@ Schedule::~Schedule() {
 void Schedule::makeSchedule() {
 
     int n = _exams.length();
-    const int freeDays = 2; // minimum days between two exams
 
     std::sort(_exams.begin(), _exams.end(),
     [](Exam* a, Exam* b) {
-        return a->getDate().addDays(a->getImportanceRate() + freeDays)  < b->getDate().addDays(b->getImportanceRate() + freeDays);
+        return a->getDate().addDays(a->getImportanceRate())  < b->getDate().addDays(b->getImportanceRate());
     });
-
-    // int numberOfExams = 1;
-
-    QDate end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
 
     QVector<Exam*> suggestedExams;
 
-    if(_exams.length() > 0) {
-        suggestedExams.append(_exams[0]);
+    for(int freeDays = 3; freeDays > 0; freeDays--) {
 
-    }
+        suggestedExams.empty();
 
-    if(_exams.length() > 1) {
+        QDate end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
 
-        for (int i = 1; i < n; i++)
 
-         if (_exams[i]->getDate() >= end) {
+        if(_exams.length() > 0) {
+            suggestedExams.append(_exams[0]);
 
-             suggestedExams.append(_exams[i]);
+        }
 
-             end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+        if(_exams.length() > 1) {
 
-         }
+            for (int i = 1; i < n; i++)
 
-    }
+             if (_exams[i]->getDate() >= end) {
 
-    // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
+                 suggestedExams.append(_exams[i]);
 
-    for(auto e : suggestedExams) {
-        std::cout << e->getSubject().getName().toStdString() << "  ";
+                 end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+
+             }
+
+        }
+
+        // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
+
+        for(auto e : suggestedExams) {
+            std::cout << e->getSubject().getName().toStdString() << "  ";
+        }
+
     }
 }
