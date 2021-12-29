@@ -39,6 +39,7 @@ private slots:
     void on_pbSendMail_clicked();
     void on_pbLogin_clicked();
     void on_calendarWidget_clicked(const QDate &date);
+    void emptyCell(QDate date);
 
 private:
     Ui::Calendar *ui;
@@ -49,8 +50,6 @@ private:
     Profile* _profileWindow;
 
     void colorCells();
-
-
 
 };
 

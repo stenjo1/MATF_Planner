@@ -18,6 +18,7 @@ Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
     _profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, _profileWindow, &Profile::fillSlot);
     connect(_examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCells);
+    connect(_examsOverviewWindow, SIGNAL(emptyCalendarSignal(QDate)), this, SLOT(emptyCell(QDate)));
 
     colorCells();
 }
@@ -41,7 +42,6 @@ LoginPage* Calendar::getLoginPage() const{
 
 void Calendar::colorCells()
 {
-    //namestiti nekako da se obrisu sva prethodno obojena polja
     QTextCharFormat fmt;
     fmt.setBackground(QColor(169, 109, 142));
 
@@ -51,6 +51,14 @@ void Calendar::colorCells()
     }
 }
 
+void Calendar::emptyCell(QDate date)
+{
+    QTextCharFormat fmt;
+    fmt.setBackground(QColorConstants::Transparent);
+
+    ui->calendarWidget->setDateTextFormat(date, fmt);
+}
+
 
 QVector<QPair<QString,QString>> Calendar::checkResults()
 {
@@ -58,12 +66,15 @@ QVector<QPair<QString,QString>> Calendar::checkResults()
     for(auto& exam: _exams){
         if (exam->checkIfDatePassed()){
             QString url = exam->getUrl();
-            //test linija za proveru QString url = "http://178.148.148.201:8989/1/index.html";
-            Request req;
-            req.download(url);
-            if (req.isFileChanged()){
-                changedExams.push_back(QPair<QString,QString>(exam->getSubject().getName(), exam->getUrl()));
-                qDebug()<<"Web page is updated!";
+            if(url.isEmpty()){
+                qDebug()<<"CALENDAR::CHECK RESULTS::Empty url string";
+            } else{
+                Request req;
+                req.download(url);
+                if (req.isFileChanged()){
+                    changedExams.push_back(QPair<QString,QString>(exam->getSubject().getName(), exam->getUrl()));
+                    qDebug()<<"Web page is updated!";
+                }
             }
         }
     }
@@ -83,7 +94,9 @@ void Calendar::on_pbCheckUrl_clicked()
     bool hasChanged=false;
     QVector<QPair<QString,QString>> changedExams = checkResults();
     for(auto& exam : changedExams){
-        QMessageBox::information(this,"Rezultat provere","Došlo je do promene na web stranici za ispit " + exam.first + ".\n" + QUrl(exam.second).toString());
+        QMessageBox msgBox;
+        msgBox.setTextFormat(Qt::RichText);
+        QMessageBox::information(&msgBox,"Rezultat provere","Doslo je do promene na sajtu predmeta <a href='" + exam.second + "'>" + exam.first + "</a>");
         hasChanged=true;
     }
 

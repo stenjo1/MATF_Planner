@@ -28,7 +28,8 @@ void ExamsOverview::setStudent(Student* student){
      insertExamsWindow->setStudent(_student);
 }
 
-void ExamsOverview::removeExam(QString& name){
+//return exam that has been removed
+Exam* ExamsOverview::removeExam(QString& name){
 
     int index = name.indexOf(" ");
     int order = name.sliced(0,1).toInt();
@@ -38,7 +39,7 @@ void ExamsOverview::removeExam(QString& name){
         if (_allExams[i]->getSubject().getName().compare(name) == 0 and order==_allExams[i]->getOrder()) {
             _allExams.remove(i);
             // Calendar::clearCell(_allExams[i]->getDate()); ne umem da napravim neku ovakvu fju
-            break;
+            return _allExams[i];
         }
     }
 }
@@ -55,15 +56,15 @@ void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
     msgBox.exec();
 
     if (msgBox.clickedButton() == yesButton) {
-        QString exam = ui->listWidget->itemFromIndex(index)->text();
-        removeExam(exam);
+        QString examName = ui->listWidget->itemFromIndex(index)->text();
+        Exam* exam  = removeExam(examName);
         loadExamList();
 
+        emit emptyCalendarSignal(exam->getDate());
     }
     else if (msgBox.clickedButton() == noButton) {
         msgBox.close();
     }
-
 
 }
 

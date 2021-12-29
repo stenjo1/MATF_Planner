@@ -18,6 +18,7 @@ signals:
    void loadComboBox();
    void fillCalendarSignal();
    void loadExamsJson();
+   void emptyCalendarSignal(QDate date);
 
 public:
    explicit ExamsOverview( QVector<Exam*>& allExams, QWidget *parent = nullptr);
@@ -41,7 +42,7 @@ private:
     InsertExams* insertExamsWindow;
     Schedule* schedule;
     QVector<Exam*>& _allExams;
-    void removeExam(QString& name);
+    Exam* removeExam(QString& name);
 };
 
 #endif // EXAMSOVERVIEW_H
