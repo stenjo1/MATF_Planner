@@ -1,13 +1,46 @@
 [
     {
         "_date": "Tue Feb 22 2022",
-        "_importanceRate": 0,
+        "_importanceRate": 762343284,
         "_order": 2,
         "_subject": {
             "_espb": 6,
             "_name": "Relacione baze podataka"
         },
         "_time": "09:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Tue Jan 11 2022",
+        "_importanceRate": 0,
+        "_order": 1,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Istraživanje podataka"
+        },
+        "_time": "11:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Tue Feb 1 2022",
+        "_importanceRate": 0,
+        "_order": 2,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Istraživanje podataka"
+        },
+        "_time": "09:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Sun Jan 9 2022",
+        "_importanceRate": 0,
+        "_order": 1,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Veštačka inteligencija"
+        },
+        "_time": "13:00:00",
         "_url": ""
     }
 ]

@@ -20,6 +20,7 @@ ExamsOverview::ExamsOverview(QVector<Exam*>& allExams, QWidget *parent) :
 ExamsOverview::~ExamsOverview()
 {
     delete ui;
+    delete insertExamsWindow;
     delete schedule;
 }
 
@@ -28,18 +29,20 @@ void ExamsOverview::setStudent(Student* student){
      insertExamsWindow->setStudent(_student);
 }
 
-//return exam that has been removed
-Exam* ExamsOverview::removeExam(QString& name){
+//return date of the exam that has been removed
+QDate ExamsOverview::removeExam(QString& name){
 
+    QDate date;
     int index = name.indexOf(" ");
     int order = name.sliced(0,1).toInt();
     name = name.sliced(index+1);
 
     for (int i=0; i<_allExams.length(); ++i) {
         if (_allExams[i]->getSubject().getName().compare(name) == 0 and order==_allExams[i]->getOrder()) {
+            date = _allExams[i]->getDate();
             _allExams.remove(i);
             // Calendar::clearCell(_allExams[i]->getDate()); ne umem da napravim neku ovakvu fju
-            return _allExams[i];
+            return date;
         }
     }
 }
@@ -57,10 +60,10 @@ void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 
     if (msgBox.clickedButton() == yesButton) {
         QString examName = ui->listWidget->itemFromIndex(index)->text();
-        Exam* exam  = removeExam(examName);
+        QDate date  = removeExam(examName);
         loadExamList();
 
-        emit emptyCalendarSignal(exam->getDate());
+        emit emptyCalendarSignal(date);
     }
     else if (msgBox.clickedButton() == noButton) {
         msgBox.close();

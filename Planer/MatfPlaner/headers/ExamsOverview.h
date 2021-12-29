@@ -42,7 +42,7 @@ private:
     InsertExams* insertExamsWindow;
     Schedule* schedule;
     QVector<Exam*>& _allExams;
-    Exam* removeExam(QString& name);
+    QDate removeExam(QString& name);
 };
 
 #endif // EXAMSOVERVIEW_H
