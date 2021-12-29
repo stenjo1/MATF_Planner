@@ -1,31 +1,39 @@
 {
     "_allSubjects": [
         {
-            "_espb": 5,
-            "_name": "Uvod u matematičku logiku"
+            "_espb": 6,
+            "_name": "Algoritmi i strukture podataka"
         },
         {
             "_espb": 6,
-            "_name": "Geometrija 1"
-        },
-        {
-            "_espb": 5,
-            "_name": "Algebra 2"
-        },
-        {
-            "_espb": 13,
-            "_name": "Linearna algebra"
+            "_name": "Analiza 2"
         },
         {
             "_espb": 6,
-            "_name": "Diskretne strukture 1"
+            "_name": "Analiza 3"
         },
         {
             "_espb": 6,
-            "_name": "Diskretne strukture 2"
+            "_name": "Prevođenje programskih jezika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Verovatnoća"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u numeričku matematiku"
+        },
+        {
+            "_espb": 6,
+            "_name": "Istraživanje podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Statistika"
         }
     ],
-    "_email": "m@g.c",
-    "_name": "marija",
+    "_email": "stefan@main.com",
+    "_name": "Stefan",
     "_yearOfStudy": 4
 }
