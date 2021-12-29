@@ -103,7 +103,6 @@ void Window::setupNextWindow()
 
                 if(checkBoxes[i]->isChecked()){
                     _student->addSubject(_subjects[i]);
-                    qDebug()<<"checked";
                 } else{
                     _student->removeSubject(_subjects[i]);
                 }

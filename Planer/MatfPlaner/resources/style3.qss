@@ -288,7 +288,7 @@ QCheckBox
 QCheckBox::indicator
 {
     background-color: #ECECEC;
-    border: 1px solid#b32025;
+    border: 1px solid #b32025;
     width: 15px;
     height: 15px;
 }
@@ -304,7 +304,7 @@ QCheckBox::indicator:checked
 
 QCheckBox::indicator:unchecked:hover
 {
-    border: 1px solid#b32025;
+    border: 1px solid #b32025;
 }
 
 
@@ -319,4 +319,26 @@ QCheckBox::indicator:disabled
     background-color: #656565;
     color: #656565;
     border: 1px solid #656565;
+}
+
+QSlider::groove:horizontal {
+        background-color: #1d1d1d;
+        border: 1px solid #ECECEC;
+        height: 10px;
+        border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+        background-color: #BFBFBF;
+        border: 2px solid #ECECEC;
+        width: 16px;
+        height: 20px;
+        line-height: 20px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+        border-radius: 10px;
+}
+
+QSlider::handle:horizontal:hover {
+        border-radius: 10px;
 }

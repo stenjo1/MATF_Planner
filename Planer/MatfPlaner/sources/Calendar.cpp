@@ -30,7 +30,6 @@ Calendar::~Calendar()
     delete _profileWindow;
     delete _examsOverviewWindow;
     delete _loginWindow;
-    delete _student;
     for (auto exam : _exams) {
         delete exam;
     }
@@ -43,7 +42,7 @@ LoginPage* Calendar::getLoginPage() const{
 void Calendar::colorCells()
 {
     QTextCharFormat fmt;
-    fmt.setBackground(QColor(169, 109, 142));
+    fmt.setBackground(QColor(61, 66, 107));
 
     for(auto& exam: _exams){
         QDate date = exam->getDate();
