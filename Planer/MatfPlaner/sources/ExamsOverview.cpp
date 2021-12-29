@@ -2,10 +2,11 @@
 #include "ui_ExamsOverview.h"
 #include <QMessageBox>
 
-ExamsOverview::ExamsOverview(QWidget *parent) :
+ExamsOverview::ExamsOverview(QVector<Exam*>& allExams, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ExamsOverview),
-    insertExamsWindow(new InsertExams)
+    insertExamsWindow(new InsertExams(allExams)),
+    _allExams(allExams)
 {
     ui->setupUi(this);
     ui->listWidget->addItem("test");
@@ -27,6 +28,21 @@ void ExamsOverview::setStudent(Student* student){
      insertExamsWindow->setStudent(_student);
 }
 
+void ExamsOverview::removeExam(QString& name){
+
+    int index = name.indexOf(" ");
+    int order = name.sliced(0,1).toInt();
+    name = name.sliced(index+1);
+
+    for (int i=0; i<_allExams.length(); ++i) {
+        if (_allExams[i]->getSubject().getName().compare(name) == 0 and order==_allExams[i]->getOrder()) {
+            _allExams.remove(i);
+            // Calendar::clearCell(_allExams[i]->getDate()); ne umem da napravim neku ovakvu fju
+            break;
+        }
+    }
+}
+
 void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 {
     QMessageBox msgBox;
@@ -40,7 +56,7 @@ void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
 
     if (msgBox.clickedButton() == yesButton) {
         QString exam = ui->listWidget->itemFromIndex(index)->text();
-        insertExamsWindow->removeExam(exam);
+        removeExam(exam);
         loadExamList();
 
     }
@@ -62,8 +78,7 @@ void ExamsOverview::on_pbAddExam_clicked()
 void ExamsOverview::loadExamList(){
 
     ui->listWidget->clear();
-    QVector<Exam*> allExams = insertExamsWindow->getExams();
-    for (Exam* e : allExams) {
+    for (Exam* e : _allExams) {
         ui->listWidget->addItem(QString::number(e->getOrder()) + ".rok: " + e->getSubject().getName());
     }
 }
@@ -71,7 +86,7 @@ void ExamsOverview::loadExamList(){
 void ExamsOverview::on_pbConfirm_clicked()
 {
     //TO-DO: pozvati pravljenje rasporeda
-    schedule = new Schedule(insertExamsWindow->getExams());
+    schedule = new Schedule(_allExams);
 
     schedule->makeSchedule();
 

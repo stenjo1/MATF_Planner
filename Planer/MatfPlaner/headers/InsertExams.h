@@ -15,10 +15,10 @@ class InsertExams : public QWidget
 signals:
     void reloadListWidget();
 public:
-    explicit InsertExams(QWidget *parent = nullptr);
+    explicit InsertExams(QVector<Exam*>& allExams, QWidget *parent = nullptr);
     ~InsertExams();
     void setStudent(Student* student);
-     QVector<Exam*> getExams();
+    // QVector<Exam*> getExams();
      void removeExam(QString& name);
 
 public slots:
@@ -34,7 +34,7 @@ private slots:
 
 private:
     Ui::InsertExams *ui;
-    QVector<Exam*> _exams;
+    QVector<Exam*>& _exams;
     Student* _student;
 
 };

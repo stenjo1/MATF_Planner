@@ -1,31 +1,68 @@
 {
     "_allSubjects": [
         {
+            "_espb": 6,
+            "_name": "Analiza 3"
+        },
+        {
+            "_espb": 6,
+            "_name": "Relacione baze podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Računarska grafika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Veštačka inteligencija"
+        },
+        {
+            "_espb": 6,
+            "_name": "Istraživanje podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Statistika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Računarske mreže"
+        },
+        {
+            "_espb": 6,
+            "_name": "Razvoj softvera"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R3"
+        },
+        {
             "_espb": 5,
-            "_name": "Uvod u matematičku logiku"
+            "_name": "Izborni predmet M1"
         },
         {
             "_espb": 6,
-            "_name": "Geometrija 1"
+            "_name": "Izborni predmet K"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R4"
+        },
+        {
+            "_espb": 2,
+            "_name": "Izborni predmet V1"
         },
         {
             "_espb": 5,
-            "_name": "Algebra 2"
-        },
-        {
-            "_espb": 13,
-            "_name": "Linearna algebra"
-        },
-        {
-            "_espb": 6,
-            "_name": "Diskretne strukture 1"
-        },
-        {
-            "_espb": 6,
-            "_name": "Diskretne strukture 2"
+            "_name": "Izborni predmet M2"
         }
     ],
-    "_email": "m@g.c",
-    "_name": "marija",
+    "_email": "marija@gmail.com",
+    "_module": "Informatika",
+    "_name": "Marija",
     "_yearOfStudy": 4
 }

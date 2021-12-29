@@ -11,33 +11,39 @@
 #include<QVector>
 
 
-enum Module {None, Informatika, Matematika};
+enum Module {
+    None,
+    Informatika,
+    Matematika
+};
 
 class Student
 {
 public:
-    Student(QString name, QString email);
+
     Student(QString name,QVector<Subject*> allSubjects,QVector<Exam*> exams);
     Student();
     ~Student();
-    void addExam(Exam *exam); //dodaje ispit na studenta
-    void jsonToSubjectList(QJsonArray arr); //izvlaci iz json fajla
-    QJsonArray parseJsonToArray(QString pathname); //damo ime json fajla koji hocemo da
+
+    void jsonToSubjectList(QJsonArray arr);
+    QJsonArray parseJsonToArray(QString pathname);
     void readFromJson();
     void writeToJson();
     void clearStudentFile();
-    // isparsira do qjsonarrayja
+
+    QString getName() const;
+    QString getEmail() const;
+    int getYearOfStudy() const;
+    QString getModuleString();
+    Module moduleFromString(QString string);
+
     void setName(QString name);
     void setEmail(QString email);
     void setYearOfStudy(int year);
     void setModule(Module m);
-    void emptyAllSubjects();
 
-    QString getName() const;
-    QString getEmail() const;
-    QString getModuleString();
-    int getYearOfStudy() const;
     QVector<Subject*> getAllSubjects() const;
+    void emptyAllSubjects();
 
     void addSubject(Subject* subj);
     void removeSubject(Subject* subj);
@@ -47,7 +53,6 @@ private:
     int _yearOfStudy;
     QString _email;
     QVector<Subject*> _allSubjects;
-    QVector<Exam*> _exams;
     Module _module;
 };
 

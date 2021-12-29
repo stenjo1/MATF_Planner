@@ -31,6 +31,7 @@ Exam::Exam(QJsonObject obj){
         //msm da je ova funkcija nepotrebna u utils
         //_date = Utils::fromQStringtoQDate(_dateString);
         _url = obj.value("_url").toString();
+        _order = obj.value("_order").toInt();
         QJsonObject subject =obj.value("_subject").toObject();
         _subject = Subject(subject);
 
@@ -81,6 +82,7 @@ QJsonObject* Exam::toJson(){
     examJson->insert("_url",_url);
     examJson->insert("_importanceRate",_importanceRate);
     examJson->insert("_subject", *_subject.toJson());
+    examJson->insert("_order", _order);
 
     return examJson;
 

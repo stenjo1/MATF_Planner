@@ -20,7 +20,7 @@ signals:
    void loadExamsJson();
 
 public:
-    explicit ExamsOverview(QWidget *parent = nullptr);
+   explicit ExamsOverview( QVector<Exam*>& allExams, QWidget *parent = nullptr);
     ~ExamsOverview();
     void setStudent(Student* student);
 
@@ -40,6 +40,8 @@ private:
     Student* _student;
     InsertExams* insertExamsWindow;
     Schedule* schedule;
+    QVector<Exam*>& _allExams;
+    void removeExam(QString& name);
 };
 
 #endif // EXAMSOVERVIEW_H
