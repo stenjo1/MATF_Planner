@@ -120,6 +120,7 @@ void Window::setupNextWindow()
         case 3: newFilename.replace('3', '4');
                 break;
         case 4:
+
                 _student->writeToJson();
                 this->hide();
                 return;

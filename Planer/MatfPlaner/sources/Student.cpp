@@ -109,18 +109,18 @@ void Student::jsonToSubjectList(QJsonArray arr){
 
 
 
-QJsonArray Student::parseJsonToArray(QString pathname){
-    QString content_json;
-    QFile file;
-    file.setFileName(pathname);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    content_json = file.readAll();
-    file.close();
-    QJsonDocument sd = QJsonDocument::fromJson(content_json.toUtf8());
-    QJsonArray array = sd.array();
+//QJsonArray Student::parseJsonToArray(QString pathname){
+//    QString content_json;
+//    QFile file;
+//    file.setFileName(pathname);
+//    file.open(QIODevice::ReadOnly | QIODevice::Text);
+//    content_json = file.readAll();
+//    file.close();
+//    QJsonDocument sd = QJsonDocument::fromJson(content_json.toUtf8());
+//    QJsonArray array = sd.array();
 
-    return array;
-}
+//    return array;
+//}
 
 void Student::writeToJson()
 {
@@ -139,12 +139,19 @@ void Student::writeToJson()
     jsonObjStudent.insert("_module",getModuleString());
 
 
-    QDir dir("..");
-    QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
-    QFile jsonFile(path);
-    jsonFile.open(QFile::WriteOnly);
-    QJsonDocument doc(jsonObjStudent);
-    jsonFile.write(doc.toJson());
+        QDir dir("..");
+        QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
+        QFile jsonFile(path);
+        if(!jsonFile.open(QIODevice::WriteOnly)) {
+           // QMessageBox::information(0,"error",jsonFile.errorString());
+        }
+        QJsonDocument doc(jsonObjStudent);
+        jsonFile.write(doc.toJson());
+        jsonFile.close();
+
+
+
+
 }
 
 void Student::readFromJson(){

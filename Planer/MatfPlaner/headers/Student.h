@@ -2,8 +2,8 @@
 #define STUDENT_HPP
 #include<QString>
 #include<vector>
-#include "Subject.h"
 #include "Exam.h"
+#include "Subject.h"
 #include<QJsonArray>
 #include<QDir>
 #include<QFile>
@@ -21,12 +21,11 @@ class Student
 {
 public:
 
-    Student(QString name,QVector<Subject*> allSubjects,QVector<Exam*> exams);
     Student();
     ~Student();
 
     void jsonToSubjectList(QJsonArray arr);
-    QJsonArray parseJsonToArray(QString pathname);
+   // QJsonArray parseJsonToArray(QString pathname);
     void readFromJson();
     void writeToJson();
     void clearStudentFile();
