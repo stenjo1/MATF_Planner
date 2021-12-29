@@ -22,6 +22,68 @@ QLabel#label_login_title
     background-color: #ECECEC;
 }
 
+QLabel#label_exam_title
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+QLabel#label_profile_title
+{
+    font-weight: bold;
+    background-color: #ECECEC;
+}
+
+QLabel#label_overview_title
+{
+    background-color: #ECECEC;
+}
+
+QLabel#labelName
+{
+    background-color: #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+}
+
+QLabel#labelEmail
+{
+    background-color: #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+}
+
+QLabel#labelYearOfStudy
+{
+    background-color: #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+}
+
+QLabel#labelModule
+{
+    background-color: #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+}
+
+QLabel#labelESPB
+{
+    background-color: #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+}
+
 QPushButton
 {
     background-color:#1d1d1d;
@@ -86,8 +148,14 @@ QPlainTextEdit
 
 QListWidget
 {
-    background-color: #ECECEC;
-    color:#1d1d1d;
+    background-color:  #ECECEC;
+    border: 1px solid #b32025;
+    border-radius: 5px;
+
+    padding: 3px;
+    padding-left: 5px;
+
+    color: #1d1d1d;
 }
 
 QComboBox
