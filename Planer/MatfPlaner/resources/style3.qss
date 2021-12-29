@@ -259,8 +259,8 @@ QCalendarWidget QAbstractItemView:enabled
     font-size: 15px;
     color:#BFBFBF;
     background-color:#1D1D1D;
-    selection-background-color:#1d1d1d;
-    selection-color:#b32025;
+    selection-background-color:#b32025;
+    selection-color:#1D1D1D;
 }
 
   /* days in other months */
