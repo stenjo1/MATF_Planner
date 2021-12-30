@@ -128,7 +128,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="dateLineEdit11">
        <property name="placeholderText">
         <string>dd.mm.yyyy.</string>
        </property>
@@ -146,7 +146,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="timeLineEdit11">
        <property name="placeholderText">
         <string>hh:mm</string>
        </property>
@@ -232,7 +232,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="dateLineEdit21">
        <property name="placeholderText">
         <string>dd.mm.yyyy.</string>
        </property>

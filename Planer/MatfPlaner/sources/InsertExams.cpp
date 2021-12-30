@@ -64,37 +64,49 @@ void InsertExams::on_addExamButton_clicked()
     if (!ui->checkBox1->isChecked()) {
 
         QString dateString1 = ui->dateLineEdit1->text();
+        QString dateString11 = ui->dateLineEdit11->text();
         QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy.");
+        QDate date11 = QDate::fromString(dateString11, "dd.MM.yyyy.");
         printf("%s\n", date1.toString().toStdString().c_str());
         if (!(date1.isValid())){
             ui->errorLabel->setText("Uneseni datum1 nije validan!");
             return ;
         }
+
         QString timeString1 = ui->timeLineEdit1->text();
         QTime time1 = QTime::fromString(timeString1, "HH:mm");
+        QString timeString11 = ui->timeLineEdit11->text();
+        QTime time11 = QTime::fromString(timeString1, "HH:mm");
         printf("%s\n", timeString1.toStdString().c_str());
         if (!time1.isValid()) {
             ui->errorLabel->setText("Uneseno vreme1 nije validno!");
             return;
         }
-        Exam *exam1 = new Exam(subject, date1, time1, url, importanceRate,1);
+        Exam *exam1 = new Exam(subject, date1, date11, time1, time11, url, importanceRate,1);
         _exams.push_back(exam1);
     }
     if (!ui->checkBox2->isChecked()) {
 
         QString dateString2 = ui->dateLineEdit2->text();
         QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy.");
+        QString dateString21 = ui->dateLineEdit21->text();
+        QDate date21 = QDate::fromString(dateString21, "dd.MM.yyyy.");
         if (!date2.isValid()) {
             ui->errorLabel->setText("Uneseni datum2 nije validan!");
             return ;
         }
+        if (!date21.isValid()) {
+            ui->errorLabel->setText("Uneseni datum21 nije validan!");
+            return ;
+        }
         QString timeString2 = ui->timeLineEdit2->text();
         QTime time2 = QTime::fromString(timeString2, "HH:mm");
+        QTime time21 = QTime::fromString(timeString2, "HH:mm");
         if (!time2.isValid()) {
             ui->errorLabel->setText("Uneseno vreme2 nije validno!");
             return;
         }
-        Exam *exam2 = new Exam(subject, date2, time2, url, importanceRate,2);
+        Exam *exam2 = new Exam(subject, date2, date21, time2, time21, url, importanceRate,2);
         _exams.push_back(exam2);
     }
 
