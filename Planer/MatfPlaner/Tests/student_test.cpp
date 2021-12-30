@@ -15,23 +15,21 @@ TEST_CASE("Testing student class", "[student]")
 
     }
 
-    SECTION("If nothing is passed as parameter, student constructor creates student with year of study 0")
+    SECTION("If nothing is passed as parameter, student constructor creates student with empty name")
     {
         Student student;
-        int expectedYearOfStudy = 0;
+        QString expectedName = "";
 
-        int yearOfStudy = student.getYearOfStudy();
+        QString name = student.getName();
 
-        REQUIRE(expectedYearOfStudy==yearOfStudy);
+        REQUIRE_FALSE(name.compare(expectedName));
     }
 
     SECTION("In order to read from student.json, that file should exist"){
         Student student;
         QDir targetDir("../MatfPlaner/resources");
         QString path = targetDir.absolutePath() + "/student.json";
-
         QFile jsonFile(path);
-
         REQUIRE(jsonFile.exists());
 
     }
