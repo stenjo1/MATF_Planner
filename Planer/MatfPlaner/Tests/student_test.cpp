@@ -27,8 +27,8 @@ TEST_CASE("Testing student class", "[student]")
 
     SECTION("In order to read from student.json, that file should exist"){
         Student student;
-        QDir dir("../");
-        QString path = dir.absolutePath() + "/resources/student.json";
+        QDir targetDir("../MatfPlaner/resources");
+        QString path = targetDir.absolutePath() + "/student.json";
 
         QFile jsonFile(path);
 
@@ -38,13 +38,14 @@ TEST_CASE("Testing student class", "[student]")
 
     SECTION("If content of student.json is \"{}\" , then student name and email are empty"){
         Student student;
-        QDir dir("../");
+        QDir targetDir("../MatfPlaner/resources");
+        QString path = targetDir.absolutePath() + "/student.json";
         std::string content;
-        QString path = dir.absolutePath() + "/resources/student.json";
         QFile jsonFile(path);
-
+        jsonFile.open(QIODevice::ReadOnly | QIODevice::Text);
         content = jsonFile.readAll().toStdString();
         jsonFile.close();
+        student.clearStudentFile();
         student.readFromJson();
         if(content.compare("{}")){
             REQUIRE_FALSE(student.getName().compare(""));
