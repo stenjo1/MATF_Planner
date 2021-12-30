@@ -157,13 +157,12 @@ void Calendar::checkIfExamIsClose(){
     for(auto exam : _exams){
         int daysToExam = currentDate.daysTo(exam->getDate());
         if (daysToExam <= 3){
-            closeExams.append("Ostalo je ").append(QString::fromStdString(std::to_string(daysToExam))).append(" dan do ispita ").append(exam->getSubject().getName()).append("\n");
+            if(daysToExam == 1){
+                closeExams.append("Ostao je ").append(QString::fromStdString(std::to_string(daysToExam))).append(" dan do ispita ").append(exam->getSubject().getName()).append("\n");
+            }else{
+                closeExams.append("Ostalo je ").append(QString::fromStdString(std::to_string(daysToExam))).append(" dan do ispita ").append(exam->getSubject().getName()).append("\n");
+            }
         }
     }
-    QMessageBox msgBox;
-    msgBox.setIcon(QMessageBox::Warning);
-    Qt::WindowFlags flags = msgBox.windowFlags();
-    msgBox.setParent(this, flags);
-    msgBox.setText(closeExams);
-    msgBox.exec();
+    ui->notificationsTextEdit->setText(closeExams);
 }
