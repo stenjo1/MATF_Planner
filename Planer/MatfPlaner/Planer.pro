@@ -72,7 +72,8 @@ FORMS += \
 #    forms/ThirdYearI.ui \
 #    forms/ThirdYearMR.ui \
     forms/Profile.ui \
-    forms/ExamsOverview.ui
+    forms/ExamsOverview.ui \
+    forms/Schedule.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

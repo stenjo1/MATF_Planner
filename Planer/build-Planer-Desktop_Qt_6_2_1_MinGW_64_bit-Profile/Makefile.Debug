@@ -139,7 +139,7 @@ DESTDIR_TARGET = debug\Planer.exe
 first: all
 all: Makefile.Debug  debug/Planer.exe
 
-debug/Planer.exe: C:/Qt/6.2.1/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Gui.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Network.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Core.a C:/Qt/6.2.1/mingw81_64/lib/libQt6EntryPoint.a ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h $(OBJECTS) 
+debug/Planer.exe: C:/Qt/6.2.1/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Gui.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Network.a C:/Qt/6.2.1/mingw81_64/lib/libQt6Core.a C:/Qt/6.2.1/mingw81_64/lib/libQt6EntryPoint.a ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h ui_Schedule.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.Planer.Debug  $(LIBS)
 	objcopy --only-keep-debug debug/Planer.exe debug/Planer.exe.debug && objcopy --strip-debug debug/Planer.exe && objcopy --add-gnu-debuglink=debug/Planer.exe.debug debug/Planer.exe
 
@@ -149,7 +149,7 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Planer.zip $(SOURCES) $(DIST) ..\MatfPlaner\Planer.pro C:\Qt\6.2.1\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.2.1\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.2.1\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.2.1\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.2.1\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resolve_target.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\separate_debug_info.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qtquickcompiler.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\lex.prf ..\MatfPlaner\Planer.pro ..\MatfPlaner\resources\logo.qrc C:\Qt\6.2.1\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Network.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Core.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6EntryPoint.prl   ..\MatfPlaner\resources\logo.qrc C:\Qt\6.2.1\mingw81_64\mkspecs\features\data\dummy.cpp ..\MatfPlaner\headers\Window.h ..\MatfPlaner\headers\Request.h ..\MatfPlaner\headers\Schedule.h ..\MatfPlaner\headers\Utils.h ..\MatfPlaner\headers\InsertExams.h ..\MatfPlaner\headers\Calendar.h ..\MatfPlaner\headers\Exam.h ..\MatfPlaner\headers\LoginPage.h ..\MatfPlaner\headers\Student.h ..\MatfPlaner\headers\Subject.h ..\MatfPlaner\headers\Profile.h ..\MatfPlaner\headers\ExamsOverview.h  ..\MatfPlaner\sources\Window.cpp ..\MatfPlaner\sources\ExamsOverview.cpp ..\MatfPlaner\sources\Profile.cpp ..\MatfPlaner\sources\Request.cpp ..\MatfPlaner\sources\Schedule.cpp ..\MatfPlaner\sources\Utils.cpp ..\MatfPlaner\sources\InsertExams.cpp ..\MatfPlaner\sources\Calendar.cpp ..\MatfPlaner\sources\Exam.cpp ..\MatfPlaner\sources\LoginPage.cpp ..\MatfPlaner\sources\Student.cpp ..\MatfPlaner\sources\Subject.cpp ..\MatfPlaner\sources\main.cpp ..\MatfPlaner\forms\InsertExams.ui ..\MatfPlaner\forms\Calendar.ui ..\MatfPlaner\forms\LoginPage.ui ..\MatfPlaner\forms\Profile.ui ..\MatfPlaner\forms\ExamsOverview.ui    
+	$(ZIP) Planer.zip $(SOURCES) $(DIST) ..\MatfPlaner\Planer.pro C:\Qt\6.2.1\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.2.1\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.2.1\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.2.1\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.2.1\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.2.1\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resolve_target.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\separate_debug_info.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qtquickcompiler.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.2.1\mingw81_64\mkspecs\features\lex.prf ..\MatfPlaner\Planer.pro ..\MatfPlaner\resources\logo.qrc C:\Qt\6.2.1\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Network.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6Core.prl C:\Qt\6.2.1\mingw81_64\lib\Qt6EntryPoint.prl   ..\MatfPlaner\resources\logo.qrc C:\Qt\6.2.1\mingw81_64\mkspecs\features\data\dummy.cpp ..\MatfPlaner\headers\Window.h ..\MatfPlaner\headers\Request.h ..\MatfPlaner\headers\Schedule.h ..\MatfPlaner\headers\Utils.h ..\MatfPlaner\headers\InsertExams.h ..\MatfPlaner\headers\Calendar.h ..\MatfPlaner\headers\Exam.h ..\MatfPlaner\headers\LoginPage.h ..\MatfPlaner\headers\Student.h ..\MatfPlaner\headers\Subject.h ..\MatfPlaner\headers\Profile.h ..\MatfPlaner\headers\ExamsOverview.h  ..\MatfPlaner\sources\Window.cpp ..\MatfPlaner\sources\ExamsOverview.cpp ..\MatfPlaner\sources\Profile.cpp ..\MatfPlaner\sources\Request.cpp ..\MatfPlaner\sources\Schedule.cpp ..\MatfPlaner\sources\Utils.cpp ..\MatfPlaner\sources\InsertExams.cpp ..\MatfPlaner\sources\Calendar.cpp ..\MatfPlaner\sources\Exam.cpp ..\MatfPlaner\sources\LoginPage.cpp ..\MatfPlaner\sources\Student.cpp ..\MatfPlaner\sources\Subject.cpp ..\MatfPlaner\sources\main.cpp ..\MatfPlaner\forms\InsertExams.ui ..\MatfPlaner\forms\Calendar.ui ..\MatfPlaner\forms\LoginPage.ui ..\MatfPlaner\forms\Profile.ui ..\MatfPlaner\forms\ExamsOverview.ui ..\MatfPlaner\forms\Schedule.ui    
 
 clean: compiler_clean 
 	-$(DEL_FILE) debug\Window.o debug\ExamsOverview.o debug\Profile.o debug\Request.o debug\Schedule.o debug\Utils.o debug\InsertExams.o debug\Calendar.o debug\Exam.o debug\LoginPage.o debug\Student.o debug\Subject.o debug\main.o debug\qrc_logo.o debug\moc_Window.o debug\moc_Request.o debug\moc_Utils.o debug\moc_InsertExams.o debug\moc_Calendar.o debug\moc_LoginPage.o debug\moc_Profile.o debug\moc_ExamsOverview.o
@@ -1571,9 +1571,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h
+compiler_uic_make_all: ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h ui_Schedule.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h
+	-$(DEL_FILE) ui_InsertExams.h ui_Calendar.h ui_LoginPage.h ui_Profile.h ui_ExamsOverview.h ui_Schedule.h
 ui_InsertExams.h: ../MatfPlaner/forms/InsertExams.ui \
 		C:/Qt/6.2.1/mingw81_64/bin/uic.exe
 	C:\Qt\6.2.1\mingw81_64\bin\uic.exe ..\MatfPlaner\forms\InsertExams.ui -o ui_InsertExams.h
@@ -1593,6 +1593,10 @@ ui_Profile.h: ../MatfPlaner/forms/Profile.ui \
 ui_ExamsOverview.h: ../MatfPlaner/forms/ExamsOverview.ui \
 		C:/Qt/6.2.1/mingw81_64/bin/uic.exe
 	C:\Qt\6.2.1\mingw81_64\bin\uic.exe ..\MatfPlaner\forms\ExamsOverview.ui -o ui_ExamsOverview.h
+
+ui_Schedule.h: ../MatfPlaner/forms/Schedule.ui \
+		C:/Qt/6.2.1/mingw81_64/bin/uic.exe
+	C:\Qt\6.2.1\mingw81_64\bin\uic.exe ..\MatfPlaner\forms\Schedule.ui -o ui_Schedule.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1952,6 +1956,59 @@ debug/ExamsOverview.o: ../MatfPlaner/sources/ExamsOverview.cpp ../MatfPlaner/hea
 		../MatfPlaner/headers/InsertExams.h \
 		../MatfPlaner/headers/Schedule.h \
 		ui_ExamsOverview.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLabel \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpicture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QListWidget \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlistview.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qicon.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QSpacerItem \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qdialog.h
@@ -2114,7 +2171,54 @@ debug/Profile.o: ../MatfPlaner/sources/Profile.cpp ../MatfPlaner/headers/Profile
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/qjsondocument.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/QVector \
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/qvector.h \
-		ui_Profile.h
+		ui_Profile.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QFormLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qformlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLabel \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpicture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QPlainTextEdit \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qplaintextedit.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpen.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qabstracttextdocumentlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qglyphrun.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qrawfont.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qfontdatabase.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QSpacerItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Profile.o ..\MatfPlaner\sources\Profile.cpp
 
 debug/Request.o: ../MatfPlaner/sources/Request.cpp ../MatfPlaner/headers/Request.h \
@@ -2662,7 +2766,66 @@ debug/InsertExams.o: ../MatfPlaner/sources/InsertExams.cpp ../MatfPlaner/headers
 		C:/Qt/6.2.1/mingw81_64/include/QtGui/QTransform \
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/qnativeinterface.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/qloggingcategory.h \
-		ui_InsertExams.h
+		ui_InsertExams.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QCheckBox \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qcheckbox.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qicon.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QComboBox \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLabel \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpicture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpen.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QSlider \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QSpacerItem \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\InsertExams.o ..\MatfPlaner\sources\InsertExams.cpp
 
 debug/Calendar.o: ../MatfPlaner/sources/Calendar.cpp ../MatfPlaner/headers/Calendar.h \
@@ -2884,7 +3047,36 @@ debug/Calendar.o: ../MatfPlaner/sources/Calendar.cpp ../MatfPlaner/headers/Calen
 		../MatfPlaner/headers/ExamsOverview.h \
 		../MatfPlaner/headers/Schedule.h \
 		../MatfPlaner/headers/Profile.h \
-		ui_Calendar.h
+		ui_Calendar.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QCalendarWidget \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qcalendarwidget.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QTextEdit \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\Calendar.o ..\MatfPlaner\sources\Calendar.cpp
 
 debug/Exam.o: ../MatfPlaner/sources/Exam.cpp ../MatfPlaner/headers/Utils.h \
@@ -3241,7 +3433,39 @@ debug/LoginPage.o: ../MatfPlaner/sources/LoginPage.cpp ../MatfPlaner/headers/Log
 		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qdialog.h \
 		C:/Qt/6.2.1/mingw81_64/include/QtCore/QRegularExpression \
-		ui_LoginPage.h
+		ui_LoginPage.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QApplication \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qthread.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qexception.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qapplicationpermission.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QFormLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qformlayout.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qpen.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.2.1/mingw81_64/include/QtWidgets/QSpacerItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\LoginPage.o ..\MatfPlaner\sources\LoginPage.cpp
 
 debug/Student.o: ../MatfPlaner/sources/Student.cpp ../MatfPlaner/headers/Student.h \

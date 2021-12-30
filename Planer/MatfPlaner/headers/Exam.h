@@ -19,12 +19,12 @@ public:
 
     QString getUrl();
     QDate getDate();
-    QDate getDateVerbal();
+    QDate getDateOral();
     int getImportanceRate();
     Subject& getSubject();
     int getOrder();
     QTime getTime();
-    QTime getTimeVerbal();
+    QTime getTimeOral();
 
 private:
     QDate _date;

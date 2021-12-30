@@ -67,8 +67,16 @@ QDate Exam::getDate() {
     return _date;
 }
 
+QDate Exam::getDateOral() {
+    return _dateOral;
+}
+
 QTime Exam::getTime(){
     return _time;
+}
+
+QTime Exam::getTimeOral(){
+    return _timeOral;
 }
 
 int Exam::getImportanceRate() {

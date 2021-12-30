@@ -24,17 +24,23 @@ void Schedule::makeSchedule() {
 
     QVector<Exam*> suggestedExams;
     QDate end;
+    QSet<QDate> datesOfOralExams;
+    int suggestion = 1;
 
     for(int freeDays = 3; freeDays > 0; freeDays--) {
 
-        suggestedExams.empty();
+        std::cout << suggestion << ". predlog" << "\n";
 
+
+        suggestedExams.clear();
+        datesOfOralExams.clear();
 
 
         if(_exams.length() > 0) {
 
             end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
             suggestedExams.append(_exams[0]);
+            datesOfOralExams.insert(_exams[0]->getDateOral());
 
         }
 
@@ -44,9 +50,9 @@ void Schedule::makeSchedule() {
 
              if (_exams[i]->getDate() >= end) {
 
-                 suggestedExams.append(_exams[i]);
-
                  end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+                 suggestedExams.append(_exams[i]);
+                 datesOfOralExams.insert(_exams[i]->getDateOral());
 
              }
 
@@ -54,9 +60,19 @@ void Schedule::makeSchedule() {
 
         // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
 
-        for(auto e : suggestedExams) {
-            std::cout << e->getSubject().getName().toStdString() << "  ";
+        for(int i = 0; i < suggestedExams.length(); i++) {
+
+            if(datesOfOralExams.find(suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
+
+                std::cout << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDate().toString("yyyy.MM.dd").toStdString() << "\n";
+                std::cout << "[USMENI]" << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDateOral().toString("yyyy.MM.dd").toStdString() << "\n";
+            }
+
         }
+
+        std::cout << "\n";
+
+        suggestion++;
 
     }
 }
