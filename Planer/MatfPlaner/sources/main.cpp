@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     }else{
         Calendar w = Calendar(student,exams);
         w.show();
+        w.checkIfExamIsClose();
         return a.exec();
     }
 

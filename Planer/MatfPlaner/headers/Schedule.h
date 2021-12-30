@@ -11,6 +11,7 @@ public:
     Schedule(QVector<Exam*> exams);
     void makeSchedule();
     ~Schedule();
+    QVector<Exam*> getExams();
 
 private:
     QVector<Exam*> _exams;

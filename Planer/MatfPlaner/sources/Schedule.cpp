@@ -57,3 +57,7 @@ void Schedule::makeSchedule() {
 
     }
 }
+
+QVector<Exam*> Schedule::getExams(){
+    return _exams;
+}

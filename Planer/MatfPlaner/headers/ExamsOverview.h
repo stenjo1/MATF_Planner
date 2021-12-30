@@ -24,6 +24,7 @@ public:
    explicit ExamsOverview( QVector<Exam*>& allExams, QWidget *parent = nullptr);
     ~ExamsOverview();
     void setStudent(Student* student);
+    Schedule* getSchedule();
 
 
 private slots:

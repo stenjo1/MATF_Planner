@@ -25,6 +25,7 @@ public:
 
     explicit Calendar(Student* student, QList<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
+    void checkIfExamIsClose();
 
     LoginPage* getLoginPage() const;
     QVector<QPair<QString,QString>> checkResults();
@@ -40,6 +41,7 @@ private slots:
     void on_pbLogin_clicked();
     void on_calendarWidget_clicked(const QDate &date);
     void emptyCell(QDate date);
+
 
 private:
     Ui::Calendar *ui;

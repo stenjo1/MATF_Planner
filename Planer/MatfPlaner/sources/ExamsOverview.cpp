@@ -101,3 +101,7 @@ void ExamsOverview::on_pbConfirm_clicked()
     hide();
 }
 
+Schedule* ExamsOverview::getSchedule(){
+    return schedule;
+}
+

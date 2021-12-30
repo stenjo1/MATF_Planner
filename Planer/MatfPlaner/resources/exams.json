@@ -1,7 +1,8 @@
 [
     {
         "_date": "Tue Jan 11 2022",
-        "_importanceRate": 2,
+        "_importanceRate": 7536640,
+        "_order": 0,
         "_subject": {
             "_espb": 6,
             "_name": "Algoritmi i strukture podataka"
@@ -11,7 +12,8 @@
     },
     {
         "_date": "Thu Jan 13 2022",
-        "_importanceRate": 3,
+        "_importanceRate": 6619246,
+        "_order": 0,
         "_subject": {
             "_espb": 6,
             "_name": "Analiza 2"
@@ -21,7 +23,8 @@
     },
     {
         "_date": "Sun Jan 16 2022",
-        "_importanceRate": 5,
+        "_importanceRate": 6619136,
+        "_order": 0,
         "_subject": {
             "_espb": 6,
             "_name": "Analiza 3"
@@ -30,35 +33,25 @@
         "_url": ""
     },
     {
-        "_date": "Sat Jan 22 2022",
-        "_importanceRate": 1,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Prevođenje programskih jezika"
-        },
-        "_time": "09:00:00",
-        "_url": ""
-    },
-    {
-        "_date": "Tue Feb 1 2022",
-        "_importanceRate": 0,
-        "_order": 2,
-        "_subject": {
-            "_espb": 6,
-            "_name": "Istraživanje podataka"
-        },
-        "_time": "09:00:00",
-        "_url": ""
-    },
-    {
-        "_date": "Sun Jan 9 2022",
+        "_date": "Fri Dec 31 2021",
         "_importanceRate": 0,
         "_order": 1,
         "_subject": {
             "_espb": 6,
-            "_name": "Veštačka inteligencija"
+            "_name": "Algoritmi i strukture podataka"
         },
-        "_time": "13:00:00",
+        "_time": "09:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Fri Jan 14 2022",
+        "_importanceRate": 1,
+        "_order": 2,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Uvod u numeričku matematiku"
+        },
+        "_time": "09:00:00",
         "_url": ""
     }
 ]

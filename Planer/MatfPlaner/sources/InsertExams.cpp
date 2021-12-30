@@ -64,14 +64,19 @@ void InsertExams::on_addExamButton_clicked()
         QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy.");
         printf("%s\n", date1.toString().toStdString().c_str());
         if (!(date1.isValid())){
-            ui->errorLabel->setText("Uneseni datum1 nije validan!");
+            ui->errorLabel->setText("Uneseni datum za ispit u prvom roku nije validan!");
             return ;
+        }
+        if (QDate::currentDate().daysTo(date1)<0)
+        {
+            ui->errorLabel->setText("Datum je prosao za ispit u prvom roku, uneti datum u buducnosti");
+            return;
         }
         QString timeString1 = ui->timeLineEdit1->text();
         QTime time1 = QTime::fromString(timeString1, "HH:mm");
         printf("%s\n", timeString1.toStdString().c_str());
         if (!time1.isValid()) {
-            ui->errorLabel->setText("Uneseno vreme1 nije validno!");
+            ui->errorLabel->setText("Uneseno vreme za ispit u prvom roku nije validno!");
             return;
         }
         Exam *exam1 = new Exam(subject, date1, time1, url, importanceRate,1);
@@ -82,13 +87,18 @@ void InsertExams::on_addExamButton_clicked()
         QString dateString2 = ui->dateLineEdit2->text();
         QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy.");
         if (!date2.isValid()) {
-            ui->errorLabel->setText("Uneseni datum2 nije validan!");
+            ui->errorLabel->setText("Uneseni datum za ispit u drugom roku nije validan!");
             return ;
+        }
+        if (QDate::currentDate().daysTo(date2)<0)
+        {
+            ui->errorLabel->setText("Datum je prosao za ispit u drugom roku, uneti datum u buducnosti");
+            return;
         }
         QString timeString2 = ui->timeLineEdit2->text();
         QTime time2 = QTime::fromString(timeString2, "HH:mm");
         if (!time2.isValid()) {
-            ui->errorLabel->setText("Uneseno vreme2 nije validno!");
+            ui->errorLabel->setText("Uneseno vreme za ispit u drugom roku nije validno!");
             return;
         }
         Exam *exam2 = new Exam(subject, date2, time2, url, importanceRate,2);

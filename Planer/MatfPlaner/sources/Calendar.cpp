@@ -151,3 +151,19 @@ void Calendar::on_calendarWidget_clicked(const QDate &date)
 //    }
 }
 
+void Calendar::checkIfExamIsClose(){
+    QString closeExams = QString();
+    QDate currentDate = QDate::currentDate();
+    for(auto exam : _exams){
+        int daysToExam = currentDate.daysTo(exam->getDate());
+        if (daysToExam <= 3){
+            closeExams.append("Ostalo je ").append(QString::fromStdString(std::to_string(daysToExam))).append(" dan do ispita ").append(exam->getSubject().getName()).append("\n");
+        }
+    }
+    QMessageBox msgBox;
+    msgBox.setIcon(QMessageBox::Warning);
+    Qt::WindowFlags flags = msgBox.windowFlags();
+    msgBox.setParent(this, flags);
+    msgBox.setText(closeExams);
+    msgBox.exec();
+}
