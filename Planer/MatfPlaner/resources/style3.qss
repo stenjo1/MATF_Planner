@@ -196,7 +196,7 @@ QCalendarWidget QToolButton
     width: 100px;
     color:#1d1d1d;
     font-size: 15px;
-    icon-size: 20px, 20px;
+    icon-size: 20px 20px;
     background-color:#b32025;
 }
 

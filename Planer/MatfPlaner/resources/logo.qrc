@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/logo">
-        <file>images/slika.png</file>
-    </qresource>
-</RCC>
