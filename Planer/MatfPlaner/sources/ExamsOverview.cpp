@@ -6,7 +6,9 @@ ExamsOverview::ExamsOverview(QVector<Exam*>& allExams, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ExamsOverview),
     insertExamsWindow(new InsertExams(allExams)),
+    schedule(),
     _allExams(allExams)
+
 {
     ui->setupUi(this);
     ui->listWidget->addItem("test");

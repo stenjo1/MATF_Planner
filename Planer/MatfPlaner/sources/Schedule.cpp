@@ -20,14 +20,13 @@ void Schedule::makeSchedule() {
         return a->getDate().addDays(a->getImportanceRate())  < b->getDate().addDays(b->getImportanceRate());
     });
 
+
     QVector<Exam*> suggestedExams;
     QDate end;
 
     for(int freeDays = 3; freeDays > 0; freeDays--) {
 
         suggestedExams.empty();
-
-
 
         if(_exams.length() > 0) {
 
