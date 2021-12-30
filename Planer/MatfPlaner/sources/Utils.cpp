@@ -18,7 +18,8 @@ QDate Utils::fromQStringtoQDate(QString string){
 
 QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
     QList<Exam*> exams;
-    QFile file(fileName);
+    QDir dir("../MatfPlaner/resources/");
+    QFile file(dir.absolutePath() + fileName);
        if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
        {
            qDebug() << QString("fail to open the file: %1, %2, %3").arg(__FILE__).arg(__LINE__).arg(__FUNCTION__);
@@ -53,7 +54,8 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
 }
 
 QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
-    QFile file("../MatfPlaner/resources/"+fileName);
+    QDir dir("../MatfPlaner/resources/");
+    QFile file(dir.absolutePath() + fileName);
     file.open(QFile::ReadOnly);
     QByteArray data = file.readAll();
     file.close();

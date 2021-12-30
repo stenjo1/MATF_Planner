@@ -140,7 +140,7 @@ void Student::writeToJson()
 
 
         QDir dir("..");
-        QString path = dir.absolutePath() + "/MatfPlaner/resources/student.json";
+        QString path = dir.absolutePath() + "/MatfPlaner/resources/student_info/student.json";
         QFile jsonFile(path);
         if(!jsonFile.open(QIODevice::WriteOnly)) {
            // QMessageBox::information(0,"error",jsonFile.errorString());
@@ -156,7 +156,7 @@ void Student::writeToJson()
 
 void Student::readFromJson(){
 
-    QDir targetDir("../MatfPlaner/resources");
+    QDir targetDir("../MatfPlaner/resources/student_info");
     QString path = targetDir.absolutePath() + "/student.json";
     // to-do: isprazniti listu
     QFile file(path);

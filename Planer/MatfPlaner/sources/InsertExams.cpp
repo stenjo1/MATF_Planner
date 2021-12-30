@@ -144,8 +144,8 @@ void InsertExams::writeToJson(){
             allExamsJson.append(*examObj);
         }
 
-        QDir dir("..");
-        QString path = dir.absolutePath() + "/MatfPlaner/resources/exams.json";
+        QDir dir("../MatfPlaner/resources/student_info");
+        QString path = dir.absolutePath() + "/exams.json";
 
         QFile jsonFile(path);
         jsonFile.open(QFile::WriteOnly);

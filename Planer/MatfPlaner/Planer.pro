@@ -80,21 +80,25 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    output/Raspored \
     resources/MailFile \
-    resources/exams.json \
-    resources/i1o.json \
-    resources/i2o.json \
-    resources/i3o.json \
-    resources/i4o.json \
+    resources/images/check.png \
+    resources/images/slika.png \
     resources/oi_predmeti.json \
-    resources/r1o.json \
-    resources/r2o.json \
-    resources/r3o.json \
-    resources/r4o.json \
-    resources/student.json
+    resources/student_info/exams.json \
+    resources/student_info/student.json \
+    resources/styles/style.qss \
+    resources/styles/style2.qss \
+    resources/styles/style3.qss \
+    resources/subjects/i1o.json \
+    resources/subjects/i2o.json \
+    resources/subjects/i3o.json \
+    resources/subjects/i4o.json \
+    resources/subjects/r1o.json \
+    resources/subjects/r2o.json \
+    resources/subjects/r3o.json \
+    resources/subjects/r4o.json
 
-RESOURCES += \
-    resources/logo.qrc
 
 #unix|win32: LIBS += -L$$PWD/../../../../../../usr/lib/x86_64-linux-gnu/ -lcurl
 

@@ -56,7 +56,7 @@ void Window::setupWindow()
     infoLabel->setText("Obeležiti nepoložene predmete:");
      verticalLayout->addWidget(infoLabel);
 
-    _subjects = Utils::readJsonSubjectsFromFile(_filename);
+    _subjects = Utils::readJsonSubjectsFromFile("/subjects/" + _filename);
     for(auto& subject: _subjects){
         QCheckBox *cb = new QCheckBox(this);
         cb->setText(subject->getName());

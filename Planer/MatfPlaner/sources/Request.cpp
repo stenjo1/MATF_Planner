@@ -17,7 +17,7 @@ void Request::download(QString s_url)
             }
         else
             {
-                QDir dir("../MatfPlaner/resources");
+                QDir dir("../MatfPlaner/output");
                 QString path = dir.absolutePath();
 
                 //mozda je efikasnije sa regexom
@@ -77,14 +77,18 @@ void Request::download(QString s_url)
     );
 
     QUrl url = QUrl(s_url);
-    QNetworkRequest request(url);
-    auto* reply = manager->get(request);
+    if(url.isValid()){
+        QNetworkRequest request(url);
+        auto* reply = manager->get(request);
 
-    //synchronized reply
-    QEventLoop loop;
-    connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
-    loop.exec();
-
+        //synchronized reply
+        QEventLoop loop;
+        connect(reply, SIGNAL(finished()), &loop, SLOT(quit()));
+        loop.exec();
+    }else{
+        qDebug()<<"REQUEST::DOWNLOAD::INVALID URL: "<<s_url;
+        _fileChanged = false;
+    }
 }
 
 bool Request::isFileChanged()

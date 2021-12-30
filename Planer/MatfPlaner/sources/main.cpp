@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QDir targetDir("../MatfPlaner/resources");
-    QString examsPath = targetDir.absolutePath() + "/exams.json";
-    QString stylePath = targetDir.absolutePath() + "/style3.qss";
+    QString examsPath = "/student_info/exams.json";
+    QString stylePath = targetDir.absolutePath() + "/styles/style3.qss";
 
     QFile file(stylePath);
     if(!file.open(QFile::ReadOnly)){
