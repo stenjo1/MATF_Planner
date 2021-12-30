@@ -122,6 +122,8 @@ void InsertExams::on_addExamButton_clicked()
     emit reloadListWidget();
 }
 
+}
+
 
 
 void InsertExams::on_clearWidgetButton_clicked()
