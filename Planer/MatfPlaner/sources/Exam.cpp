@@ -2,9 +2,11 @@
 #include "headers/Exam.h"
 
 
-Exam::Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, int order) {
+Exam::Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOral, QString url, int importanceRate, int order) {
     _date = date;
+    _dateOral = dateOral;
     _time = time;
+    _timeOral = timeOral;
     _url = url;
     _subject = subject;
     _order = order;
@@ -66,8 +68,16 @@ QDate Exam::getDate() {
     return _date;
 }
 
+QDate Exam::getDateOral() {
+    return _dateOral;
+}
+
 QTime Exam::getTime(){
     return _time;
+}
+
+QTime Exam::getTimeOral(){
+    return _timeOral;
 }
 
 int Exam::getImportanceRate() {

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>698</height>
+    <height>711</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,6 +37,19 @@
     </widget>
    </item>
    <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <widget class="QComboBox" name="comboBox">
      <property name="font">
       <font>
@@ -49,19 +62,6 @@
       </property>
      </item>
     </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
    <item>
     <widget class="QLabel" name="dateLabel">
@@ -111,6 +111,42 @@
      </item>
      <item>
       <widget class="QLineEdit" name="timeLineEdit1">
+       <property name="placeholderText">
+        <string>hh:mm</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Datum usmenog ispita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="dateLineEdit11">
+       <property name="placeholderText">
+        <string>dd.mm.yyyy.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Vreme usmenog ispita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="timeLineEdit11">
        <property name="placeholderText">
         <string>hh:mm</string>
        </property>
@@ -179,6 +215,42 @@
      </item>
      <item>
       <widget class="QLineEdit" name="timeLineEdit2">
+       <property name="placeholderText">
+        <string>hh:mm</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Datum usmenog ispita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="dateLineEdit21">
+       <property name="placeholderText">
+        <string>dd.mm.yyyy.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Vreme usmenog ispita:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_4">
        <property name="placeholderText">
         <string>hh:mm</string>
        </property>

@@ -41,8 +41,13 @@
             "_name": "Projektovanje baza podataka"
         }
     ],
+<<<<<<< HEAD:Planer/MatfPlaner/resources/student_info/student.json
     "_email": "stef@car.com",
     "_module": "Informatika",
     "_name": "Stefanija",
+=======
+    "_email": "stef@mai.rs",
+    "_name": "Stefan",
+>>>>>>> dtz:Planer/MatfPlaner/resources/student.json
     "_yearOfStudy": 4
 }

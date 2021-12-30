@@ -9,7 +9,7 @@
 class Exam
 {
 public:
-    Exam(Subject subject, QDate date, QTime time, QString url, int importanceRate, int order);
+    Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOral, QString url, int importanceRate, int order);
     Exam(QJsonObject);
     bool writeExamInFile(); // todo: napisati funkciju koja u fajl gde cuvamo ispite dodaje ovaj podatak
    // void setPassed(); // postavlja true ako student polozi ispit (nepotrebno)
@@ -19,14 +19,18 @@ public:
 
     QString getUrl();
     QDate getDate();
+    QDate getDateOral();
     int getImportanceRate();
     Subject& getSubject();
     int getOrder();
     QTime getTime();
+    QTime getTimeOral();
 
 private:
     QDate _date;
+    QDate _dateOral;
     QTime _time;
+    QTime _timeOral;
     QString _url;
     Subject _subject;
     int _order;
