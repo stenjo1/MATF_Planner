@@ -17,6 +17,7 @@ ExamsOverview::ExamsOverview(QWidget *parent) :
     connect(insertExamsWindow, &InsertExams::reloadListWidget, this, &ExamsOverview::loadExamList);
     connect(this, &ExamsOverview::loadComboBox, insertExamsWindow, &InsertExams::loadComboBox);
     connect(_scheduleSuggestion, &ScheduleSuggestion::scheduleSet, this, &ExamsOverview::fillCalendarSlot);
+    connect(this, &ExamsOverview::makeFirstSuggestion, _scheduleSuggestion, &ScheduleSuggestion::makeFirstSuggestion);
 }
 
 ExamsOverview::~ExamsOverview()
@@ -98,6 +99,7 @@ void ExamsOverview::on_pbConfirm_clicked()
     Utils::writeJsonExamsToFile("/resources/student_info/exams.json", _allExams);
 
     _scheduleSuggestion->setExams(_allExams);
+    emit makeFirstSuggestion();
     _scheduleSuggestion->show();
 
 

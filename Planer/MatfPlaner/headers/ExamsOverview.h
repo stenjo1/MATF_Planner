@@ -18,6 +18,7 @@ signals:
    void loadComboBox();
    void fillCalendarSignal();
    void emptyCalendarSignal(QDate date);
+   void makeFirstSuggestion();
 
 public:
    explicit ExamsOverview(QWidget *parent = nullptr);

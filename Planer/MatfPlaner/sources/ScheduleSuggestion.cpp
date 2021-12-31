@@ -7,7 +7,6 @@ ScheduleSuggestion::ScheduleSuggestion(QWidget *parent) :
 {
     ui->setupUi(this);
     sortExams();
-    makeSuggestion(_freeDays, _suggestion);
 }
 
 ScheduleSuggestion::~ScheduleSuggestion()
@@ -16,10 +15,14 @@ ScheduleSuggestion::~ScheduleSuggestion()
 }
 
 void ScheduleSuggestion::setExams(QVector<Exam*> exams){
+
     _exams = exams;
 
 }
 
+void ScheduleSuggestion::makeFirstSuggestion(){
+    makeSuggestion(3,1);
+}
 void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
 
         ui->listWidget->clear();

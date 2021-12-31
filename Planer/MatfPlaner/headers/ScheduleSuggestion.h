@@ -23,6 +23,7 @@ public:
     void sortExams();
 
     void setExams(QVector<Exam*> exams);
+    void makeFirstSuggestion();
 
 private slots:
     void on_pbNext_clicked();
