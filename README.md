@@ -7,9 +7,9 @@ An application intended for students of the Faculty of Math, University of Belgr
 
 -   The libcurl4 library should be installed as follows:
 
-sudo apt update
-sudo apt install curl
-sudo apt install libcurl4-openssl-dev
+sudo apt update <br>
+sudo apt install curl <br>
+sudo apt install libcurl4-openssl-dev <br>
 
 
 
