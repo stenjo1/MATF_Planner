@@ -14,24 +14,15 @@ Exam::Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOr
 }
 
 Exam::Exam(QJsonObject obj){
-    //TODO:: fix exams.json or utils func
-    //Kratko objasnjenje
-    //Json fajl je formatiran tako da ima listu kljuceva(ime ispita) i vrednosti(json objekat)
-    //Ovde se prosledjuje objekat koji ima samo jedan kljuc i vrednost tipa exam1 : {}
-    //tako da je vrednost zapravo novi json objekat
-    //koji se onda tek moze parsirati
 
-    //ako se drzimo starog json formata moralo bi nesto ovako
-    //morala sam u jsonu umesto exam1 exam2 da stavim samo exam
-    //takodje promenila sam datume
-
-    //ovo sada je sa ispravljenim jsonom i funkcijom za citanje
         QString dateString = obj.value("_date").toString();
         _date = QDate::fromString(dateString, Qt::TextDate);
         QString timeString = obj.value("_time").toString();
         _time = QTime::fromString(timeString);
-        //msm da je ova funkcija nepotrebna u utils
-        //_date = Utils::fromQStringtoQDate(_dateString);
+        dateString = obj.value("_dateOral").toString();
+        _dateOral = QDate::fromString(dateString, Qt::TextDate);
+        timeString = obj.value("_timeOral").toString();
+        _timeOral = QTime::fromString(timeString);
         _url = obj.value("_url").toString();
         _order = obj.value("_order").toInt();
         QJsonObject subject =obj.value("_subject").toObject();
@@ -39,23 +30,26 @@ Exam::Exam(QJsonObject obj){
 
 }
 
-bool Exam::checkIfDatePassed(){
-    if (_date < _date.currentDate())
-        return true;
+QJsonObject* Exam::toJson(){
 
-    return false;
+    QJsonObject *examJson = new QJsonObject();
+    examJson->insert("_date",_date.toString());
+    examJson->insert("_time",_time.toString());
+    examJson->insert("_dateOral",_dateOral.toString());
+    examJson->insert("_timeOral",_timeOral.toString());
+    examJson->insert("_url",_url);
+    examJson->insert("_importanceRate",_importanceRate);
+    examJson->insert("_subject", *_subject.toJson());
+    examJson->insert("_order", _order);
+
+    return examJson;
+
 }
 
 Subject& Exam::getSubject(){
     return _subject;
 }
 
-bool Exam::checkIfDatePassed(QDate date){
-    if (_date < date)
-        return true;
-
-    return false;
-}
 int Exam::getOrder(){
     return _order;
 }
@@ -84,16 +78,9 @@ int Exam::getImportanceRate() {
     return _importanceRate;
 }
 
-QJsonObject* Exam::toJson(){
+bool Exam::checkIfDatePassed(){
+    if (_date < _date.currentDate())
+        return true;
 
-    QJsonObject *examJson = new QJsonObject();
-    examJson->insert("_date",_date.toString());
-    examJson->insert("_time",_time.toString());
-    examJson->insert("_url",_url);
-    examJson->insert("_importanceRate",_importanceRate);
-    examJson->insert("_subject", *_subject.toJson());
-    examJson->insert("_order", _order);
-
-    return examJson;
-
+    return false;
 }

@@ -5,20 +5,9 @@ Utils::Utils()
 
 }
 
-//nepotrebno
-
-//mozda da svuda filename bude isti komad putanje?
-
-QDate Utils::fromQStringtoQDate(QString string){
-    QDate date = QDate::fromString(string);
-
-    return date;
-}
-
-
 QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
     QList<Exam*> exams;
-    QDir dir("../MatfPlaner/resources/");
+    QDir dir("../MatfPlaner/");
     QFile file(dir.absolutePath() + fileName);
        if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
        {
@@ -31,18 +20,7 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
        {
            qDebug() << QString("JsonParseError: %1").arg(jsonParseError.errorString());
        }
-       //QJsonObject rootObject = jsonDocument.object();
 
-       //if(!rootObject.keys().contains("_exams"))
-       //{
-       //    qDebug() << "No target value";
-       //}
-
-       //QJsonValue jsonValue = rootObject.value("_exams");
-       //if(!jsonValue.isArray())
-       //{
-       //    qDebug() << "No target array";
-       //}
        QJsonArray jsonArray = jsonDocument.array();
 
        for(auto iter = jsonArray.constBegin(); iter != jsonArray.constEnd(); ++iter)
@@ -75,12 +53,21 @@ QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
 
 }
 
-void Utils::clearExamFile(const QString &fileName){
-   QFile file(fileName);
-   file.open(QIODevice::WriteOnly | QIODevice::Text);
-   QTextStream out(&file);
-   out.seek(0);
-   out<<"{\n\t\"_exams\":[]\n}";
-   file.close();
+void Utils::writeJsonExamsToFile(QString filePath, const QVector<Exam*>& exams){
+
+        QJsonArray allExamsJson;
+        for(auto exam: exams){
+            QJsonObject *examObj = exam->toJson();
+            allExamsJson.append(*examObj);
+        }
+
+        QDir dir("../MatfPlaner");
+        QString path = dir.absolutePath() + filePath;
+
+        QFile jsonFile(path);
+        jsonFile.open(QFile::WriteOnly);
+        QJsonDocument doc(allExamsJson);
+        jsonFile.write(doc.toJson());
+
 
 }

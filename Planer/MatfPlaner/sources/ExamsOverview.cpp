@@ -2,36 +2,38 @@
 #include "ui_ExamsOverview.h"
 #include <QMessageBox>
 
-ExamsOverview::ExamsOverview(QVector<Exam*>& allExams, QWidget *parent) :
+ExamsOverview::ExamsOverview(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ExamsOverview),
-    insertExamsWindow(new InsertExams(allExams)),
-    schedule(),
-    _allExams(allExams)
+    _scheduleSuggestion(new ScheduleSuggestion()),
+    _allExams()
 
 {
     ui->setupUi(this);
-    ui->listWidget->addItem("test");
+    insertExamsWindow = new InsertExams(_allExams);
 
     loadExamList();
     connect(insertExamsWindow, &InsertExams::reloadListWidget, this, &ExamsOverview::loadExamList);
     connect(this, &ExamsOverview::loadComboBox, insertExamsWindow, &InsertExams::loadComboBox);
-    connect(this, &ExamsOverview::loadExamsJson,insertExamsWindow, &InsertExams::writeToJson);
+    connect(_scheduleSuggestion, &ScheduleSuggestion::scheduleSet, this, &ExamsOverview::fillCalendarSlot);
 }
 
 ExamsOverview::~ExamsOverview()
 {
     delete ui;
     delete insertExamsWindow;
-    delete schedule;
+    delete _scheduleSuggestion;
 }
 
+void ExamsOverview::fillCalendarSlot(){
+    emit fillCalendarSignal();
+}
 void ExamsOverview::setStudent(Student* student){
     _student=student;
      insertExamsWindow->setStudent(_student);
 }
 
-//return date of the exam that has been removed
+//returns date of the exam that has been removed
 QDate ExamsOverview::removeExam(QString& name){
 
     QDate date;
@@ -43,10 +45,10 @@ QDate ExamsOverview::removeExam(QString& name){
         if (_allExams[i]->getSubject().getName().compare(name) == 0 and order==_allExams[i]->getOrder()) {
             date = _allExams[i]->getDate();
             _allExams.remove(i);
-            // Calendar::clearCell(_allExams[i]->getDate()); ne umem da napravim neku ovakvu fju
-            return date;
+            break;
         }
     }
+    return date;
 }
 
 void ExamsOverview::on_listWidget_doubleClicked(const QModelIndex &index)
@@ -89,19 +91,15 @@ void ExamsOverview::loadExamList(){
     }
 }
 
+
 void ExamsOverview::on_pbConfirm_clicked()
 {
-    //TO-DO: pozvati pravljenje rasporeda
-    schedule = new Schedule(_allExams);
+    Utils::writeJsonExamsToFile("/resources/student_info/exams.json", _allExams);
 
-    schedule->makeSchedule();
+    _scheduleSuggestion->setExams(_allExams);
+    _scheduleSuggestion->show();
 
-    emit loadExamsJson();
-    emit fillCalendarSignal();
+
     hide();
-}
-
-Schedule* ExamsOverview::getSchedule(){
-    return schedule;
 }
 

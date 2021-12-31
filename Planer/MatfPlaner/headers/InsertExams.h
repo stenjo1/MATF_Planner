@@ -18,12 +18,11 @@ public:
     explicit InsertExams(QVector<Exam*>& allExams, QWidget *parent = nullptr);
     ~InsertExams();
     void setStudent(Student* student);
-    // QVector<Exam*> getExams();
      void removeExam(QString& name);
 
 public slots:
-     void writeToJson();
      void loadComboBox();
+
 private slots:
     void on_addExamButton_clicked();
 
@@ -36,6 +35,7 @@ private:
     Ui::InsertExams *ui;
     QVector<Exam*>& _exams;
     Student* _student;
+    void checkInput(QDate date, QTime time, int ord);
 
 };
 

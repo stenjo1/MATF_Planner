@@ -4,14 +4,16 @@
 #include <algorithm>
 
 #include "Exam.h"
+#include "Utils.h"
 
 class Schedule{
 
 public:
-    Schedule(QVector<Exam*> exams);
-    void makeSchedule();
+    Schedule();
     ~Schedule();
-    QVector<Exam*> getExams();
+    void makeSchedule();
+
+    void setExams(QVector<Exam*> exams);
 
 private:
     QVector<Exam*> _exams;

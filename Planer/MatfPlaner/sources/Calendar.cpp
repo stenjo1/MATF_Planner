@@ -4,9 +4,9 @@
 Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
     QWidget(parent),
     ui(new Ui::Calendar),
-    _exams(exams),
+    _schedule(exams),
     _loginWindow(new LoginPage),
-    _examsOverviewWindow(new ExamsOverview(_exams)),
+    _examsOverviewWindow(new ExamsOverview()),
     _profileWindow(new Profile)
 
 
@@ -30,7 +30,7 @@ Calendar::~Calendar()
     delete _profileWindow;
     delete _examsOverviewWindow;
     delete _loginWindow;
-    for (auto exam : _exams) {
+    for (auto exam : _schedule) {
         delete exam;
     }
 }
@@ -41,10 +41,11 @@ LoginPage* Calendar::getLoginPage() const{
 
 void Calendar::colorCells()
 {
+    _schedule = Utils::readJsonExamsFromFile("/output/schedule.json");
     QTextCharFormat fmt;
     fmt.setBackground(QColor(61, 66, 107));
 
-    for(auto& exam: _exams){
+    for(auto& exam: _schedule){
         QDate date = exam->getDate();
         ui->calendarWidget->setDateTextFormat(date, fmt);
     }
@@ -62,7 +63,7 @@ void Calendar::emptyCell(QDate date)
 QVector<QPair<QString,QString>> Calendar::checkResults()
 {
     QVector<QPair<QString,QString>> changedExams;
-    for(auto& exam: _exams){
+    for(auto& exam: _schedule){
         if (exam->checkIfDatePassed()){
             QString url = exam->getUrl();
             if(url.isEmpty()){
@@ -135,26 +136,18 @@ void Calendar::on_pbProfile_clicked()
 
 void Calendar::on_calendarWidget_clicked(const QDate &date)
 {
-    bool hasExam = false;
-    for(auto& exam: _exams){
+    for(auto& exam: _schedule){
         if(date == exam->getDate()){
             QMessageBox::information(this,"Ispit",exam->getSubject().getName().append("\n").append(exam->getTime().toString()));
-            hasExam = true;
             break;
         }
     }
-//    // ako ne uspemo da resimo drugacije, nek bude bar ovo da kad klikne na obojeno polje sa kog je obrisan ispit,
-//    if (!hasExam){
-//        QTextCharFormat fmt;
-//        fmt.setBackground(QColor(50, 9, 142)); //namestiti na boju pozadine kalendara
-//        ui->calendarWidget->setDateTextFormat(date, fmt);
-//    }
 }
 
 void Calendar::checkIfExamIsClose(){
     QString closeExams = QString();
     QDate currentDate = QDate::currentDate();
-    for(auto exam : _exams){
+    for(auto exam : _schedule){
         int daysToExam = currentDate.daysTo(exam->getDate());
         if (daysToExam <= 3){
             if(daysToExam == 1){

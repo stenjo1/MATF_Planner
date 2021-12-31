@@ -30,9 +30,6 @@ public:
     LoginPage* getLoginPage() const;
     QVector<QPair<QString,QString>> checkResults();
 
-//public slots:
-//    void colorCellsSlot(); //
-
 private slots:
     void on_pbNewExam_clicked();
     void on_pbCheckUrl_clicked();
@@ -46,7 +43,7 @@ private slots:
 private:
     Ui::Calendar *ui;
     Student* _student;
-    QVector<Exam*> _exams;
+    QVector<Exam*> _schedule;
     LoginPage* _loginWindow;
     ExamsOverview* _examsOverviewWindow;
     Profile* _profileWindow;

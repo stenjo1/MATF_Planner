@@ -11,10 +11,6 @@ class Exam
 public:
     Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOral, QString url, int importanceRate, int order);
     Exam(QJsonObject);
-    bool writeExamInFile(); // todo: napisati funkciju koja u fajl gde cuvamo ispite dodaje ovaj podatak
-   // void setPassed(); // postavlja true ako student polozi ispit (nepotrebno)
-    bool checkIfDatePassed(QDate date); //proverava da li je ispit pre datuma proslednjenog kao argument
-    bool checkIfDatePassed(); //proverava da li je datum prosao od trenutnog vremena
     QJsonObject* toJson();
 
     QString getUrl();
@@ -25,6 +21,7 @@ public:
     int getOrder();
     QTime getTime();
     QTime getTimeOral();
+    bool checkIfDatePassed();
 
 private:
     QDate _date;

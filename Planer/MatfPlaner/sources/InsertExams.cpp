@@ -26,10 +26,6 @@ void InsertExams::setStudent(Student* student){
     _student=student;
 }
 
-//QVector<Exam*> InsertExams::getExams(){
-//    return _exams;
-//}
-
 void InsertExams::removeExam(QString& name){
 
     int index = name.indexOf(" ");
@@ -44,6 +40,22 @@ void InsertExams::removeExam(QString& name){
     }
 }
 
+void InsertExams::checkInput(QDate date, QTime time, int ord) {
+    if (!(date.isValid())){
+        ui->errorLabel->setText("Uneseni datum za ispit u " + QString::number(ord) + ". roku nije validan!");
+        return ;
+    }
+    if (QDate::currentDate().daysTo(date)<0)
+    {
+        ui->errorLabel->setText("Datum je prosao za ispit u " + QString::number(ord) + ". roku, uneti datum u buducnosti");
+        return;
+    }
+
+    if (!time.isValid()) {
+        ui->errorLabel->setText("Uneseno vreme za ispit u " + QString::number(ord) + ". roku nije validno!");
+        return;
+    }
+}
 
 void InsertExams::on_addExamButton_clicked()
 {
@@ -58,62 +70,56 @@ void InsertExams::on_addExamButton_clicked()
     int importanceRate = ui->horizontalSlider->value();
     QString url = ui->urlLineEdit->text();
 
+    QString dateString, timeString;
+    QDate date, oralDate;
+    QTime time, oralTime;
+
     if (!ui->checkBox1->isChecked()) {
 
-        QString dateString1 = ui->dateLineEdit1->text();
-        QString dateString11 = ui->dateLineEdit11->text();
-        QDate date1 = QDate::fromString(dateString1, "dd.MM.yyyy.");
-        QDate date11 = QDate::fromString(dateString11, "dd.MM.yyyy.");
-        printf("%s\n", date1.toString().toStdString().c_str());
-        if (!(date1.isValid())){
-            ui->errorLabel->setText("Uneseni datum za ispit u prvom roku nije validan!");
-            return ;
+        dateString = ui->dateLineEdit1->text();
+        date = QDate::fromString(dateString, "dd.MM.yyyy.");
+        timeString = ui->timeLineEdit1->text();
+        QTime time = QTime::fromString(timeString, "HH:mm");
+
+        checkInput(date,time,1);
+
+
+        if (!ui->checkBoxOral1->isChecked()) {
+            dateString = ui->dateLineEditOral1->text();
+            oralDate = QDate::fromString(dateString, "dd.MM.yyyy.");
+            timeString = ui->timeLineEditOral1->text();
+            oralTime = QTime::fromString(timeString, "HH:mm");
+            checkInput(oralDate,oralTime,1);
         }
-        if (QDate::currentDate().daysTo(date1)<0)
-        {
-            ui->errorLabel->setText("Datum je prosao za ispit u prvom roku, uneti datum u buducnosti");
-            return;
+        else{
+            oralDate = date.addDays(7);
+            oralTime = time;
         }
-        QString timeString1 = ui->timeLineEdit1->text();
-        QTime time1 = QTime::fromString(timeString1, "HH:mm");
-        QString timeString11 = ui->timeLineEdit11->text();
-        QTime time11 = QTime::fromString(timeString1, "HH:mm");
-        printf("%s\n", timeString1.toStdString().c_str());
-        if (!time1.isValid()) {
-            ui->errorLabel->setText("Uneseno vreme za ispit u prvom roku nije validno!");
-            return;
-        }
-        Exam *exam1 = new Exam(subject, date1, date11, time1, time11, url, importanceRate,1);
+        Exam *exam1 = new Exam(subject, date, oralDate, time, oralTime, url, importanceRate,1);
         _exams.push_back(exam1);
     }
+
     if (!ui->checkBox2->isChecked()) {
 
-        QString dateString2 = ui->dateLineEdit2->text();
-        QDate date2 = QDate::fromString(dateString2, "dd.MM.yyyy.");
-        QString dateString21 = ui->dateLineEdit21->text();
-        QDate date21 = QDate::fromString(dateString21, "dd.MM.yyyy.");
-        if (!date2.isValid()) {
-            ui->errorLabel->setText("Uneseni datum za ispit u drugom roku nije validan!");
-            return ;
-        }
-        if (QDate::currentDate().daysTo(date2)<0)
-        {
-            ui->errorLabel->setText("Datum je prosao za ispit u drugom roku, uneti datum u buducnosti");
-            return;
+        dateString = ui->dateLineEdit2->text();
+        date = QDate::fromString(dateString, "dd.MM.yyyy.");
+        timeString = ui->timeLineEdit2->text();
+        time = QTime::fromString(timeString, "HH:mm");
+        checkInput(date,time,2);
 
-        if (!date21.isValid()) {
-            ui->errorLabel->setText("Uneseni datum21 nije validan!");
-            return ;
-        }
 
-        QString timeString2 = ui->timeLineEdit2->text();
-        QTime time2 = QTime::fromString(timeString2, "HH:mm");
-        QTime time21 = QTime::fromString(timeString2, "HH:mm");
-        if (!time2.isValid()) {
-            ui->errorLabel->setText("Uneseno vreme za ispit u drugom roku nije validno!");
-            return;
+        if (!ui->checkBoxOral2->isChecked()) {
+            dateString = ui->dateLineEditOral2->text();
+            oralDate = QDate::fromString(dateString, "dd.MM.yyyy.");
+            timeString = ui->timeLineEditOral2->text();
+            oralTime = QTime::fromString(timeString, "HH:mm");
+            checkInput(oralDate,oralTime,2);
         }
-        Exam *exam2 = new Exam(subject, date2, date21, time2, time21, url, importanceRate,2);
+        else{
+            oralDate = date.addDays(7);
+            oralTime = time;
+        }
+        Exam *exam2 = new Exam(subject, date, oralDate, time, oralTime, url, importanceRate,2);
         _exams.push_back(exam2);
     }
 
@@ -121,9 +127,6 @@ void InsertExams::on_addExamButton_clicked()
 
     emit reloadListWidget();
 }
-
-}
-
 
 
 void InsertExams::on_clearWidgetButton_clicked()
@@ -134,9 +137,15 @@ void InsertExams::on_clearWidgetButton_clicked()
     ui->dateLineEdit2->clear();
     ui->timeLineEdit1->clear();
     ui->timeLineEdit2->clear();
+    ui->dateLineEditOral1->clear();
+    ui->dateLineEditOral2->clear();
+    ui->timeLineEditOral1->clear();
+    ui->timeLineEditOral2->clear();
     ui->horizontalSlider->setValue(1);
     ui->errorLabel->clear();
     ui->checkBox1->setChecked(false);
+    ui->checkBox2->setChecked(false);
+    ui->checkBoxOral1->setChecked(false);
     ui->checkBox2->setChecked(false);
     ui->comboBox->setCurrentText("Odabir predmeta:");
 
@@ -150,21 +159,4 @@ void InsertExams::on_endInputExamButton_clicked()
 }
 
 
-void InsertExams::writeToJson(){
-
-        QJsonArray allExamsJson;
-        for(auto exam: _exams){
-            QJsonObject *examObj = exam->toJson();
-            allExamsJson.append(*examObj);
-        }
-
-        QDir dir("../MatfPlaner/resources/student_info");
-        QString path = dir.absolutePath() + "/exams.json";
-
-        QFile jsonFile(path);
-        jsonFile.open(QFile::WriteOnly);
-        QJsonDocument doc(allExamsJson);
-        jsonFile.write(doc.toJson());
-
-}
 

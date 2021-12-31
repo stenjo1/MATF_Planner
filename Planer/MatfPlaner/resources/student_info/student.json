@@ -6,15 +6,11 @@
         },
         {
             "_espb": 6,
+            "_name": "Relacione baze podataka"
+        },
+        {
+            "_espb": 6,
             "_name": "Računarska grafika"
-        },
-        {
-            "_espb": 6,
-            "_name": "Verovatnoća"
-        },
-        {
-            "_espb": 6,
-            "_name": "Uvod u numeričku matematiku"
         },
         {
             "_espb": 6,
@@ -38,16 +34,43 @@
         },
         {
             "_espb": 6,
+            "_name": "Izborni predmet R2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R3"
+        },
+        {
+            "_espb": 5,
+            "_name": "Izborni predmet M1"
+        },
+        {
+            "_espb": 6,
             "_name": "Projektovanje baza podataka"
+        },
+        {
+            "_espb": 6,
+            "_name": "Specijalni kurs"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet K"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R4"
+        },
+        {
+            "_espb": 2,
+            "_name": "Izborni predmet V1"
+        },
+        {
+            "_espb": 5,
+            "_name": "Izborni predmet M2"
         }
     ],
-<<<<<<< HEAD:Planer/MatfPlaner/resources/student_info/student.json
-    "_email": "stef@car.com",
+    "_email": "marija@gmail.com",
     "_module": "Informatika",
-    "_name": "Stefanija",
-=======
-    "_email": "stef@mai.rs",
-    "_name": "Stefan",
->>>>>>> dtz:Planer/MatfPlaner/resources/student.json
+    "_name": "Marija",
     "_yearOfStudy": 4
 }

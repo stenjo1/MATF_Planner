@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "headers/Student.h"
 #include "headers/InsertExams.h"
-#include "headers/Schedule.h"
+#include "headers/ScheduleSuggestion.h"
 
 namespace Ui {
 class ExamsOverview;
@@ -17,19 +17,19 @@ class ExamsOverview : public QWidget
 signals:
    void loadComboBox();
    void fillCalendarSignal();
-   void loadExamsJson();
    void emptyCalendarSignal(QDate date);
 
 public:
-   explicit ExamsOverview( QVector<Exam*>& allExams, QWidget *parent = nullptr);
+   explicit ExamsOverview(QWidget *parent = nullptr);
     ~ExamsOverview();
     void setStudent(Student* student);
-    Schedule* getSchedule();
 
 
 private slots:
 
     void loadExamList();
+
+    void fillCalendarSlot();
 
     void on_listWidget_doubleClicked(const QModelIndex &index);
 
@@ -37,13 +37,15 @@ private slots:
 
     void on_pbConfirm_clicked();
 
+
 private:
     Ui::ExamsOverview *ui;
     Student* _student;
     InsertExams* insertExamsWindow;
-    Schedule* schedule;
-    QVector<Exam*>& _allExams;
+    ScheduleSuggestion* _scheduleSuggestion;
+    QVector<Exam*> _allExams;
     QDate removeExam(QString& name);
+    void writeToJson(QString filePath);
 };
 
 #endif // EXAMSOVERVIEW_H

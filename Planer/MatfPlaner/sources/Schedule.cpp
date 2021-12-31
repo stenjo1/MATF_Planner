@@ -1,13 +1,16 @@
 #include "headers/Schedule.h"
 
 
-Schedule::Schedule(QVector<Exam*> exams)
+Schedule::Schedule()
 {
-    _exams = exams;
-
 }
 
 Schedule::~Schedule() {
+
+}
+
+void Schedule::setExams(QVector<Exam*> exams){
+    _exams = exams;
 
 }
 
@@ -59,23 +62,22 @@ void Schedule::makeSchedule() {
 
         // std::cout << "[TEST] Broj ispita na koji ce izaci student: " << numberOfExams << "\n";
 
-        for(int i = 0; i < suggestedExams.length(); i++) {
+//        for(int i = 0; i < suggestedExams.length(); i++) {
 
-            if(datesOfOralExams.find(suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
+//            if(datesOfOralExams.find(suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
 
-                std::cout << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDate().toString("yyyy.MM.dd").toStdString() << "\n";
-                std::cout << "[USMENI]" << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDateOral().toString("yyyy.MM.dd").toStdString() << "\n";
-            }
+//                std::cout << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDate().toString("yyyy.MM.dd").toStdString() << "\n";
+//                std::cout << "[USMENI]" << suggestedExams[i]->getSubject().getName().toStdString() << " " << suggestedExams[i]->getDateOral().toString("yyyy.MM.dd").toStdString() << "\n";
+//            }
 
-        }
+//        }
 
-        std::cout << "\n";
+//        std::cout << "\n";
 
         suggestion++;
 
     }
+
 }
 
-QVector<Exam*> Schedule::getExams(){
-    return _exams;
-}
+

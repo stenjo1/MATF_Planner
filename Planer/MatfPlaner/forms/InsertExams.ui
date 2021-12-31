@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>711</height>
+    <height>771</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,6 +119,13 @@
     </layout>
    </item>
    <item>
+    <widget class="QCheckBox" name="checkBoxOral1">
+     <property name="text">
+      <string>Podaci o usmenom  ispitu nepoznati (biće dodat u raspored 7 dana nakon pismenog)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label_8">
@@ -128,7 +135,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="dateLineEdit11">
+      <widget class="QLineEdit" name="dateLineEditOral1">
        <property name="placeholderText">
         <string>dd.mm.yyyy.</string>
        </property>
@@ -146,7 +153,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="timeLineEdit11">
+      <widget class="QLineEdit" name="timeLineEditOral1">
        <property name="placeholderText">
         <string>hh:mm</string>
        </property>
@@ -223,6 +230,13 @@
     </layout>
    </item>
    <item>
+    <widget class="QCheckBox" name="checkBoxOral2">
+     <property name="text">
+      <string>Podaci o usmenom  ispitu nepoznati (biće dodat u raspored 7 dana nakon pismenog)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_7">
      <item>
       <widget class="QLabel" name="label_10">
@@ -232,7 +246,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="dateLineEdit21">
+      <widget class="QLineEdit" name="dateLineEditOral2">
        <property name="placeholderText">
         <string>dd.mm.yyyy.</string>
        </property>
@@ -250,7 +264,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="timeLineEditOral2">
        <property name="placeholderText">
         <string>hh:mm</string>
        </property>
