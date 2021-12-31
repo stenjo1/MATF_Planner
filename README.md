@@ -2,7 +2,14 @@
 
 An application intended for students of the Faculty of Math, University of Belgrade
 
-## Prerequisites and instalations
+## Prerequisites and installations
+
+
+*The libcurl4 library should be installed as follows:
+
+sudo apt update
+sudo apt install curl
+sudo apt install libcurl4-openssl-dev
 
 
 
