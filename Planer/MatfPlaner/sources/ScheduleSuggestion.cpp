@@ -23,6 +23,7 @@ void ScheduleSuggestion::setExams(QVector<Exam*> exams){
 void ScheduleSuggestion::makeFirstSuggestion(){
     makeSuggestion(3,1);
 }
+
 void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
 
         ui->listWidget->clear();
@@ -45,21 +46,16 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
             }
 
 
-        } else {
+        } else if (_exams.length() > 0) {
 
-            if(_exams.length() > 0) {
 
                 end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
                 _suggestedExams.append(_exams[0]);
                 datesOfOralExams.insert(_exams[0]->getDateOral());
 
-            }
-
-            if(_exams.length() > 1) {
-
                 for (int i = 1; i < n; i++)
 
-                 if (_exams[i]->getDate() >= end) {
+                 if (_exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays) >= end) {
 
                      end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
                      _suggestedExams.append(_exams[i]);
@@ -67,19 +63,18 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
 
                  }
 
+        }
+
+        for(int i = 0; i < _suggestedExams.length(); i++) {
+
+            if(datesOfOralExams.find(_suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
+                ui->listWidget->addItem(_suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDate().toString("dd.MM.yyyy") + "\n");
+                ui->listWidget->addItem("[USMENI]" + _suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDateOral().toString("dd.MM.yyyy") + "\n");
             }
         }
 
-            for(int i = 0; i < _suggestedExams.length(); i++) {
-
-                if(datesOfOralExams.find(_suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
-                    ui->listWidget->addItem(_suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDate().toString("dd.MM.yyyy") + "\n");
-                    ui->listWidget->addItem("[USMENI]" + _suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDateOral().toString("dd.MM.yyyy") + "\n");
-                }
-            }
-
-            _freeDays--;
-            _suggestion++;
+        _freeDays--;
+        _suggestion++;
 }
 
 
@@ -94,7 +89,7 @@ void ScheduleSuggestion::sortExams() {
 
 void ScheduleSuggestion::on_pbNext_clicked()
 {
-    if (_freeDays==0) {
+    if (_suggestion==4) {
         _freeDays=3;
         _suggestion=1;
     }
