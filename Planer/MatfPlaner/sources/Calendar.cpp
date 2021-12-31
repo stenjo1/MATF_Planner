@@ -124,6 +124,7 @@ void Calendar::on_pbSendMail_clicked()
 //        }
 //        else{
 //            QMessageBox::warning(this, "Email", "Otvaranje fajla za slanje nije uspelo.");
+//            return;
 //        }
 
 //        MailSender ms;
