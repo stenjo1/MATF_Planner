@@ -41,21 +41,22 @@ void InsertExams::removeExam(QString& name){
     }
 }
 
-void InsertExams::checkInput(QDate date, QTime time, int ord) {
+bool InsertExams::checkInput(QDate date, QTime time, int ord) {
     if (!(date.isValid())){
         ui->errorLabel->setText("Uneseni datum za ispit u " + QString::number(ord) + ". roku nije validan!");
-        return ;
+        return false;
     }
     if (QDate::currentDate().daysTo(date)<0)
     {
         ui->errorLabel->setText("Datum je prosao za ispit u " + QString::number(ord) + ". roku, uneti datum u buducnosti");
-        return;
+        return false;
     }
 
     if (!time.isValid()) {
         ui->errorLabel->setText("Uneseno vreme za ispit u " + QString::number(ord) + ". roku nije validno!");
-        return;
+        return false;
     }
+    return true;
 }
 
 void InsertExams::on_addExamButton_clicked()
@@ -82,7 +83,8 @@ void InsertExams::on_addExamButton_clicked()
         timeString = ui->timeLineEdit1->text();
         QTime time = QTime::fromString(timeString, "HH:mm");
 
-        checkInput(date,time,1);
+        if (checkInput(date,time,1)==false)
+            return;
 
 
         if (!ui->checkBoxOral1->isChecked()) {
@@ -90,7 +92,8 @@ void InsertExams::on_addExamButton_clicked()
             oralDate = QDate::fromString(dateString, "dd.MM.yyyy.");
             timeString = ui->timeLineEditOral1->text();
             oralTime = QTime::fromString(timeString, "HH:mm");
-            checkInput(oralDate,oralTime,1);
+           if (checkInput(oralDate,oralTime,1)==false)
+               return;
         }
         else{
             oralDate = date.addDays(7);
@@ -106,7 +109,8 @@ void InsertExams::on_addExamButton_clicked()
         date = QDate::fromString(dateString, "dd.MM.yyyy.");
         timeString = ui->timeLineEdit2->text();
         time = QTime::fromString(timeString, "HH:mm");
-        checkInput(date,time,2);
+        if (checkInput(date,time,2)==false)
+            return;
 
 
         if (!ui->checkBoxOral2->isChecked()) {
@@ -114,7 +118,8 @@ void InsertExams::on_addExamButton_clicked()
             oralDate = QDate::fromString(dateString, "dd.MM.yyyy.");
             timeString = ui->timeLineEditOral2->text();
             oralTime = QTime::fromString(timeString, "HH:mm");
-            checkInput(oralDate,oralTime,2);
+            if (checkInput(oralDate,oralTime,2)==false)
+                return;
         }
         else{
             oralDate = date.addDays(7);

@@ -35,7 +35,7 @@ private:
     Ui::InsertExams *ui;
     QVector<Exam*>& _exams;
     Student* _student;
-    void checkInput(QDate date, QTime time, int ord);
+    bool checkInput(QDate date, QTime time, int ord);
 
 };
 
