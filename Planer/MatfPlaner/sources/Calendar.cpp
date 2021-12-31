@@ -1,7 +1,7 @@
 #include "headers/Calendar.h"
 #include "ui_Calendar.h"
 
-Calendar::Calendar(Student* student,QList<Exam*> exams, QWidget *parent):
+Calendar::Calendar(Student* student,QVector<Exam*> exams, QWidget *parent):
     QWidget(parent),
     ui(new Ui::Calendar),
     _schedule(exams),
@@ -47,7 +47,9 @@ void Calendar::colorCells()
 
     for(auto& exam: _schedule){
         QDate date = exam->getDate();
+        QDate oralDate= exam->getDateOral();
         ui->calendarWidget->setDateTextFormat(date, fmt);
+        ui->calendarWidget->setDateTextFormat(oralDate,fmt);
     }
 }
 
@@ -109,7 +111,7 @@ void Calendar::on_pbCheckUrl_clicked()
 void Calendar::on_pbSendMail_clicked()
 {
 //        MailSender ms;
-//        QString recip = ""; //dodajte mail koji isprobavate
+//        QString recip = _student->getEmail();
 //        auto res = ms.send(recip);
 
 //        if (res != CURLE_OK) {
@@ -139,6 +141,10 @@ void Calendar::on_calendarWidget_clicked(const QDate &date)
     for(auto& exam: _schedule){
         if(date == exam->getDate()){
             QMessageBox::information(this,"Ispit",exam->getSubject().getName().append("\n").append(exam->getTime().toString()));
+            break;
+        }
+        if(date == exam->getDateOral()) {
+            QMessageBox::information(this,"Usmeni ispit",exam->getSubject().getName().append("\n").append(exam->getTimeOral().toString()));
             break;
         }
     }

@@ -9,7 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-     #sources/MailSender.cpp
+    # sources/MailSender.cpp \
      sources/ScheduleSuggestion.cpp \
      sources/Window.cpp \
      sources/ExamsOverview.cpp \
@@ -26,7 +26,7 @@ SOURCES += \
 
 
 HEADERS += \
-    #headers/MailSender.h
+   # headers/MailSender.h \
     headers/ScheduleSuggestion.h \
     headers/Window.h \
     headers/Request.h \

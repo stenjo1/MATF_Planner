@@ -1,2 +1,41 @@
 [
+    {
+        "_date": "Thu Jan 13 2022",
+        "_dateOral": "Thu Jan 20 2022",
+        "_importanceRate": 0,
+        "_order": 1,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Relacione baze podataka"
+        },
+        "_time": "11:00:00",
+        "_timeOral": "11:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Sat Feb 5 2022",
+        "_dateOral": "Sat Feb 12 2022",
+        "_importanceRate": 0,
+        "_order": 2,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Relacione baze podataka"
+        },
+        "_time": "09:00:00",
+        "_timeOral": "09:00:00",
+        "_url": ""
+    },
+    {
+        "_date": "Tue Feb 8 2022",
+        "_dateOral": "Tue Feb 15 2022",
+        "_importanceRate": 21850,
+        "_order": 2,
+        "_subject": {
+            "_espb": 6,
+            "_name": "Istraživanje podataka"
+        },
+        "_time": "09:00:00",
+        "_timeOral": "09:00:00",
+        "_url": ""
+    }
 ]

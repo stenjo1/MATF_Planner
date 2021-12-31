@@ -77,7 +77,7 @@ CURLcode MailSender::send(QString& recipient)
            //dodaje se attachment
            part = curl_mime_addpart(mime);
            curl_mime_encoder(part, "base64");
-           QString path =QDir("../MatfPlaner/resources").absoluteFilePath("Raspored");
+           QString path =QDir("../MatfPlaner/output").absoluteFilePath("mail.txt");
            curl_mime_filedata(part, path.toStdString().c_str());
            curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
 

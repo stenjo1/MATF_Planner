@@ -23,7 +23,7 @@ signals:
 
 public:
 
-    explicit Calendar(Student* student, QList<Exam*> exams = {}, QWidget *parent = nullptr);
+    explicit Calendar(Student* student, QVector<Exam*> exams = {}, QWidget *parent = nullptr);
     ~Calendar();
     void checkIfExamIsClose();
 

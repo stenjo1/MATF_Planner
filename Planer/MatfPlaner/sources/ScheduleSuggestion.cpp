@@ -22,6 +22,7 @@ void ScheduleSuggestion::setExams(QVector<Exam*> exams){
 
 void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
 
+        ui->listWidget->clear();
         ui->label->setText("Predlog rasporeda ispita: " + QString::number(suggestion));
 
         int n = _exams.length();

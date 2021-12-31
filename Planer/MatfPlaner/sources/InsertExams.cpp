@@ -16,6 +16,7 @@ InsertExams::~InsertExams()
 
 void InsertExams::loadComboBox()
 {
+    ui->comboBox->clear();
     for (auto& subj : _student->getAllSubjects()) {
         ui->comboBox->addItem(subj->getName());
     }

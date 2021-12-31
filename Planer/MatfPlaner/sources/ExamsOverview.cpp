@@ -12,6 +12,7 @@ ExamsOverview::ExamsOverview(QWidget *parent) :
     ui->setupUi(this);
     insertExamsWindow = new InsertExams(_allExams);
 
+    _allExams = Utils::readJsonExamsFromFile("/resources/student_info/exams.json");
     loadExamList();
     connect(insertExamsWindow, &InsertExams::reloadListWidget, this, &ExamsOverview::loadExamList);
     connect(this, &ExamsOverview::loadComboBox, insertExamsWindow, &InsertExams::loadComboBox);
