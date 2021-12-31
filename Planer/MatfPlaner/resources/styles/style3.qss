@@ -39,6 +39,34 @@ QLabel#label_overview_title
     background-color: #ECECEC;
 }
 
+QLabel#label_login_ime
+{
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+QLabel#label_login_email
+{
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+QLabel#label_login_god
+{
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+QLabel#label_login_smer
+{
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
 QLabel#labelName
 {
     background-color: #ECECEC;
@@ -280,7 +308,7 @@ QCheckBox
     background-color: transparent;
     color: #1d1d1d;
 
-    font-size: 20px;
+    font-size: 15px;
 
     border: 1px solid #b32025;
 }
@@ -304,6 +332,26 @@ QCheckBox::indicator:checked
 
 QCheckBox::indicator:unchecked:hover
 {
+    border: 1px solid #b32025;
+}
+
+QCheckBox#math_department
+{
+    background-color: transparent;
+    color: #1d1d1d;
+
+    font-size: 20px;
+
+    border: 1px solid #b32025;
+}
+
+QCheckBox#info_department
+{
+    background-color: transparent;
+    color: #1d1d1d;
+
+    font-size: 20px;
+
     border: 1px solid #b32025;
 }
 

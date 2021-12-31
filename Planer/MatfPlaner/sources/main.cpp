@@ -1,8 +1,4 @@
 #include <QApplication>
-#include <QList>
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonArray>
 #include <QVector>
 #include "headers/Calendar.h"
 #include "headers/Student.h"
@@ -12,18 +8,11 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QDir targetDir("../MatfPlaner/resources");
     QString examsPath = "/output/schedule.json";
-    QString stylePath = targetDir.absolutePath() + "/styles/style3.qss";
+    QString stylePath = "/styles/style3.qss";
 
-    QFile file(stylePath);
-    if(!file.open(QFile::ReadOnly)){
-        qDebug()<<file.errorString();
-    }
-    else{
-        QString styleSheet = file.readAll();
-        a.setStyleSheet(styleSheet);
-    }
+    QString styleSheetData = QString(Utils::readJsonFromFile(stylePath));
+    a.setStyleSheet(styleSheetData);
 
     QVector<Exam*> exams = Utils::readJsonExamsFromFile(examsPath);
     Student *student = new Student();

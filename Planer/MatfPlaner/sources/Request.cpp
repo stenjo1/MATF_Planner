@@ -4,7 +4,10 @@ Request::Request(QObject *parent) : QObject(parent)
 {
 }
 
-Request::~Request(){}
+Request::~Request()
+{
+    delete manager;
+}
 
 void Request::download(QString s_url)
 {

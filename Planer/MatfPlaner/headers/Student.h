@@ -1,15 +1,14 @@
 #ifndef STUDENT_HPP
 #define STUDENT_HPP
-#include<QString>
-#include<vector>
+#include <QString>
+#include <QJsonArray>
+#include <QDir>
+#include <QFile>
+#include <QJsonDocument>
+#include <QVector>
+
 #include "Exam.h"
 #include "Subject.h"
-#include<QJsonArray>
-#include<QDir>
-#include<QFile>
-#include<QJsonDocument>
-#include<QVector>
-
 
 enum Module {
     None,
@@ -25,7 +24,6 @@ public:
     ~Student();
 
     void jsonToSubjectList(QJsonArray arr);
-   // QJsonArray parseJsonToArray(QString pathname);
     void readFromJson();
     void writeToJson();
     void clearStudentFile();

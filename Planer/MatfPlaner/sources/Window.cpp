@@ -16,6 +16,9 @@ Window::~Window()
     for(auto& cb : checkBoxes){
         delete cb;
     }
+    if(nextYear!=nullptr){
+        delete nextYear;
+    }
 }
 
 void Window::setFilename(QString filename)
@@ -78,11 +81,6 @@ void Window::setupWindow()
 
     previousButton = new QPushButton();
     previousButton->setText("Nazad");
-
-    //TODO:: check how to add button group to layout
-    buttonGroup = new QButtonGroup();
-    buttonGroup->addButton(nextButton);
-    buttonGroup->addButton(previousButton);
 
     verticalLayout->addWidget(nextButton);
     verticalLayout->addWidget(previousButton);

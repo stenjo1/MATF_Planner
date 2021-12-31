@@ -40,7 +40,6 @@ private:
     QVector<Subject*> _subjects;
 
     QVBoxLayout *verticalLayout;
-    QButtonGroup *buttonGroup;
 
     QLabel *label;
     QLabel *infoLabel;

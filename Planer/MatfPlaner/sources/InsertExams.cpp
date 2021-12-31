@@ -152,6 +152,7 @@ void InsertExams::on_clearWidgetButton_clicked()
     ui->checkBox1->setChecked(false);
     ui->checkBox2->setChecked(false);
     ui->checkBoxOral1->setChecked(false);
+    ui->checkBoxOral2->setChecked(false);
     ui->checkBox2->setChecked(false);
     ui->comboBox->setCurrentText("Odabir predmeta:");
 

@@ -73,8 +73,14 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
             }
         }
 
-        _freeDays--;
-        _suggestion++;
+        if(_freeDays > 0)
+            _freeDays--;
+        else
+            _freeDays = 3;
+        if(_suggestion < 4)
+            _suggestion++;
+        else
+            _suggestion = 1;
 }
 
 

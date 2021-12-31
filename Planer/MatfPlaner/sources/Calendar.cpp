@@ -34,6 +34,7 @@ Calendar::~Calendar()
     for (auto exam : _schedule) {
         delete exam;
     }
+    delete _student;
 }
 
 LoginPage* Calendar::getLoginPage() const{

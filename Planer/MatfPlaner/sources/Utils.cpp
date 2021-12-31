@@ -6,6 +6,7 @@ Utils::Utils()
 }
 
 QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
+
     QList<Exam*> exams;
     QDir dir("../MatfPlaner/");
     QFile file(dir.absolutePath() + fileName);
@@ -28,13 +29,16 @@ QVector<Exam*> Utils::readJsonExamsFromFile(const QString &fileName){
            Exam *exam = new Exam((*iter).toObject());
            exams.push_back(exam);
        }
-       return exams;
+     return exams;
 }
 
 QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
     QDir dir("../MatfPlaner/resources/");
     QFile file(dir.absolutePath() + fileName);
-    file.open(QFile::ReadOnly);
+
+    if(!file.open(QFile::ReadOnly)){
+        qDebug()<<"UTILS::READ SUBJECTS FILE::Could not opet file";
+    }
     QByteArray data = file.readAll();
     file.close();
     QJsonParseError errorPtr;
@@ -53,21 +57,39 @@ QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
 
 }
 
+QByteArray Utils::readJsonFromFile(QString &fileName)
+{
+    QDir dir("../MatfPlaner/resources");
+    QString path = dir.absolutePath() + fileName;
+
+    QFile file(path);
+    QByteArray data= QByteArray("");
+    if(!file.open(QFile::ReadOnly)){
+        qDebug()<<file.errorString();
+    } else {
+        data = file.readAll();
+    }
+
+    return data;
+}
+
 void Utils::writeJsonExamsToFile(QString filePath, const QVector<Exam*>& exams){
 
-        QJsonArray allExamsJson;
-        for(auto exam: exams){
-            QJsonObject *examObj = exam->toJson();
-            allExamsJson.append(*examObj);
-        }
+    QJsonArray allExamsJson;
+    for(auto exam: exams){
+        QJsonObject *examObj = exam->toJson();
+        allExamsJson.append(*examObj);
+    }
 
-        QDir dir("../MatfPlaner");
-        QString path = dir.absolutePath() + filePath;
+    QDir dir("../MatfPlaner");
+    QString path = dir.absolutePath() + filePath;
 
-        QFile jsonFile(path);
-        jsonFile.open(QFile::WriteOnly);
-        QJsonDocument doc(allExamsJson);
-        jsonFile.write(doc.toJson());
-        jsonFile.close();
+    QFile jsonFile(path);
+    if(!jsonFile.open(QFile::WriteOnly)){
+       qDebug()<<"UTILS::WRITE TO EXAMS:: Could not open json file";
+    }
+    QJsonDocument doc(allExamsJson);
+    jsonFile.write(doc.toJson());
+    jsonFile.close();
 
 }

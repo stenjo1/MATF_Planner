@@ -6,11 +6,15 @@
         },
         {
             "_espb": 6,
-            "_name": "Relacione baze podataka"
+            "_name": "Računarska grafika"
         },
         {
             "_espb": 6,
-            "_name": "Računarska grafika"
+            "_name": "Verovatnoća"
+        },
+        {
+            "_espb": 6,
+            "_name": "Uvod u numeričku matematiku"
         },
         {
             "_espb": 6,
@@ -23,10 +27,26 @@
         {
             "_espb": 6,
             "_name": "Statistika"
+        },
+        {
+            "_espb": 6,
+            "_name": "Računarske mreže"
+        },
+        {
+            "_espb": 6,
+            "_name": "Razvoj softvera"
+        },
+        {
+            "_espb": 6,
+            "_name": "Izborni predmet R2"
+        },
+        {
+            "_espb": 6,
+            "_name": "Projektovanje baza podataka"
         }
     ],
-    "_email": "peachey0212@gmail.com",
+    "_email": "stef@car.com",
     "_module": "Informatika",
-    "_name": "Marija",
+    "_name": "Stefanija",
     "_yearOfStudy": 4
 }
