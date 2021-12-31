@@ -47,11 +47,14 @@ void Calendar::colorCells()
     QTextCharFormat fmt;
     fmt.setBackground(QColor(61, 66, 107));
 
+    QTextCharFormat fmt2;
+    fmt2.setBackground(QColor(255, 153, 51));
+
     for(auto& exam: _schedule){
         QDate date = exam->getDate();
         QDate oralDate= exam->getDateOral();
         ui->calendarWidget->setDateTextFormat(date, fmt);
-        ui->calendarWidget->setDateTextFormat(oralDate,fmt);
+        ui->calendarWidget->setDateTextFormat(oralDate,fmt2);
     }
 }
 
