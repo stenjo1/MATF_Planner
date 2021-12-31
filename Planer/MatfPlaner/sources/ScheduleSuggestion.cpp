@@ -28,6 +28,7 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
         ui->listWidget->clear();
         ui->label->setText("Predlog rasporeda ispita: " + QString::number(suggestion));
 
+
         int n = _exams.length();
 
         QDate end;
@@ -37,27 +38,36 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
         _suggestedExams.clear();
         datesOfOralExams.clear();
 
+        if(suggestion == 3) {
 
-        if(_exams.length() > 0) {
+            for(int i = 0; i < n; i++) {
+                _suggestedExams.append(_exams[i]);
+            }
 
-            end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
-            _suggestedExams.append(_exams[0]);
-            datesOfOralExams.insert(_exams[0]->getDateOral());
 
-        }
+        } else {
 
-        if(_exams.length() > 1) {
+            if(_exams.length() > 0) {
 
-            for (int i = 1; i < n; i++)
+                end = _exams[0]->getDate().addDays(_exams[0]->getImportanceRate() + freeDays);
+                _suggestedExams.append(_exams[0]);
+                datesOfOralExams.insert(_exams[0]->getDateOral());
 
-             if (_exams[i]->getDate() >= end) {
+            }
 
-                 end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
-                 _suggestedExams.append(_exams[i]);
-                 datesOfOralExams.insert(_exams[i]->getDateOral());
+            if(_exams.length() > 1) {
 
-             }
+                for (int i = 1; i < n; i++)
 
+                 if (_exams[i]->getDate() >= end) {
+
+                     end = _exams[i]->getDate().addDays(_exams[i]->getImportanceRate() + freeDays);
+                     _suggestedExams.append(_exams[i]);
+                     datesOfOralExams.insert(_exams[i]->getDateOral());
+
+                 }
+
+            }
         }
 
             for(int i = 0; i < _suggestedExams.length(); i++) {
