@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QMessageBox>
 
-//#include "headers/MailSender.h"
 #include "headers/Request.h"
 #include "headers/LoginPage.h"
 #include "headers/ExamsOverview.h"

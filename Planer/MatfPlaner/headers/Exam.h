@@ -22,6 +22,7 @@ public:
     QTime getTime();
     QTime getTimeOral();
     bool checkIfDatePassed();
+    QString toString();
 
 private:
     QDate _date;

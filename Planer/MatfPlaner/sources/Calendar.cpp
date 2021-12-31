@@ -1,5 +1,6 @@
 #include "headers/Calendar.h"
 #include "ui_Calendar.h"
+//#include "headers/MailSender.h"
 
 Calendar::Calendar(Student* student,QVector<Exam*> exams, QWidget *parent):
     QWidget(parent),
@@ -110,6 +111,21 @@ void Calendar::on_pbCheckUrl_clicked()
 
 void Calendar::on_pbSendMail_clicked()
 {
+
+//        QDir dir("../MatfPlaner/output");
+//        QFile mailFile(dir.absoluteFilePath("mail.txt"));
+//        if (mailFile.open(QFile::WriteOnly)) {
+//                QString content = "RASPORED ISPITA:\n\n";
+//                for (auto& exam : _schedule) {
+//                    content = content.append(exam->toString() + "\n");
+//                }
+//                mailFile.write(content.toUtf8());
+//                mailFile.close();
+//        }
+//        else{
+//            QMessageBox::warning(this, "Email", "Otvaranje fajla za slanje nije uspelo.");
+//        }
+
 //        MailSender ms;
 //        QString recip = _student->getEmail();
 //        auto res = ms.send(recip);

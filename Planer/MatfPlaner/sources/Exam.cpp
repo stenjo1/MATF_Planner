@@ -26,8 +26,16 @@ Exam::Exam(QJsonObject obj){
         _url = obj.value("_url").toString();
         _order = obj.value("_order").toInt();
         QJsonObject subject =obj.value("_subject").toObject();
+        _importanceRate = obj.value("_importanceRate").toInt();
         _subject = Subject(subject);
 
+}
+
+QString Exam::toString(){
+    QString s;
+    s = getSubject().getName() + "    " + QString::number(getOrder()) + ".rok :" + getDate().toString() + ", " + getTime().toString() + "\n";
+    s += "[USMENI]:  " +  QString::number(getOrder()) + ".rok :" + getDateOral().toString() + ", " + getTimeOral().toString() + "\n";
+    return s;
 }
 
 QJsonObject* Exam::toJson(){

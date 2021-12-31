@@ -68,6 +68,6 @@ void Utils::writeJsonExamsToFile(QString filePath, const QVector<Exam*>& exams){
         jsonFile.open(QFile::WriteOnly);
         QJsonDocument doc(allExamsJson);
         jsonFile.write(doc.toJson());
-
+        jsonFile.close();
 
 }
