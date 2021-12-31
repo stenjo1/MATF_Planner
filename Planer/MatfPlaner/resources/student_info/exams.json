@@ -28,7 +28,7 @@
     {
         "_date": "Tue Feb 8 2022",
         "_dateOral": "Tue Feb 15 2022",
-        "_importanceRate": 21850,
+        "_importanceRate": 0,
         "_order": 2,
         "_subject": {
             "_espb": 6,
@@ -41,7 +41,7 @@
     {
         "_date": "Mon Jan 10 2022",
         "_dateOral": "Tue Jan 18 2022",
-        "_importanceRate": 0,
+        "_importanceRate": 21877,
         "_order": 1,
         "_subject": {
             "_espb": 6,
@@ -54,7 +54,7 @@
     {
         "_date": "Tue Feb 8 2022",
         "_dateOral": "Sun Jan 16 2022",
-        "_importanceRate": 32684,
+        "_importanceRate": 32670,
         "_order": 2,
         "_subject": {
             "_espb": 6,
