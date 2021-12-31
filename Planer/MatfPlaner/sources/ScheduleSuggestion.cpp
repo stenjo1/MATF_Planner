@@ -63,8 +63,8 @@ void ScheduleSuggestion::makeSuggestion(int freeDays, int suggestion){
             for(int i = 0; i < _suggestedExams.length(); i++) {
 
                 if(datesOfOralExams.find(_suggestedExams[i]->getDate()) == datesOfOralExams.end()) {
-                    ui->listWidget->addItem(_suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDate().toString("yyyy.MM.dd") + "\n");
-                    ui->listWidget->addItem("[USMENI]" + _suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDateOral().toString("yyyy.MM.dd") + "\n");
+                    ui->listWidget->addItem(_suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDate().toString("dd.MM.yyyy") + "\n");
+                    ui->listWidget->addItem("[USMENI]" + _suggestedExams[i]->getSubject().getName() + " " + _suggestedExams[i]->getDateOral().toString("dd.MM.yyyy") + "\n");
                 }
             }
 
