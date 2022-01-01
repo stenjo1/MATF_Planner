@@ -26,7 +26,6 @@ public:
     void jsonToSubjectList(QJsonArray arr);
     void readFromJson();
     void writeToJson();
-    void clearStudentFile();
 
     QString getName() const;
     QString getEmail() const;

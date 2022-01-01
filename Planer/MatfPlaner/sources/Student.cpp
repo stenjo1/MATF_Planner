@@ -143,7 +143,6 @@ void Student::readFromJson(){
 
     QDir targetDir("../MatfPlaner/resources/student_info");
     QString path = targetDir.absolutePath() + "/student.json";
-    // to-do: isprazniti listu
     QFile file(path);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QByteArray array = file.readAll();
@@ -166,13 +165,3 @@ void Student::readFromJson(){
 
 }
 
-void Student::clearStudentFile(){
-    QDir targetDir("../MatfPlaner/resources");
-    QString path = targetDir.absolutePath() + "/student.json";
-    QFile file(path);
-    file.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream out(&file);
-    out.seek(0);
-    out<<"{}";
-    file.close();
-}
