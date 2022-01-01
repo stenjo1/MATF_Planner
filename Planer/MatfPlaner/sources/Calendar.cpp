@@ -19,7 +19,6 @@ Calendar::Calendar(Student* student,QVector<Exam*> exams, QWidget *parent):
     _profileWindow->setStudent(_student);
     connect(this, &Calendar::fillProfileSignal, _profileWindow, &Profile::fillSlot);
     connect(_examsOverviewWindow, &ExamsOverview::fillCalendarSignal, this, &Calendar::colorCells);
-    connect(_examsOverviewWindow, SIGNAL(emptyCalendarSignal(QDate)), this, SLOT(emptyCell(QDate)));
 
     colorCells();
 }
@@ -43,8 +42,16 @@ LoginPage* Calendar::getLoginPage() const{
 
 void Calendar::colorCells()
 {
-    _schedule = Utils::readJsonExamsFromFile("/output/schedule.json");
     QTextCharFormat fmt;
+    fmt.setBackground(QColorConstants::Transparent);
+    QMap<QDate,QTextCharFormat> dates = ui->calendarWidget->dateTextFormat();
+    QList<QDate> keys = dates.keys();
+
+    for (auto& key : keys) {
+         ui->calendarWidget->setDateTextFormat(key, fmt);
+    }
+
+    _schedule = Utils::readJsonExamsFromFile("/output/schedule.json");
     fmt.setBackground(QColor(61, 66, 107));
 
     QTextCharFormat fmt2;
@@ -56,14 +63,6 @@ void Calendar::colorCells()
         ui->calendarWidget->setDateTextFormat(date, fmt);
         ui->calendarWidget->setDateTextFormat(oralDate,fmt2);
     }
-}
-
-void Calendar::emptyCell(QDate date)
-{
-    QTextCharFormat fmt;
-    fmt.setBackground(QColorConstants::Transparent);
-
-    ui->calendarWidget->setDateTextFormat(date, fmt);
 }
 
 
@@ -159,16 +158,17 @@ void Calendar::on_pbProfile_clicked()
 
 void Calendar::on_calendarWidget_clicked(const QDate &date)
 {
+    QString info;
     for(auto& exam: _schedule){
         if(date == exam->getDate()){
-            QMessageBox::information(this,"Ispit",exam->getSubject().getName().append("\n").append(exam->getTime().toString()));
-            break;
+            info += exam->getSubject().getName() + "   " + exam->getTime().toString() + "\n";
         }
         if(date == exam->getDateOral()) {
-            QMessageBox::information(this,"Usmeni ispit",exam->getSubject().getName().append("\n").append(exam->getTimeOral().toString()));
-            break;
+            info += "Usmeni ispit: " + exam->getSubject().getName() + "   " +exam->getTimeOral().toString() + "\n";
         }
     }
+    QMessageBox::information(this,"Ispit",info);
+
 }
 
 void Calendar::checkIfExamIsClose(){

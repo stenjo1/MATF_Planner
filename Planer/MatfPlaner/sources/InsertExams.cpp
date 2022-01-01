@@ -101,6 +101,7 @@ void InsertExams::on_addExamButton_clicked()
         }
         Exam *exam1 = new Exam(subject, date, oralDate, time, oralTime, url, importanceRate,1);
         _exams.push_back(exam1);
+        emit reloadListWidget();
     }
 
     if (!ui->checkBox2->isChecked()) {
@@ -127,11 +128,12 @@ void InsertExams::on_addExamButton_clicked()
         }
         Exam *exam2 = new Exam(subject, date, oralDate, time, oralTime, url, importanceRate,2);
         _exams.push_back(exam2);
+        emit reloadListWidget();
     }
 
     ui->errorLabel->clear();
 
-    emit reloadListWidget();
+
 }
 
 

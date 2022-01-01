@@ -49,7 +49,7 @@ QVector<Subject*> Utils::readJsonSubjectsFromFile(QString fileName){
     QJsonObject rootObj = doc.object();
     QVector<Subject*> listSubjects;
     QJsonArray subjArray = rootObj.value("_subjects").toArray();
-    foreach(const QJsonValue  &val, subjArray){
+    for(const auto  &val : subjArray){
             listSubjects.append(new Subject(val));
         }
 
