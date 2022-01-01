@@ -20,8 +20,8 @@ This project was done for a faculty project (Software Development course). The a
 ![demo](https://gitlab.com/matf-bg-ac-rs/course-rs/projects-2021-2022/15-Matf-Planer/-/raw/8202e9436ff3e2cac8690d555648e8061a9e3132/matf-planer.png)
 
 #### Authors
--   **Stefanija Markovic**
--   **Sara Misic**
--   **Marija Skoric**
--   **Stefan Durlevic**
+-   **Stefanija Marković 306/2018**
+-   **Sara Mišić 198/2018**
+-   **Marija Škorić 63/2018**
+-   **Stefan Durlević 163/2017**
 
