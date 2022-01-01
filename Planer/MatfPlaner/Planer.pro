@@ -9,7 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-     #sources/MailSender.cpp \
+     sources/MailSender.cpp \
      sources/ScheduleSuggestion.cpp \
      sources/Window.cpp \
      sources/ExamsOverview.cpp \
@@ -26,7 +26,7 @@ SOURCES += \
 
 
 HEADERS += \
-    #headers/MailSender.h \
+    headers/MailSender.h \
     headers/ScheduleSuggestion.h \
     headers/Window.h \
     headers/Request.h \
@@ -75,11 +75,11 @@ DISTFILES += \
     resources/subjects/r4o.json
 
 
-#unix|win32: LIBS += -L$$PWD/../../../../../../usr/lib/x86_64-linux-gnu/ -lcurl
+unix|win32: LIBS += -L$$PWD/../../../../../../usr/lib/x86_64-linux-gnu/ -lcurl
 
-#INCLUDEPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
-#DEPENDPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
+INCLUDEPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
+DEPENDPATH += $$PWD/../../../../../../usr/include/x86_64-linux-gnu/curl
 
-#win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/curl.lib
-#else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/libcurl.a
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/curl.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/../../../../../../usr/lib/x86_64-linux-gnu/libcurl.a
 
