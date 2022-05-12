@@ -1,22 +1,20 @@
 #ifndef MAILSENDER_H
 #define MAILSENDER_H
 
-#include <iostream>
-#include <QString>
-#include <QMessageBox>
 #include <QDir>
+#include <QMessageBox>
+#include <QString>
 #include <curl.h>
+#include <iostream>
 
 
 class MailSender : public QObject
 {
     Q_OBJECT
 
-public:
+  public:
     ~MailSender();
-    CURLcode send(QString& recipient);
-
-
+    CURLcode send(QString &recipient);
 };
 
 #endif // MAILSENDER_H

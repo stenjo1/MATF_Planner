@@ -1,25 +1,20 @@
 #ifndef STUDENT_HPP
 #define STUDENT_HPP
-#include <QString>
-#include <QJsonArray>
 #include <QDir>
 #include <QFile>
+#include <QJsonArray>
 #include <QJsonDocument>
+#include <QString>
 #include <QVector>
 
 #include "Exam.h"
 #include "Subject.h"
 
-enum Module {
-    None,
-    Informatika,
-    Matematika
-};
+enum Module { None, Informatika, Matematika };
 
 class Student
 {
-public:
-
+  public:
     Student();
     ~Student();
 
@@ -38,17 +33,17 @@ public:
     void setYearOfStudy(int year);
     void setModule(Module m);
 
-    QVector<Subject*> getAllSubjects() const;
+    QVector<Subject *> getAllSubjects() const;
     void emptyAllSubjects();
 
-    void addSubject(Subject* subj);
-    void removeSubject(Subject* subj);
+    void addSubject(Subject *subj);
+    void removeSubject(Subject *subj);
 
-private:
+  private:
     QString _name;
     int _yearOfStudy;
     QString _email;
-    QVector<Subject*> _allSubjects;
+    QVector<Subject *> _allSubjects;
     Module _module;
 };
 

@@ -7,7 +7,8 @@
 #include "Exam.h"
 #include "Utils.h"
 
-namespace Ui {
+namespace Ui
+{
 class ScheduleSuggestion;
 }
 
@@ -15,27 +16,28 @@ class ScheduleSuggestion : public QWidget
 {
     Q_OBJECT
 
-signals:
+  signals:
     void scheduleSet();
-public:
+
+  public:
     explicit ScheduleSuggestion(QWidget *parent = nullptr);
     ~ScheduleSuggestion();
     void sortExams();
 
-    void setExams(QVector<Exam*> exams);
+    void setExams(QVector<Exam *> exams);
     void makeFirstSuggestion();
 
-private slots:
+  private slots:
     void on_pbNext_clicked();
 
     void on_pbConfirm_clicked();
 
-private:
+  private:
     Ui::ScheduleSuggestion *ui;
-    QVector<Exam*> _exams;
-    QVector<Exam*> _suggestedExams;
+    QVector<Exam *> _exams;
+    QVector<Exam *> _suggestedExams;
     void makeSuggestion(int freeDays, int suggestion);
-    int _freeDays = 3;
+    int _freeDays   = 3;
     int _suggestion = 1;
 };
 
