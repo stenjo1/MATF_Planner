@@ -2,42 +2,43 @@
 #define WINDOW_H
 
 #include <QObject>
-#include <QWidget>
 #include <QVector>
+#include <QWidget>
 
-#include <QVBoxLayout>
-#include <QCheckBox>
 #include <QButtonGroup>
-#include <QPushButton>
+#include <QCheckBox>
 #include <QLabel>
+#include <QPushButton>
+#include <QVBoxLayout>
 
-#include "headers/Utils.h"
 #include "headers/Student.h"
+#include "headers/Utils.h"
 
 
 class Window : public QWidget
 {
     Q_OBJECT
 
-signals:
+  signals:
     void showLogin();
-public:
+
+  public:
     explicit Window(QWidget *parent = nullptr);
     ~Window();
 
     void setFilename(QString filename);
-    void setStudent(Student* student);
+    void setStudent(Student *student);
     void setupWindow();
 
-private:
+  private:
     QString _filename;
     int year;
 
     Window *previousYear;
     Window *nextYear = nullptr;
 
-    Student* _student;
-    QVector<Subject*> _subjects;
+    Student *_student;
+    QVector<Subject *> _subjects;
 
     QVBoxLayout *verticalLayout;
 
@@ -46,11 +47,11 @@ private:
     QPushButton *nextButton;
     QPushButton *previousButton;
 
-    QVector<QCheckBox*> checkBoxes;
+    QVector<QCheckBox *> checkBoxes;
 
     QString nameLabel();
 
-private slots:
+  private slots:
     void setupNextWindow();
     void setupPreviousWindow();
 };

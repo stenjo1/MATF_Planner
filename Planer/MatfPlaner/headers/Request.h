@@ -1,30 +1,28 @@
 #ifndef REQUEST_H
 #define REQUEST_H
 
-#include <QObject>
-#include <QIODevice>
-#include <QUrl>
-#include <QFile>
 #include <QDir>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkRequest>
-#include <QtNetwork/QNetworkReply>
 #include <QEventLoop>
+#include <QFile>
+#include <QIODevice>
+#include <QObject>
+#include <QUrl>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
 
 class Request : public QObject
 {
     Q_OBJECT
-public:
+  public:
     explicit Request(QObject *parent = 0);
     virtual ~Request();
     void download(QString s_url);
     bool isFileChanged();
 
-private:
-  QNetworkAccessManager* manager;
-  bool _fileChanged;
-
-
+  private:
+    QNetworkAccessManager *manager;
+    bool _fileChanged;
 };
 
 #endif // REQUEST_H

@@ -1,12 +1,13 @@
 #ifndef EXAMSOVERVIEW_H
 #define EXAMSOVERVIEW_H
 
-#include <QWidget>
-#include "headers/Student.h"
 #include "headers/InsertExams.h"
 #include "headers/ScheduleSuggestion.h"
+#include "headers/Student.h"
+#include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 class ExamsOverview;
 }
 
@@ -14,19 +15,19 @@ class ExamsOverview : public QWidget
 {
     Q_OBJECT
 
-signals:
-   void loadComboBox();
-   void fillCalendarSignal();
-   void emptyCalendarSignal(QDate date);
-   void makeFirstSuggestion();
+  signals:
+    void loadComboBox();
+    void fillCalendarSignal();
+    void emptyCalendarSignal(QDate date);
+    void makeFirstSuggestion();
 
-public:
-   explicit ExamsOverview(QWidget *parent = nullptr);
+  public:
+    explicit ExamsOverview(QWidget *parent = nullptr);
     ~ExamsOverview();
-    void setStudent(Student* student);
+    void setStudent(Student *student);
 
 
-private slots:
+  private slots:
 
     void loadExamList();
 
@@ -39,13 +40,13 @@ private slots:
     void on_pbConfirm_clicked();
 
 
-private:
+  private:
     Ui::ExamsOverview *ui;
-    Student* _student;
-    InsertExams* insertExamsWindow;
-    ScheduleSuggestion* _scheduleSuggestion;
-    QVector<Exam*> _allExams;
-    QDate removeExam(QString& name);
+    Student *_student;
+    InsertExams *insertExamsWindow;
+    ScheduleSuggestion *_scheduleSuggestion;
+    QVector<Exam *> _allExams;
+    QDate removeExam(QString &name);
     void writeToJson(QString filePath);
 };
 

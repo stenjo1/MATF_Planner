@@ -1,59 +1,65 @@
 #include "headers/Student.h"
 
-Student::Student()
+Student::Student() {}
+
+Student::~Student()
 {
-
-}
-
-Student::~Student(){
-   for(auto element : _allSubjects){
-       delete element;
-   }
+    for (auto element : _allSubjects) {
+        delete element;
+    }
 }
 
 
-void Student::setName(QString name){
+void Student::setName(QString name)
+{
     _name = name;
 }
 
-void Student::setEmail(QString email){
+void Student::setEmail(QString email)
+{
     _email = email;
 }
 
-void Student::setYearOfStudy(int year){
+void Student::setYearOfStudy(int year)
+{
     _yearOfStudy = year;
 }
 
-void Student::setModule(Module m){
+void Student::setModule(Module m)
+{
     _module = m;
 }
 
-QVector<Subject*> Student::getAllSubjects() const
+QVector<Subject *> Student::getAllSubjects() const
 {
     return _allSubjects;
 }
 
 
-QString Student::getName() const{
+QString Student::getName() const
+{
     return _name;
 }
-QString Student::getEmail() const{
+QString Student::getEmail() const
+{
     return _email;
 }
-int Student::getYearOfStudy() const{
+int Student::getYearOfStudy() const
+{
     return _yearOfStudy;
 }
-QString Student::getModuleString() {
-    if(_module == Module::Informatika)
+QString Student::getModuleString()
+{
+    if (_module == Module::Informatika)
         return QString("Informatika");
     else if (_module == Module::Matematika)
         return QString("Matematika");
     else
         return QString("/");
-
 }
 
-Module Student::moduleFromString(QString string) {
+Module Student::moduleFromString(QString string)
+{
     if (string.compare("Informatika") == 0)
         return Module::Informatika;
     else if (string.compare("Matematika") == 0)
@@ -63,105 +69,100 @@ Module Student::moduleFromString(QString string) {
 }
 
 
+void Student::addSubject(Subject *subj)
+{
+    int i = 0;
 
-void Student::addSubject(Subject *subj){
-    int i=0;
-
-    while(i<_allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0 )){
+    while (i < _allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0)) {
         i++;
     }
 
-    if(i == _allSubjects.length()){
+    if (i == _allSubjects.length()) {
         _allSubjects.push_back(new Subject(subj));
     }
 }
 
 void Student::removeSubject(Subject *subj)
 {
-    int i=0;
+    int i = 0;
 
-    while(i<_allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0 )){
+    while (i < _allSubjects.length() && (_allSubjects[i]->getName().compare(subj->getName()) != 0)) {
         i++;
     }
 
-    if(i < _allSubjects.length()){
+    if (i < _allSubjects.length()) {
         _allSubjects.removeAt(i);
     }
 }
 
-void Student::emptyAllSubjects(){
+void Student::emptyAllSubjects()
+{
     for (auto s : _allSubjects)
         delete s;
     _allSubjects.resize(0);
 }
 
 
-void Student::jsonToSubjectList(QJsonArray arr){
+void Student::jsonToSubjectList(QJsonArray arr)
+{
 
-   auto begin =  arr.begin();
-   auto end = arr.end();
-   while(begin != end){
-       Subject *sub =new Subject((*begin).toObject());
-       _allSubjects.push_back(sub);
-       begin++;
-   }
+    auto begin = arr.begin();
+    auto end   = arr.end();
+    while (begin != end) {
+        Subject *sub = new Subject((*begin).toObject());
+        _allSubjects.push_back(sub);
+        begin++;
+    }
 }
 
 void Student::writeToJson()
 {
     QJsonArray allSubjectsJson;
-    for(auto subject:_allSubjects){
+    for (auto subject : _allSubjects) {
         QJsonObject *subjObj = subject->toJson();
         allSubjectsJson.append(*subjObj);
     }
 
 
     QJsonObject jsonObjStudent;
-    jsonObjStudent.insert("_name",_name);
-    jsonObjStudent.insert("_yearOfStudy",_yearOfStudy);
-    jsonObjStudent.insert("_email",_email);
-    jsonObjStudent.insert("_allSubjects",allSubjectsJson);
-    jsonObjStudent.insert("_module",getModuleString());
+    jsonObjStudent.insert("_name", _name);
+    jsonObjStudent.insert("_yearOfStudy", _yearOfStudy);
+    jsonObjStudent.insert("_email", _email);
+    jsonObjStudent.insert("_allSubjects", allSubjectsJson);
+    jsonObjStudent.insert("_module", getModuleString());
 
 
     QDir dir("..");
     QString path = dir.absolutePath() + "/MatfPlaner/resources/student_info/student.json";
     QFile jsonFile(path);
-    if(!jsonFile.open(QIODevice::WriteOnly)) {
-        qDebug()<<"STUDENT::WRITETOJSON:: Could not opetn json file.";
+    if (!jsonFile.open(QIODevice::WriteOnly)) {
+        qDebug() << "STUDENT::WRITETOJSON:: Could not opetn json file.";
     }
     QJsonDocument doc(jsonObjStudent);
     jsonFile.write(doc.toJson());
     jsonFile.close();
-
-
-
-
 }
 
-void Student::readFromJson(){
+void Student::readFromJson()
+{
 
     QDir targetDir("../MatfPlaner/resources/student_info");
     QString path = targetDir.absolutePath() + "/student.json";
     QFile file(path);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QByteArray array = file.readAll();
-    if(array.isEmpty())
+    if (array.isEmpty())
         _name = "";
     file.close();
     QJsonParseError jsonParseError;
     QJsonDocument jsonDocument(QJsonDocument::fromJson(array, &jsonParseError));
-    if(QJsonParseError::NoError != jsonParseError.error)
-    {
+    if (QJsonParseError::NoError != jsonParseError.error) {
         qDebug() << QString("JsonParseError: %1").arg(jsonParseError.errorString());
     }
     QJsonObject rootObj = jsonDocument.object();
-    _name = rootObj.value("_name").toString();
-    _email = rootObj.value("_email").toString();
-    _yearOfStudy = rootObj.value("_yearOfStudy").toInt();
-    _module = moduleFromString(rootObj.value("_module").toString());
+    _name               = rootObj.value("_name").toString();
+    _email              = rootObj.value("_email").toString();
+    _yearOfStudy        = rootObj.value("_yearOfStudy").toInt();
+    _module             = moduleFromString(rootObj.value("_module").toString());
     jsonToSubjectList(rootObj.value("_allSubjects").toArray());
-
-
 }
-

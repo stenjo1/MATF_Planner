@@ -6,17 +6,18 @@
 #include "Exam.h"
 #include "Utils.h"
 
-class Schedule{
+class Schedule
+{
 
-public:
+  public:
     Schedule();
     ~Schedule();
     void makeSchedule();
 
-    void setExams(QVector<Exam*> exams);
+    void setExams(QVector<Exam *> exams);
 
-private:
-    QVector<Exam*> _exams;
+  private:
+    QVector<Exam *> _exams;
 };
 
 #endif // SCHEDULE_H

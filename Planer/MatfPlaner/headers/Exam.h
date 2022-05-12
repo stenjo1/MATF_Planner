@@ -3,28 +3,28 @@
 
 #include "headers/Subject.h"
 #include <QDate>
-#include <QTime>
 #include <QString>
+#include <QTime>
 
 class Exam
 {
-public:
+  public:
     Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOral, QString url, int importanceRate, int order);
     Exam(QJsonObject);
-    QJsonObject* toJson();
+    QJsonObject *toJson();
 
     QString getUrl();
     QDate getDate();
     QDate getDateOral();
     int getImportanceRate();
-    Subject& getSubject();
+    Subject &getSubject();
     int getOrder();
     QTime getTime();
     QTime getTimeOral();
     bool checkIfDatePassed();
     QString toString();
 
-private:
+  private:
     QDate _date;
     QDate _dateOral;
     QTime _time;
