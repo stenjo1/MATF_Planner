@@ -10,7 +10,7 @@ class Exam
 {
   public:
     Exam(Subject subject, QDate date, QDate dateOral, QTime time, QTime timeOral, QString url, int importanceRate, int order);
-    Exam(QJsonObject);
+    explicit Exam(QJsonObject);
     QJsonObject *toJson();
 
     QString getUrl();

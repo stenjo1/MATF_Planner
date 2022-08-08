@@ -43,7 +43,7 @@ void LoginPage::on_nextButton_clicked()
 
     QRegularExpression mailRegex;
     mailRegex.setPattern(
-        "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+        "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:/.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
 
     if (name == "") {
         ui->label_3->setText("Morate uneti ime!");
@@ -59,7 +59,7 @@ void LoginPage::on_nextButton_clicked()
     }
 
     bool okYear;
-    year.toInt(&okYear, 10);
+    int yearInt = year.toInt(&okYear, 10);
 
     if (!okYear) {
         ui->label_3->setText("Godina studija mora biti broj!");
@@ -68,7 +68,7 @@ void LoginPage::on_nextButton_clicked()
 
     _student->setName(name);
     _student->setEmail(mail);
-    _student->setYearOfStudy(year.toInt());
+    _student->setYearOfStudy(yearInt);
     _student->emptyAllSubjects();
 
     if (ui->info_department->isChecked()) {
