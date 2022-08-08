@@ -10,9 +10,9 @@ class Subject
   public:
     Subject(QString name, int espb);
     Subject();
-    Subject(const Subject *other);
+    explicit Subject(const Subject *other);
     QJsonObject *toJson() const;
-    Subject(QJsonValue val);
+    explicit Subject(QJsonValue val);
     QString getName() const;
     int getEspb() const;
 

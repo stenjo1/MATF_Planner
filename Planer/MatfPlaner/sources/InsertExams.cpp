@@ -79,7 +79,7 @@ void InsertExams::on_addExamButton_clicked()
         dateString = ui->dateLineEdit1->text();
         date       = QDate::fromString(dateString, "dd.MM.yyyy.");
         timeString = ui->timeLineEdit1->text();
-        QTime time = QTime::fromString(timeString, "HH:mm");
+        time = QTime::fromString(timeString, "HH:mm");
 
         if (checkInput(date, time, 1) == false)
             return;
